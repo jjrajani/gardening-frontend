@@ -2,8 +2,8 @@ import angular from 'angular';
 import 'angular-ui-router';
 import 'angular-cookies';
 
-import { config } from './utilites/config';
-import { serverConstant } from './utilites/server.constant';
+import { config } from './utilities/config';
+import { serverConstant } from './utilities/server.constant';
 
 import { LayoutController } from './controllers/layout.controller';
 
