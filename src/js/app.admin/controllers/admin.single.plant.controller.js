@@ -1,4 +1,5 @@
 function AdminSinglePlantController (AdminService, $stateParams) {
+  
   let vm = this;
 
   init()
