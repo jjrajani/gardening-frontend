@@ -1,28 +1,21 @@
 <header>
-  <nav class="nav">
     <div class="nav-left">
-      <a class="nav-item" href="#">Garden</a>
+      <a class="" href="#"><span class="green">my</span><span class="orange">Garden</span></a>
     </div>
+    <div class="nav-right">
+      <a href="/#/">Home</a>
 
-    <div class="nav-right nav-menu">
-      <a class="nav-item" href="/#/">Home</a>
-    
-
-      <a class="nav-item" ng-hide="vm.loggedIn" href="/#/login">Login</a>
-      <a class="nav-item" ng-hide="vm.loggedIn" href="/#/register">Register</a>
-      <a class="nav-item" ng-show="vm.loggedIn" href="#" ng-click="vm.logOut()">Logout</a>
+      <a class="" ng-hide="vm.loggedIn" href="/#/login">Login</a>
+      <a class="" ng-hide="vm.loggedIn" href="/#/register">Register</a>
+      <a class="" ng-show="vm.loggedIn" href="#" ng-click="vm.logOut()">Logout</a>
 
     </div>
-  </nav>
 </header>
 
-<div class="wrapper" ui-view></div>
+<div class="wrapper container-fluid layout" ui-view></div>
 
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>Plant Stuff</p>
-    </div>
-  </div>
+<footer layout="row" layout-align="space-around">
+  <p class="col-xs-6 col-sm-6">@humdrum</p>
+  <p class="col-xs-6 col-sm-6 text-right">a <span class="blue">magnanimus</span> app</p>
 </footer>

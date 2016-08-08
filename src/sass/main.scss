@@ -1,10 +1,100 @@
-@import 'bulma';
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+$blue: blue;
+$green: green;
+$orange: orange;
 
-
-.register {
-  margin: 25px auto;
+.blue {
+  color: blue;
 }
 
-.login {
-  margin: 25px auto;
+.green {
+  color: $green;
 }
+
+.orange {
+  color: orange;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+//////////////////////////////////////////////
+////// -- Layout  ////////////////////////////
+//////////////////////////////////////////////
+
+header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+  .nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+
+//////////////////////////////////////////////
+////// -- Planner  ///////////////////////////
+//////////////////////////////////////////////
+
+.planner {
+  max-width: 100%;
+  .nav {
+    div {
+      border: solid black 1px;
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        border: solid black 1px;
+      }
+    }
+  }
+  .library {
+    .plants {
+      overflow: scroll;
+      .plant {
+        min-width: 150px;
+        max-width: 175px;
+        border: solid black 1px;
+      }
+    }
+  }
+
+  .plan {
+    height: 500px;
+    .garden {
+      height: 400px;
+      width: 800px;
+      margin: 50px 0;
+      .space {
+        height: 100px;
+        width: 100px;
+        border: solid black 1px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
