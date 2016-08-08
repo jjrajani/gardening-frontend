@@ -1,8 +1,12 @@
-<form class="newPlant" ng-submit="vm.createPlant(plant)">
+<div class="new-plant">
+  <form class="new-plant-form" ng-submit="vm.createPlant(plant)">
 
-  <p class="control">
-    <input type="text" class="input" ng-model="plant.name" placeholder="Name">
-  </p>
-
-
-</form>
+    <p class="control">
+      <input type="text" class="input" ng-model="plant.name" placeholder="Name">
+    </p>
+    <p class="control">
+      <input type="text" class="input" ng-model="plant.family" placeholder="Family">
+    </p>
+    <button class="button">Submit</button>
+  </form>
+</div>
