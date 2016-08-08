@@ -1,0 +1,28 @@
+<header>
+  <nav class="nav">
+    <div class="nav-left">
+      <a class="nav-item" href="#">Garden</a>
+    </div>
+
+    <div class="nav-right nav-menu">
+      <a class="nav-item" href="/#/">Home</a>
+    
+
+      <a class="nav-item" href="/#/admin/plants">Plants</a>
+      
+      <a class="nav-item" ng-show="vm.loggedIn" href="#" ng-click="vm.logOut()">Logout</a>
+
+    </div>
+  </nav>
+</header>
+
+<div class="wrapper" ui-view></div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Plant Stuff</p>
+    </div>
+  </div>
+</footer>
