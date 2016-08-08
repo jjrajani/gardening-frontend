@@ -1,11 +1,19 @@
 function config ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+  // Core
     .state('root', {
       abstract: true,
       templateUrl: 'templates/core/layout.tpl.html',
       controller: 'LayoutController as vm'
     })
+    .state('root.home', {
+      url: '/',
+      templateUrl: 'templates/core/home.tpl.html',
+      controller: 'HomeController as vm'
+    })
+
+  // User
     .state('root.register', {
       url: '/register',
       templateUrl: 'templates/users/register.tpl.html',
@@ -16,6 +24,8 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/users/login.tpl.html',
       controller: 'LoginController as vm'
     })
+
+  // Admin
     .state('admin', {
       abstract: true,
       templateUrl: 'templates/admin/admin.tpl.html'
@@ -34,10 +44,21 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/admin/plants/new',
       templateUrl: 'templates/admin/plants/new.tpl.html',
       controller: 'AdminNewPlantController as vm'
-    });
+    })
+    .state('admin.showPlant', {
+      url: '/admin/plants/:id',
+      templateUrl: 'templates/admin/plants/show.tpl.html',
+      controller: 'AdminSinglePlantController as vm'
+    })
 
+  // Planner
+    .state('root.planner', {
+      url: '/planner',
+      templateUrl: 'templates/planner/planner.tpl.html',
+      controller: 'PlannerController as vm'
+    })
+    ;
     $urlRouterProvider.otherwise('/');
-
 }
 
 config.$inject = ['$stateProvider', '$urlRouterProvider'];
