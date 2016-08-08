@@ -1,13 +1,15 @@
-function AdminNewPlantController () {
+function AdminNewPlantController (AdminService) {
 
   let vm = this;
-  vm.createPlant = createPlant;
+  vm.newPlant = newPlant;
 
-  function createPlant (plant) {
-    console.log(plant);
+  function newPlant (plant) {
+    AdminService.createPlant(plant).then( res => {
+      console.log(res)
+    })
   }
 
 }
 
-AdminNewPlantController.$inject = [];
+AdminNewPlantController.$inject = ['AdminService'];
 export { AdminNewPlantController }
