@@ -1,5 +1,5 @@
 const serverConstant = {
-  // URL: 'https://garden-back.herokuapp.com/'
+  // URL: 'https://gardening-backend.herokuapp.com/'
   URL: 'http://localhost:3333/'
 }
 
