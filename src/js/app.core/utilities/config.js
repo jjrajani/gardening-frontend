@@ -50,6 +50,11 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/admin/plants/show.tpl.html',
       controller: 'AdminSinglePlantController as vm'
     })
+    .state('admin.updatePlant', {
+      url: '/admin/plants/:id/edit',
+      templateUrl: 'templates/admin/plants/edit.tpl.html',
+      controller: 'AdminSinglePlantController as vm'
+    })
   // Planner
     .state('root.planner', {
       url: '/planner',

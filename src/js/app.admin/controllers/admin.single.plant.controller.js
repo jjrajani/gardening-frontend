@@ -1,6 +1,7 @@
 function AdminSinglePlantController (AdminService, $stateParams) {
   
   let vm = this;
+  vm.updatePlant = updatePlant;
 
   init()
 
@@ -8,6 +9,10 @@ function AdminSinglePlantController (AdminService, $stateParams) {
     AdminService.getPlant($stateParams.id).then(res => {
       vm.plant = res.data
     })
+  }
+
+  function updatePlant (plant) {
+    AdminService.updatePlant(plant);
   }
 
 }
