@@ -9,7 +9,7 @@ import { LayoutController } from './controllers/layout.controller';
 import { HomeController } from './controllers/home.controller';
 
 angular
-  .module('app.core', ['ui.router', 'ngCookies', 'ngMaterial'])
+  .module('app.core', ['ui.router', 'ngCookies'])
   .config(config)
   .constant('SERVER', serverConstant)
   .controller('LayoutController', LayoutController)

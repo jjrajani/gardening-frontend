@@ -1,96 +1,66 @@
 <div class="wrapper planner" layout="column" flex>
-  <div hide-md>
+  <div class="small-screen">
     <p>Our Garden Planner performs best on a large screen.  Tablet or desktop monitor required.</p>
   </div>
 
-  <div hide-xs hide-sm>
+  <div class="big-screen">
 
   <!-- NAV -->
 
-    <div class="nav" layout="row">
-      <div flex="20">    
-        <p>Library</p>
-      </div>
-      <div flex="80" layout="row">
-        <p flex="25">Vegetables</p>
-        <p flex="25">Herbs</p>
-        <p flex="25">Alphabetical</p>
-        <p flex="25">Season</p>
-      </div>
-    </div>
-
+  <div class="tabs">
+    <ul>
+      <li><a>Library</a></li>
+      <li class="is-active"><a>Vegetables</a></li>
+      <li><a>Herbs</a></li>
+      <li><a>Seasons</a></li>
+    </ul>
+  </div>
+    
   <!-- Library -->
-
     <div class="library">
-      <ul class="plants" layout="row">
-        <li class="plant" align="center">
-          <img src="#">
-          <p>Name</p>
-        </li>
-        <li class="plant" align="center">
-          <img src="#">
-          <p>Name</p>
-        </li>
-        <li class="plant" align="center">
-          <img src="#">
-          <p>Name</p>
-        </li>
-        <li class="plant" align="center">
-          <img src="#">
-          <p>Name</p>
-        </li>
-        <li class="plant" align="center">
-          <img src="#">
-          <p>Name</p>
-        </li>
-        <li class="plant" align="center">
-          <img src="#">
-          <p>Name</p>
-        </li>
-        <li class="plant" align="center">
-          <img src="#">
-          <p>Name</p>
-        </li>
+      <ul class="plants">
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
+        <planner-plant-card></planner-plant-card>
       </ul>
     </div>
 
-    <div class="plan" align="center">
-      <div class="garden" layout="row" layout-wrap>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
-        <div class="space"></div>
+    <div class="plan">
+      <div class="garden" layout-wrap>
+        <div class="row">
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+        </div>
+        <div class="row">
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+        </div>
+        <div class="row">
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+          <div class="space"></div>
+        </div>
 
-        
       </div>
+
     </div>
 
   </div>

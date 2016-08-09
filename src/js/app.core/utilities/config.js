@@ -25,6 +25,12 @@ function config ($stateProvider, $urlRouterProvider) {
       controller: 'LoginController as vm'
     })
 
+  // Fellow
+    .state('root.fellow', {
+      url: '/fellow',
+      templateUrl: 'templates/fellow/fellow.tpl.html'
+    })
+
   // Admin
     .state('admin', {
       abstract: true,
@@ -55,6 +61,12 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/planner',
       templateUrl: 'templates/planner/planner.tpl.html',
       controller: 'PlannerController as vm'
+    })
+  // Library
+    .state('root.library', {
+      url: '/library',
+      templateUrl: 'templates/library/library.tpl.html',
+      controller: 'LibraryController as vm'
     })
     ;
     $urlRouterProvider.otherwise('/');
