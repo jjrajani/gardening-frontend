@@ -1,9 +1,10 @@
 function AdminService ($http, $cookies, UserService, SERVER) {
 
-  this.admin = admin;
+  this.admin       = admin;
   this.createPlant = createPlant;
-  this.getPlants = getPlants;
-  this.getPlant = getPlant; 
+  this.getPlants   = getPlants;
+  this.getPlant    = getPlant; 
+  this.updatePlant = updatePlant
 
   function admin () {
     $cookies.get('admin');
@@ -19,6 +20,11 @@ function AdminService ($http, $cookies, UserService, SERVER) {
 
   function getPlant (id) {
     return $http.get(SERVER.URL + 'admin/plants/' + id, UserService.headers());
+  }
+
+  function updatePlant (plant) {
+    console.log(plant)
+    return $http.put(SERVER.URL + 'admin/plants/' + plant.id, plant, UserService.headers())
   }
 
 
