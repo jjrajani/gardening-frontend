@@ -1,4 +1,56 @@
-<header>
+<div id="container">
+   <div id="header">
+     <nav class="nav">
+      <div class="nav-left">
+        <a href="/#/" class="title nav-item"><span class="green">my</span><span class="orange">Garden</span></a>
+      </div>
+
+      <div class="nav-right nav-menu">
+        <a class="nav-item" href="">
+          Profile
+        </a>
+        <span class="nav-item">
+          <a class="button" href="/#/login">
+            <span>Login</span>
+          </a>
+          <a class="button is-primary" href="/#/register">
+            <span>Register</span>
+          </a>
+        </span>
+      </div>
+    </nav>
+   </div>
+
+   <div class="body" ui-view></div>
+  
+   <footer id="footer-no-bottom">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+      </p>
+      <p>
+        <a class="icon" href="https://github.com/jgthms/bulma">
+          <i class="fa fa-github"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+</div>
+
+
+
+
+
+
+
+
+<!-- 
+
+<div id="header">
     <div class="nav-left">
       <a class="" href="#"><span class="green">my</span><span class="orange">Garden</span></a>
     </div>
@@ -10,12 +62,12 @@
       <a class="" ng-show="vm.loggedIn" href="#" ng-click="vm.logOut()">Logout</a>
 
     </div>
-</header>
+</div>
 
-<div class="wrapper container-fluid layout" ui-view></div>
+<div id="wrapper" class="container-fluid layout" ui-view></div>
 
 
-<footer layout="row" layout-align="space-around">
+<div id="footer" layout="row" layout-align="space-around">
   <p class="col-xs-6 col-sm-6">@humdrum</p>
   <p class="col-xs-6 col-sm-6 text-right">a <span class="blue">magnanimus</span> app</p>
-</footer>
+</div> -->
