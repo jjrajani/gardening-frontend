@@ -1,9 +1,12 @@
-function LayoutController () {
+function LayoutController (UserService, $rootScope) {
 
   let vm = this;
 
-  console.log('LayoutController')
+  
+  $rootScope.$on('loginChange', (event, status) => {
+    vm.loggedIn = status;
+  });
 }
 
-LayoutController.$inject = [];
+LayoutController.$inject = ['UserService','$rootScope'];
 export { LayoutController }

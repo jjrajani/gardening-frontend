@@ -1,10 +1,23 @@
-function LibraryController () {
+function LibraryController (LibraryService) {
   
   let vm = this;
+  vm.setCurrentPlant = setCurrentPlant;
 
-  console.log('LibraryController')
+  init ()
+
+  function init() {
+    LibraryService.getPlants().then( res => {
+      vm.plants = res.data;
+    }) 
+  }
+
+  function setCurrentPlant (plant) {
+    vm.current = plant;
+  }
+
+
 
 }
 
-LibraryController.$inject = [];
+LibraryController.$inject = ['LibraryService'];
 export { LibraryController };
