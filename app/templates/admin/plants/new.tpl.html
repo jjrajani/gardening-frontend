@@ -57,7 +57,11 @@
     <label class="label">Secrets</label>
     <p class="control">
       <textarea class="textarea" ng-model="plant.secrets" placeholder="Secrets"></textarea>
-    </p>    
+    </p>
+    <label class="label" ng-click="vm.uploadImage()">Image</label>
+    <p class="control">
+      <input type="text" class="input" ng-model="plant.image">
+    </p>
     <!--<p class="control">
       <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
       <input type="filepicker" data-fp-apikey="A9umldpYmRBuR4UTXk6Dkz" onchange="alert(event.fpfile.url)">

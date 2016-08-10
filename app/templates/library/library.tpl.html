@@ -12,25 +12,12 @@
   </nav>
 
   <div class="content">
-
     <ul class="plants">
-      <li class="plant">
-        <img src="#">
-      </li>
-      <li class="plant">
-        <img src="#">
-      </li>
-      <li class="plant">
-        <img src="#">
-      </li>
-      <li class="plant">
-        <img src="#">
-      </li>
-      <li class="plant">
-        <img src="#">
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)">
+        <img src="http://placehold.it/90x50">
       </li>
     </ul>
 
-    <library-plant-card></library-plant-card>
+    <library-plant-card plant="vm.current"></library-plant-card>
   </div>
 </div>
