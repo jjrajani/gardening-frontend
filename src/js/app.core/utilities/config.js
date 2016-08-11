@@ -73,6 +73,11 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/library/library.tpl.html',
       controller: 'LibraryController as vm'
     })
+    .state('root.singlePlant', {
+      url: '/library/:id',
+      templateUrl: 'templates/library/single.plant.tpl.html',
+      controller: 'SinglePlantController as vm'
+    })
     ;
     $urlRouterProvider.otherwise('/');
 }

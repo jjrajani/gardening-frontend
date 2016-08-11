@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -6,12 +6,15 @@
     <title>My Cool Project</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <script href="components/angular-dragdrop/src/angular-dragdrop.min.js"></script>
+  </head>
+  <body ng-app="app">
+    <div id="container" ui-view></div>
   </head>
   </head>
   <body ng-app="app">
-    <!-- <div id="container" ui-view></div> -->
-    hello
+    <div id="container" ui-view></div>
+    <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+    <script>filepicker.setKey("A9umldpYmRBuR4UTXk6Dkz");</script>
     <script src="js/bundle.js"></script>
   </body>
 </html>

@@ -1,5 +1,4 @@
 import angular from 'angular';
-// import $ from 'jquery';
 
 import './app.core';
 import './app.users';

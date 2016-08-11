@@ -6,6 +6,7 @@ function UserService (SERVER, $state, $http, $cookies) {
   this.getUser = getUser;
   this.logOut = logOut;
   this.isLoggedIn = isLoggedIn;
+  this.isAdmin = isAdmin;
 
   function register (user) {
     return $http.post(SERVER.URL + 'register', user)
@@ -21,7 +22,7 @@ function UserService (SERVER, $state, $http, $cookies) {
   }
 
   function getUser () {
-    $cookies.get('access_token')
+    return $cookies.get('access_token')
   }
 
   function logOut () {
@@ -32,7 +33,10 @@ function UserService (SERVER, $state, $http, $cookies) {
     return (this.getUser()) ? true : false
   }
 
-
+  function isAdmin () {
+    let admin = $cookies.get('admin')
+    return (admin) ? true : false;
+  }
 }
 
 UserService.$inject = ['SERVER', '$state', '$http', '$cookies'];
