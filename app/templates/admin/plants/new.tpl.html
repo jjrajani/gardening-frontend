@@ -1,14 +1,8 @@
 <div class="new-plant">
   <form class="new-plant-form" ng-submit="vm.newPlant(plant)">
-<<<<<<< HEAD
-
-    <p class="control">
-      <input type="text" class="input" ng-model="plant.name" placeholder="Name">
-=======
     <label for="name" class="label">Name</label>
     <p class="control">
       <input type="text" class="input" ng-model="plant.name" placeholder="Name" name="name">
->>>>>>> a120e830a56ec7174eab338f2d9ab8f8c80fc1ad
     </p>
     <label class="label">Season</label>
     <p class="control">
@@ -63,20 +57,11 @@
     <label class="label">Secrets</label>
     <p class="control">
       <textarea class="textarea" ng-model="plant.secrets" placeholder="Secrets"></textarea>
-<<<<<<< HEAD
-    </p>    
-    <!--<p class="control">
-      <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
-      <input type="filepicker" data-fp-apikey="A9umldpYmRBuR4UTXk6Dkz" onchange="alert(event.fpfile.url)">
-      <input type="text" class="input" ng-model="plant.image"> 
-    </p>-->
-=======
     </p>
     <label class="label" ng-click="vm.uploadImage()">Image</label>
     <p class="control">
       <button class="button" ng-click="vm.uploadImage()">Upload Image</button>
     </p>
->>>>>>> a120e830a56ec7174eab338f2d9ab8f8c80fc1ad
     <button class="button">Submit</button>
   </form>
 </div>
