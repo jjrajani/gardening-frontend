@@ -1,8 +1,8 @@
 <div class="new-plant">
   <form class="new-plant-form" ng-submit="vm.newPlant(plant)">
-
+    <label for="name" class="label">Name</label>
     <p class="control">
-      <input type="text" class="input" ng-model="plant.name" placeholder="Name">
+      <input type="text" class="input" ng-model="plant.name" placeholder="Name" name="name">
     </p>
     <label class="label">Season</label>
     <p class="control">
@@ -60,13 +60,8 @@
     </p>
     <label class="label" ng-click="vm.uploadImage()">Image</label>
     <p class="control">
-      <input type="text" class="input" ng-model="plant.image">
+      <button class="button" ng-click="vm.uploadImage()">Upload Image</button>
     </p>
-    <!--<p class="control">
-      <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
-      <input type="filepicker" data-fp-apikey="A9umldpYmRBuR4UTXk6Dkz" onchange="alert(event.fpfile.url)">
-      <input type="text" class="input" ng-model="plant.image"> 
-    </p>-->
     <button class="button">Submit</button>
   </form>
 </div>
