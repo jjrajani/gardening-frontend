@@ -1,14 +1,35 @@
 @import 'bulma';
 @import 'joshua';
+@import 'profile';
+
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
 
+.large {
+  &.clone {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: solid black 1px;
+  }
+}
+
 ///////////////////////////////////
 /// -- Make the Footer Stick  /////
 ///////////////////////////////////
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  list-style: none;
+  padding: 0;
+}
 
 html,
 body {

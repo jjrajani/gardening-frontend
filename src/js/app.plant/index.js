@@ -6,7 +6,7 @@ import { libraryPlantCard } from './directives/library-plant-card.directive';
 import { PlannerPlantCardController } from './controllers/planner-plant-card.controller';
 angular
   .module('app.plant', [])
-  .controller('PlannerPlantCardController as vm', PlannerPlantCardController)
+  .controller('PlannerPlantCardController', PlannerPlantCardController)
   .directive('plannerPlantCard', plannerPlantCard)
   .directive('libraryPlantCard', libraryPlantCard)
   ;

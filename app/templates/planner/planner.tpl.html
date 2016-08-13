@@ -16,46 +16,51 @@
     </ul>
   </div>
   <!-- Library -->
-    <div class="library">
-      <ul class="plants">
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-      </ul>
-    </div>
+  <div data-drag="true" jqyoui-draggable>So you think you can drag</div>
+
+
+  <div class="library">
+    <ul class="plants">
+    <!-- ng-repeat="plant in vm.plants"  -->
+      <li class="plant" 
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <img src="http://placehold.it/100x100">
+      </li>
+      <li class="plant large" 
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <img src="http://placehold.it/100x100">
+      </li>
+    </ul>
+  </div>
+
 
     <div class="plan">
       <div class="garden" layout-wrap>
         <div class="row">
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
         </div>
         <div class="row">
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
         </div>
         <div class="row">
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
         </div>
 
       </div>

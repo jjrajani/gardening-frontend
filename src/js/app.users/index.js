@@ -4,6 +4,7 @@ import { run } from './utilities/run';
 
 import { LoginController } from './controllers/login.controller';
 import { RegisterController } from './controllers/register.controller';
+import { ProfileController } from './controllers/profile.controller'
 
 import { UserService } from './services/user.service';
 
@@ -12,4 +13,5 @@ angular
   .run(run)
   .controller('LoginController', LoginController)
   .controller('RegisterController', RegisterController)
+  .controller('ProfileController', ProfileController)
   .service('UserService', UserService);

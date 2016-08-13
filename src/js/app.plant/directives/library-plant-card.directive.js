@@ -2,7 +2,8 @@ function libraryPlantCard () {
   return {
     restrict: 'E',
     scope: {
-      name: '@'
+      name: '@',
+      plant: '='
     },
     templateUrl: 'templates/library/plant-card.tpl.html'
   };

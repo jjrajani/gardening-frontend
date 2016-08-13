@@ -24,6 +24,11 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/users/login.tpl.html',
       controller: 'LoginController as vm'
     })
+    .state('root.profile', {
+      url: '/profile',
+      templateUrl: 'templates/users/profile.tpl.html',
+      controller: 'ProfileController as vm'
+    })
 
   // Fellow
     .state('root.fellow', {

@@ -24,5 +24,4 @@ function AdminNewPlantController (AdminService, $state) {
 }
 
 AdminNewPlantController.$inject = ['AdminService', '$state'];
->>>>>>> a120e830a56ec7174eab338f2d9ab8f8c80fc1ad
 export { AdminNewPlantController }
