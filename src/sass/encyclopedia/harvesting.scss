@@ -1,0 +1,24 @@
+.harvesting {
+
+  // shadowing
+  margin: 5px;
+  padding: 20px;
+  border: solid 1px rgba(17, 17, 17, 0.3);
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.1),
+              -2px -2px 3px rgba(17, 17, 17, 0.1);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  h3 {
+    width: 30%;
+  }
+  img {
+    width: 30%;
+    height: 100px;
+  }
+  .l {
+    width: 100%;
+  }
+}

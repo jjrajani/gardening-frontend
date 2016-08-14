@@ -1,70 +1,55 @@
 <div class="profile wrapper">
-  
-  <div class="header">
-    <h3 class='logo'>humdrum</h3>
-    <p>Gardens: 12</p>
-    <p>Gardening Since: 2002</p>
+  <div class="user-info">
+    <p class="subtitle">hudrum</p> <!-- {{ user.username }} -->
+    <p>Active Gardens: </p> <!-- {{ user.gardens.active }} -->
+    <p class="lg-sc">Gardening Since: </p> <!-- {{ user.created_at }} -->
   </div>
 
-<div class="new-garden">
-  <h3>New Garden</h3>
-  <form>
-    <input type="text" name="title" placeholder="Garden Name">
-    <input type="text" name="Tags" placeholder="Tags">
-    <input type="text" name="image" placeholder="Garden Image">
-    <input type="number" name="height" placeholder="Garden Height">
-    <input type="number" name="width" placeholder="Garden Width">
-    <button>Create Garden</button>
-  </form>
-</div>
+  <div class="edit-user">
+    <img src="#"> <!-- {{user.avatar}} -->
+    <form>
+      <p class="control">
+        <label>humdrum@hum.drum</label>
+        <input type="text" name="email" ng-show="vm.showEmail" placeholder="humdrum@hum.drum"> <!--{{user.email}}-->
+        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showEmail" ng-click="vm.updateEmail()"></i>
+        <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editEmail()" ng-hide="vm.showEmail"></i>
+        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showEmail" ng-click="vm.editEmail()"></i>
+      </p>
 
-<div class="gardens">
-  <div class="garden">
-    <i class="fa fa-trash-o" aria-hidden="true"></i>
-    <img src="http://www.placecage.com/200/200">
-    <div class="specs">
-      <div class="top">
-        <div class="comments">
-          <p>Last Three Comments: </p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="info">
-          <p>Garden Name</p>
-          <p>Garden Tags</p>
-          <p>Created: date</p>
-        </div>
+      <p class="control">
+        <label>Change Password</label>
+        <input type="password" name="password" ng-show="vm.showPassword" placeholder="type password">
+        <input type="password" name="password" ng-show="vm.showPassword" placeholder="re-enter password">
+        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showPassword" ng-click="vm.updatePassword()"></i>
+        <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editPassword()" ng-hide="vm.showPassword"></i>
+        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showPassword" ng-click="vm.editPassword()"></i>
+      </p>
+
+      <p class="control">
+        <label>Atl, Ga</label> <!-- {{ user.location }} -->
+        <input type="text" name="location" ng-show="vm.showLocation" placeholder="City">
+        <input type="text" name="location" ng-show="vm.showLocation" placeholder="St">
+        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showLocation" ng-click="vm.updateLocation()"></i>
+        <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editLocation()" ng-hide="vm.showLocation"></i>
+        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showLocation" ng-click="vm.editLocation()"></i>
+      </p>
+    </form>
+  </div>
+
+  <div class="gardens">
+    <div class="nav">
+      <p>Active</p>
+      <p>Planning</p>
+    </div>
+    <div class="overview">
+      <div class="nav">
+        <p>Overview</p>
+        <p>Comment</p>
       </div>
-      <div class="comment">
-        <form>
-          <input placeholder="New Comment"></input>
-          <button>Submit</button>
-        </form>
+      <div class="content">
+        
       </div>
     </div>
   </div>
-  <div class="garden">
-    <i class="fa fa-trash-o" aria-hidden="true"></i>
-    <img src="http://www.placecage.com/200/200">
-    <div class="specs">
-      <div class="top">
-        <div class="comments">
-          <p>Last Three Comments: </p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="info">
-          <p>Garden Name</p>
-          <p>Garden Tags</p>
-          <p>Created: date</p>
-        </div>
-      </div>
-      <div class="comment">
-        <form>
-          <input placeholder="New Comment"></input>
-          <button>Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 </div>

@@ -8,6 +8,7 @@ function LibraryController (LibraryService) {
   function init() {
     LibraryService.getPlants().then( res => {
       vm.plants = res.data;
+      vm.setCurrentPlant(vm.plants[0])
     }) 
   }
 
@@ -15,6 +16,7 @@ function LibraryController (LibraryService) {
     vm.current = plant;
   }
   console.log('LibraryController')
+
 
 }
 

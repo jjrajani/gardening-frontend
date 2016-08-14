@@ -1,0 +1,57 @@
+// //////////////////////////////////////////////
+// ////// -- Library  ///////////////////////////
+// //////////////////////////////////////////////
+@import 'encyclopedia/encyclopedia';
+@import 'library-plant-card';
+
+.library {
+  .nav-top {
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    .container {
+      border-top: solid #ccc 1px;
+      border-radius: 10px;
+    }
+  }
+  .content {
+    .plants {
+      display: flex;
+      list-style: none;
+      border-top: solid 10px green;
+      box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
+      z-index: 100;
+      background-color: #FCFCFD;
+      overflow: scroll;
+      padding: 40px 0 0;
+      .plant {
+        position: relative;
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+          margin: 0;
+          padding: 3px;
+        }
+        img {
+          border: solid pink 1px;
+          height: 90px;
+          min-width: 90px;
+          max-width: 90px;
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+
+.library {
+  @media screen and (max-width: 760px) {
+
+  }
+  // @media screen and (min-width: 760px) {
+
+// }
+}

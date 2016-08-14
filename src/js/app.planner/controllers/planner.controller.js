@@ -41,7 +41,7 @@ function PlannerController (LibraryService) {
 
   function makeDraggable (elem) {
   $(elem).draggable({
-    cursorAt: {left: 0, top: 0},
+    cursorAt: {left: 5, top: 5},
     stop: function (event, ui) {
       $(this).remove();
     }

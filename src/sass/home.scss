@@ -13,29 +13,26 @@ $black: #ccc;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    .planner {
-      margin: 30px 2.5%;
-      padding: 10px;
+    .planner, .library {
+      margin: 2.5%;
+      padding: 20px 1.5%;
       background-color: white;
       border: solid $black 1px;
       border-radius: 4px;
+    }
+    .planner {
+      
       a {
         h3 {
-          padding: 8px 0;
+          // padding: 8px 0;
         }
       }
       p {
-        padding: 0 8%;
+        padding: 0 5%;
       }
     }
 
     .library {
-      margin: 2.5%;
-      margin-bottom: 30px;
-      padding: 10px;
-      background-color: white;
-      border: solid $black 1px;
-      border-radius: 4px;
       div {
         display: flex;
         justify-content: space-around;
@@ -104,7 +101,6 @@ $black: #ccc;
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-content: center;
             .inputs {
               display: flex;
@@ -113,7 +109,7 @@ $black: #ccc;
             }
             input {
               width: 80%;
-              height: 30px;
+              height: 25px;
               margin: 5px auto;
               background-color: white;
               border: solid $black 1px;

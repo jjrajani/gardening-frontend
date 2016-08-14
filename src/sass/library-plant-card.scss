@@ -1,0 +1,60 @@
+@import 'encyclopedia/encyclopedia';
+
+library-plant-card {
+  @media screen and (max-width: 760px) {
+    
+  }
+  @media screen and (min-width: 760px) {
+    .plant {
+      margin: 0;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
+      background-color: green;
+      padding: 10px;
+      .overview {
+        display: flex;
+        box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
+        background-color: white;
+        padding: 10px;
+        border: solid 1px rgba(17, 17, 17, 0.3);
+        border-radius: 4px;
+        margin: 20px 0 10px;
+        .l, .r {
+          width: 50%;
+          max-width: 1200px;
+          display: flex;
+          flex-direction: column;
+          padding: 10px 2.5%;
+          box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
+          border: solid 1px rgba(17, 17, 17, 0.3);
+          border-radius: 4px;
+          margin: 10px;
+          p.title, p.subtitle {
+            border-bottom: solid 1px rgba(17, 17, 17, 0.3);
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+            padding: 5px 5%;
+          }
+        }
+        .l {
+          img {
+            border: solid 1px rgba(17, 17, 17, 0.3);
+            width: 90%;
+            margin: 0 5% 20px;
+            height: 200px;
+          }
+        }
+        .r {
+          .description {
+            width: 90%;
+            margin: 0 5% 20px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,17 +1,117 @@
 <div class="plant" data-id="{{plant.id}}">
-  <div class="overview">
-    <div class="info">
-      <p class="label">{{plant.name}}</p>
-      <p><span class="subtitle">Sun: </span>{{plant.sun}}hrs</p>
-      <p><span class="subtitle">Size: </span>{{plant.size}} sqFt</p>
-      <p><span class="subtitle">Season: </span>{{plant.season}}</p>
-      <p><span class="subtitle">Seed Count: </span>{{plant.seed_count}}</p>
-    </div>
-    <img src="#">
-  </div>
-  <div class="detail">
-    <p><span class="label">Fertilizers</span>{{plant.fertilizers}}</p>
-    <p><span class="label">Gardener Secrets</span>{{plant.secrets}}</p>
-  </div>
+  
+  <div class="overview">
+    <div class="l">
+      <p class="title">{{plant.name}}</p>
+      <img src="">
+    </div>
+    <div class="r">
+      <p class="subtitle">Desription:</p>
+      <p class="description">{{plant.description}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="encyclopedia">
+    <nav>
+      <ul>
+        <li ng-click="vm.select(1)">Specs</li>
+        <li ng-click="vm.select(2)">Grow Calendar</li>
+        <li ng-click="vm.select(3)">Spacing</li>
+        <li ng-click="vm.select(4)">Starting</li>
+        <li ng-click="vm.select(5)">Growing</li>
+        <li ng-click="vm.select(6)">Harvesting</li>
+        <li ng-click="vm.select(7)">Watering</li>
+        <li ng-click="vm.select(8)">Common Problems</li>
+      </ul>
+    </nav>
+  <div class="content">
+    <div class="title">
+    <h3 class="title-r">{{plant.name}}</h3>
+    </div>
+    <div class="specs" ng-show="vm.selected === 1">
+        <h3 class="title">Specs</h3>
+    </div>
+    <div class="grow" ng-show="vm.selected === 2">
+        <h3 class="title">Grow Calendar</h3>
+
+    </div>
+    <div class="spacing" ng-show="vm.selected === 3">
+        
+        <h3 class="title">Spacing</h3>
+        <div class="measure">
+          <div class="l">
+            <p class="line">12"</p>
+          </div>
+
+          <div class="r">
+            <p class="line" ng-class="vm.seedClass">{{12 / vm.sqRoot(1)}}"</p>
+
+            <ul class="space">
+              <li class="seed" ng-class="vm.seedClass" ng-repeat="seed in vm.getSeeds(plant.seed_count)">
+                <p class="seed">s</p>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+    
+    </div>
+    <div class="starting" ng-show="vm.selected === 4">
+        <h3 class="title">Starting</h3>
+        <p><span class="subtitle">Location:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p><span class="subtitle">Seeds Indoors: </span>No</p>
+        <p><span class="subtitle">Transplanting: </span>Do not transplant well.</p>
+        <p><span class="subtitle">Seeds Outdoors: </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+    </div>
+    <div class="growing" ng-show="vm.selected === 5">
+        <h3 class="title">Growing</h3>
+        <p><span class="subtitle">Watering: </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p><span class="subtitle">Fertilizing: </span>Feed monthly if desired.</p>
+        <p><span class="subtitle">Maintenance: </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="harvesting" ng-show="vm.selected === 6">
+        <h3 class="title">Harvesting</h3>
+        <img src="#">
+        <img src="#">
+        <div class="l">
+          <p class="subtitle">How: </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+
+          <p class="subtitle">When: </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+        </div>
+    </div>
+    <div class="watering" ng-show="vm.selected === 7">
+      <h3 class="title">Watering</h3>
+        <p><span class="subtitle">Watering: </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="problems" ng-show="vm.selected === 8">
+        <h3 class="title">Common Problems</h3>
+    </div>
+  </div>
+
+
+
+
+  
 
 </div>
+<!-- <p class="label">{{plant}}</p> -->

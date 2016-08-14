@@ -5,7 +5,9 @@ function libraryPlantCard () {
       name: '@',
       plant: '='
     },
-    templateUrl: 'templates/library/plant-card.tpl.html'
+    templateUrl: 'templates/library/plant-card.tpl.html',
+    controller: 'LibraryPlantCardController',
+    controllerAs: 'vm'
   };
 }
 
