@@ -4,7 +4,7 @@ import { run } from './utilities/run';
 
 import { LoginController } from './controllers/login.controller';
 import { RegisterController } from './controllers/register.controller';
-import { ProfileController } from './controllers/profile.controller'
+import { ProfileController } from './controllers/profile.controller';
 
 import { UserService } from './services/user.service';
 
