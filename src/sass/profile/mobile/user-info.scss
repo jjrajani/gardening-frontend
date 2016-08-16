@@ -4,6 +4,11 @@
       display: none;
       visibility: hidden;
     }
+    .user-info {
+      p {
+        width: 50%;
+      }
+    }
     .edit-user {
       form {
         .control {

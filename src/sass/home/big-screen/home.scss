@@ -1,0 +1,77 @@
+$lightborder: rgba(17, 17, 17, 0.1);
+$darkborder: rgba(17, 17, 17, 0.3);
+$green: #49BF02;
+
+
+  @media screen and (min-width: 770px) {
+    .sm-sc {
+      &.user {
+        display: none;
+      }
+    }
+    .home {
+        .content {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          .planner, .library {
+            width: 45%;
+            margin: 10px 0;
+            .title {
+              margin-right: 30%;
+              border-bottom: solid $lightborder 1px;
+              padding: 0 0 10px 10px;
+            }
+          }
+        }
+        .user {
+          &.lg-sc {
+            display: flex;
+            background-color: white;
+            .login, .register {
+              display: flex;
+              flex-direction: column;
+              width: 50%;
+              border: solid $darkborder 1px;
+              border-radius: 4px;
+              margin: 0 2.5%;
+              background-color: white;
+              h3   {
+                padding: 10px 0 0 30px;
+                color: black;
+              }
+              form {
+                border: solid $darkborder 1px;
+                width: 90%;
+                margin: 0 auto 10px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                .inputs {
+                  display: flex;
+                  flex-direction: column;
+                  margin: 20px 0 0;
+                }
+                input {
+                  width: 80%;
+                  height: 25px;
+                  margin: 5px auto;
+                  background-color: white;
+                  border: solid $lightborder 1px;
+                  border-radius: 4px;
+                  &:first-child {
+                    margin-top: 10px;
+                  }
+                }
+                button {
+                  height: 40px;
+                  width: 60%;
+                  margin: 10px auto;
+                }
+              }
+            }
+          }
+        }
+  }
+}

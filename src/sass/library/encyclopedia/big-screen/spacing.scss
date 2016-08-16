@@ -1,22 +1,7 @@
-.spacing {
-
-  // shadowing
-  margin: 5px;
-  padding: 20px;
-  border: solid 1px rgba(17, 17, 17, 0.3);
-  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.1),
-              -2px -2px 3px rgba(17, 17, 17, 0.1);
-
-  display: flex;
-  max-width: 100%;
-  justify-content: center;
-  padding: 20px;
-  @media screen and (max-width: 760px) {
-    
-  }
-
-  @media screen and (min-width: 760px) {
-
+.encyclopedia {
+  .content {
+@media screen and (min-width: 760px) {
+  .spacing {
     .measure {
       width: 225px;
       height: 225px;
@@ -97,4 +82,6 @@
       }
     }
   }
+}
+}
 }

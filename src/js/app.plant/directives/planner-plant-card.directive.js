@@ -5,7 +5,7 @@ function plannerPlantCard () {
       name: '@',
       plant: '='
     },
-    templateUrl: 'templates/planner/planner-plant-card.tpl.html',
+    templateUrl: 'templates/planner/plant-card.tpl.html',
     controller: 'PlannerPlantCardController',
     controllerAs: 'vm'
   };

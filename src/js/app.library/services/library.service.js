@@ -1,15 +1,7 @@
 function LibraryService (SERVER, $http) {
 
-  this.getPlants = getPlants;
-  this.singlePlant = singlePlant;
-
-  function getPlants () {
-    return $http.get(SERVER.URL + 'plants')
-  }
-
-  function singlePlant (id) {
-    return $http.get(SERVER.URL + 'plants/' + id)
-  }
+  let vm = this;
+  console.log('library service')
 
 }
 

@@ -1,7 +1,11 @@
+.profile {
+  // General
+}
+
 @import 'user-info';
 @import 'mobile/user-info';
 @import 'big-screen/user-info';
 
-.profile {
-  // General
-}
+@import 'user-gardens';
+@import 'mobile/user-gardens';
+@import 'big-screen/user-gardens';

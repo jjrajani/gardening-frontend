@@ -1,17 +1,21 @@
 function LibraryPlantCardController () {
   
+  console.log('in here')
+
   let vm = this;
   vm.select = select;
-  vm.selected = 6;
+  vm.selected = 9;
   vm.getSeeds = getSeeds;
   vm.seedClass = "";
   vm.sqRoot = sqRoot;
+  vm.navOpen = false;
   // vm.seedSpace = 12 / sqrt of seed_count
 
 
 
   function select(tab) {
     vm.selected = tab;
+    vm.navOpen = false;
     console.log(vm.selected)
   }
 

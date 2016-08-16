@@ -1,20 +1,7 @@
 function LibraryController (LibraryService) {
   
   let vm = this;
-  vm.setCurrentPlant = setCurrentPlant;
-
-  init ()
-
-  function init() {
-    LibraryService.getPlants().then( res => {
-      vm.plants = res.data;
-      vm.setCurrentPlant(vm.plants[0])
-    }) 
-  }
-
-  function setCurrentPlant (plant) {
-    vm.current = plant;
-  }
+  
   console.log('LibraryController')
 
 
