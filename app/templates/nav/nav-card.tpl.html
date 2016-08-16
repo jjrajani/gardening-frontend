@@ -1,94 +1,20 @@
 <nav class="nav-top has-shadow">
-    <div class="container">
-      <div class="nav-left">
-        <a class="nav-item is-tab">Library</a>
-        <a class="nav-item is-tab is-active">Vegetables</a>
-        <a class="nav-item is-tab">Herbs</a>
-        <a class="nav-item is-tab">Season</a>
-      </div>
+  <div class="container">
+    <div class="nav-left">
+      <a class="nav-item is-tab">Library</a>
+      <a class="nav-item is-tab is-active">Vegetables</a>
+      <a class="nav-item is-tab">Herbs</a>
+      <a class="nav-item is-tab">Season</a>
     </div>
-  </nav>
-
-  <div class="content">
-    <ul class="plants">
-      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)">
-        <p class="plant-title">{{plant.name}}</p>
-        <img src="">
-        <p class="size-seed">{{plant.seed_count}} sd | {{plant.size}} sq</p>
-      </li>
-
-      <li class="plant">
-        <p class="plant-title">Asparagus</p>
-        <img src="">
-        <p class="size">1 sd | 1 sq</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Beet Root</p>
-        <img src="">
-        <p class="seed">4 sds | 1 sq</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Cabbage</p>
-        <img src="">
-        <p class="seed">4 sds | 1 sw</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Carrots</p>
-        <img src="">
-        <p class="seed">9 sds | 1 sq</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Eggplant</p>
-        <img src="">
-        <p class="seed">1 sd | 4 sqs</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Pole Beans</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Kale</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Kale</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Kale</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Kale</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Kale</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Kale</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Kale</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      <li class="plant">
-        <p class="plant-title">Kale</p>
-        <img src="">
-        <p class="seed">1 sq | 1 sd</p>
-      </li>
-      
-    </ul>
-    <library-plant-card plant=vm.current></library-plant-card>
-
   </div>
+</nav>
+
+<div class="content">
+  <ul class="plants">
+    <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)">
+      <p class="plant-title">{{plant.name}}</p>
+      <img src="">
+      <p class="size-seed">{{plant.seed_count}} sd | {{plant.size}} sq</p>
+    </li>
+  </ul>
+</div>

@@ -1,18 +1,10 @@
-function PlannerController (NavService) {
+function PlannerController () {
 
   let vm = this;
   vm.drop = drop;
   vm.start = start;
 
   console.log('PlannerController');
-  
-  init();
-
-  function init() {
-    NavService.getPlants().then( res => {
-      vm.plants = res.data;
-    }) 
-  }
 
   function start(event, ui) {
     $(ui.helper).addClass('clone');
@@ -49,5 +41,5 @@ function PlannerController (NavService) {
 }
 }
 
-PlannerController.$inject = ['NavService'];
+PlannerController.$inject = [];
 export { PlannerController };

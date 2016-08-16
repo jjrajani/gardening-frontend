@@ -8,8 +8,7 @@
     <nav>
       <i class="fa fa-bars" aria-hidden="true" ng-click="vm.navOpen = !vm.navOpen"></i>
       <ul ng-show="vm.navOpen">
-        <li ng-class="{active : vm.selected === 9}" ng-click="vm.select(9)">Overview</li>
-        <li ng-class="{active : vm.selected === 1}" ng-click="vm.select(1)">Specs</li>
+        <li ng-class="{active : vm.selected === 1}" ng-click="vm.select(1)">Overview</li>
         <li ng-class="{active : vm.selected === 2}" ng-click="vm.select(2)">Grow Calendar</li>
         <li ng-class="{active : vm.selected === 3}" ng-click="vm.select(3)">Starting</li>
         <li ng-class="{active : vm.selected === 4}" ng-click="vm.select(4)">Spacing</li>
@@ -19,10 +18,24 @@
         <li ng-class="{active : vm.selected === 8}" ng-click="vm.select(8)">Common Problems</li>
       </ul>
     </nav>
-    <div class="overview" ng-show="vm.selected === 9">
+    <div class="overview" ng-show="vm.selected === 1">
       <h3 class="title">Overveiw</h3>
       <div class="imgs">
         <img src="">
+      </div>
+      <div class="specs">
+        <ul>Botanical Info
+          <li>Family</li>
+          <li>Height</li>
+          <li>Hardy</li>
+        </ul>
+        <p>Spacing: Plants per Space</p>
+        <ul>
+          Growing Season(s)
+          <li>Summer</li>
+        </ul>
+        <p>Seed to Harvest: x weeks</p>
+        <p>Seed Store: x Years</p>
       </div>
       <div class="content">
         <p class="subtitle">Desription:</p>
@@ -33,9 +46,6 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
-    </div>
-    <div class="specs" ng-show="vm.selected === 1">
-        <h3 class="title">Specs</h3>
     </div>
     <div class="grow" ng-show="vm.selected === 2">
         <h3 class="title">Grow Calendar</h3>

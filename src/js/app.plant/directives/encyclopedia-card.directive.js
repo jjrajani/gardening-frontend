@@ -1,4 +1,4 @@
-function libraryPlantCard () {
+function encyclopediaCard () {
   return {
     restrict: 'E',
     scope: {
@@ -6,10 +6,10 @@ function libraryPlantCard () {
       plant: '='
     },
     templateUrl: 'templates/library/plant-card.tpl.html',
-    controller: 'LibraryPlantCardController',
+    controller: 'EncyclopediaCardController',
     controllerAs: 'vm'
   };
 }
 
-libraryPlantCard.$inject = [];
-export { libraryPlantCard };
+encyclopediaCard.$inject = [];
+export { encyclopediaCard };

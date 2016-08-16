@@ -1,17 +1,28 @@
 <div class="home wrapper">
-  <!-- Planner Div -->
+  <!-- //////////////////////// -->
+  <!-- Jumbotron -->
+  <!-- //////////////////////// -->
+
   <div class="jumbotron">
     <img src="">
   </div>
   <div class="content">
-    <!-- Planner Row -->
+  
+    <!-- //////////////////////// -->
+    <!-- Planner -->
+    <!-- //////////////////////// -->
     <div ng-click="vm.planner()" class="planner">
         <a href=""><h3 class="title"><span class="green">my</span><span class="orange">Garden</span> Planner</h3></a>
-        <p>Start planning your garden.</p>
+        <p ng-hide="vm.loggedIn">Start planning your garden.</p>
+        <a href="" ng-show="vm.loggedIn">New Garden</a>
         <!-- If user logged in href = new garden -->
         <!-- If user not logged in href = login/register page -->
     </div>
-    <!-- Library Row -->
+
+    <!-- //////////////////////// -->
+    <!-- Library -->
+    <!-- //////////////////////// -->
+
     <div ng-click="vm.library()" class="library">
       <a href="/#/library"><h3 class="title">Plants Library</h3></a>
       <div>
@@ -20,20 +31,20 @@
         <a class="button" href="">By Season</a>
       </div>
     </div>
-    <!-- Fellow Row -->
-    <!-- <div ng-click="vm.fellow()">
-      <div>
-        <a href="/#/fellow"><h3 class="title" >Fellow Gardeners</h3></a>
-        <p> Find and connect with growers in your area.  Share your garden experience with <a href="/#/fellow"><span class="orange">fellow</span><span class="green">Gardeners</span></a></p>
-      </div>
-    </div> -->
+
 </div>
 
+<!-- //////////////////////// -->
+<!-- Login Mobile-->
+<!-- //////////////////////// -->
 <div class="user sm-sc">
   <button class="button">Login</button>
   <button class="button">Register</button>
 </div>
 
+<!-- //////////////////////// -->
+<!-- Login Big Screen-->
+<!-- //////////////////////// -->
 <div class="user lg-sc">
   <div class="login">
   <h3 class="subtitle">Login</h3>
@@ -56,20 +67,23 @@
   </div>
 </div>
 
+<!-- //////////////////////// -->
+<!-- Footer-->
+<!-- //////////////////////// -->
 <footer>
-      <p>
-        <strong>myGarden</strong> by <a href="">humdrum</a> <!-- Link humdrum to a page with our wonderful faces!! :D -->
-      </p>
-      <p>
-        <a class="icon" href="https://github.com/jjrajani">
-          <i class="fa fa-github"></i>
-        </a>
-      </p>
-      <!-- INSERT JOSH GITHUB -->
-      <p>
-        <a class="icon" href="https://github.com/">
-          <i class="fa fa-github"></i>
-        </a>
-      </p>
-  </footer>
+  <p>
+    <strong>myGarden</strong> by <a href="">humdrum</a> <!-- Link humdrum to a page with our wonderful faces!! :D -->
+  </p>
+  <p>
+    <a class="icon" href="https://github.com/jjrajani">
+      <i class="fa fa-github"></i>
+    </a>
+  </p>
+  <!-- INSERT JOSH GITHUB -->
+  <p>
+    <a class="icon" href="https://github.com/">
+      <i class="fa fa-github"></i>
+    </a>
+  </p>
+</footer>
   </div>

@@ -1,10 +1,10 @@
-function LibraryPlantCardController () {
+function EncyclopediaCardController () {
   
   console.log('in here')
 
   let vm = this;
   vm.select = select;
-  vm.selected = 9;
+  vm.selected = 1;
   vm.getSeeds = getSeeds;
   vm.seedClass = "";
   vm.sqRoot = sqRoot;
@@ -41,5 +41,5 @@ function LibraryPlantCardController () {
   }
 }
 
-LibraryPlantCardController.$inject = [];
-export { LibraryPlantCardController };
+EncyclopediaCardController.$inject = [];
+export { EncyclopediaCardController };
