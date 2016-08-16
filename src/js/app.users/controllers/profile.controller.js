@@ -2,7 +2,10 @@ function ProfileController () {
 
   let vm = this;
 
-  vm.overviewTab = 2;
+  vm.gardenState = 0;
+
+  // this toggles from 0 to >0 to show comments
+  vm.gardenComments = 0;
 
   vm.editEmail = editEmail;
   vm.updateEmail = updateEmail;
