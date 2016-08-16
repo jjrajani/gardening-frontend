@@ -1,4 +1,4 @@
-function PlannerController (LibraryService) {
+function PlannerController (NavService) {
 
   let vm = this;
   vm.drop = drop;
@@ -9,7 +9,7 @@ function PlannerController (LibraryService) {
   init();
 
   function init() {
-    LibraryService.getPlants().then( res => {
+    NavService.getPlants().then( res => {
       vm.plants = res.data;
     }) 
   }
@@ -49,5 +49,5 @@ function PlannerController (LibraryService) {
 }
 }
 
-PlannerController.$inject = ['LibraryService'];
+PlannerController.$inject = ['NavService'];
 export { PlannerController };

@@ -39,34 +39,84 @@
   <div class="gardens">
     <div class="nav l">
       <p class="title"><span class="green">My</span><span class="orange">Gardens</span></p>
-      <ul ng-click="vm.selected = 1">
-        <p ng-class="{active: vm.selected === 1}">Active</p>
-        <li ng-show="vm.selected === 1">Vegetables</li>
-        <li ng-show="vm.selected === 1">Herbs</li>
+      <ul ng-click="vm.gardenState = 0">
+        <p ng-class="{active: vm.gardenState === 0}">New Garden</p>
       </ul>
-      <ul ng-click="vm.selected = 2">
-        <p ng-class="{active: vm.selected === 2}">Planning</p>
-        <li ng-show="vm.selected === 2">Winter</li>
-        <li ng-show="vm.selected === 2">Garage</li>
+      <ul ng-click="vm.gardenState = 1">
+        <p ng-class="{active: vm.gardenState === 1}">Active</p>
+        <li ng-show="vm.gardenState === 1" ng-click="vm.gardenSelected = 1" ng-class="{active: vm.gardenSelected === 1}">Vegetables</li>
+        <li ng-show="vm.gardenState === 1" ng-click="vm.gardenSelected = 2" ng-class="{active: vm.gardenSelected === 2}">Herbs</li>
+      </ul>
+      <ul ng-click="vm.gardenState = 2">
+        <p ng-class="{active: vm.gardenState === 2}">Planning</p>
+        <li ng-show="vm.gardenState === 2" ng-click="vm.gardenSelected = 3" ng-class="{active: vm.gardenSelected === 3}">Winter</li>
+        <li ng-show="vm.gardenState === 2" ng-click="vm.gardenSelected = 4" ng-class="{active: vm.gardenSelected === 4}">Garage</li>
       </ul>
     </div>
-    <div class="overview">
+    <div class="new-garden" ng-show='vm.gardenState === 0'>
+          <form>
+            <p class="control">
+            <label for="name">Garden Name</label>
+              <input id="name" type="text" placeholder="">
+            </p>
+            <p class="control">
+            <label for="tags">Garden Tags</label>
+              <input id='tags' type="text" placeholder="Comma Seperated">
+            </p>
+            <p class="control">
+              <label>Height</label>
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </p>
+            <p class="control">
+              <label>Width</label>
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+              </select>
+            </p>
+            <p class="control">
+              <label>Image Upload</label>
+              <input type="url">
+            </p>
+          </form>
+        </div>
+    <div class="overview" ng-show="vm.gardenState">
       <div class="nav">
         <p ng-class="{active: vm.overviewTab === 1}" ng-click="vm.overviewTab = 1">Overview</p>
         <p ng-class="{active: vm.overviewTab === 2}" ng-click="vm.overviewTab = 2">Comment</p>
       </div>
+
       <div class="content">
-        <div class="overview" ng-show="vm.overviewTab === 1">
+        <div class="overview borderless" ng-show="vm.overviewTab === 1">
           <ul>
             <li>
-              <p><span>Name: </span>humdrum</p> <!-- {{garden.name}} -->
+              <p>humdrum</p> <!-- {{garden.name}} -->
             </li>
             <li>
               <p><span>H: </span>4ft</p> <!-- {{garden.height}} -->
               <p><span>W: </span>8ft</p> <!-- {{garden.width}} -->
             </li>
             <li>
-              <p><span>Tags: </span>Herb, Side Yard, Fall</p> <!-- {{garden.tags}} -->
+              <p>Herb, Side Yard, Fall</p> <!-- {{garden.tags}} -->
             </li>
           </ul>
           <img src="#">
@@ -82,7 +132,7 @@
           </p>
           <button class="button">Comment</button>
         </form>
-        <ul class="comments">
+        <ul class="comments" ng-show="vm.gardenComments > 0">
           <li class="comment">
             <p class="date">5.17.16</p>
             <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
