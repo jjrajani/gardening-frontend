@@ -10,8 +10,6 @@ function LoginController (UserService, $cookies, $state) {
       $state.go('root.home');
     })
   }
-
 }
-
 LoginController.$inject = ['UserService', '$cookies', '$state'];
 export { LoginController };

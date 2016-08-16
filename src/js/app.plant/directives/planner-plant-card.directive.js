@@ -2,9 +2,12 @@ function plannerPlantCard () {
   return {
     restrict: 'E',
     scope: {
-      name: '@'
+      name: '@',
+      plant: '='
     },
-    templateUrl: 'templates/planner/plant-card.tpl.html'
+    templateUrl: 'templates/planner/plant-card.tpl.html',
+    controller: 'PlannerPlantCardController',
+    controllerAs: 'vm'
   };
 }
 

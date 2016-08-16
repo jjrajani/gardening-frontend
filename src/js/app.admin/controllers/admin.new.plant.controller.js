@@ -21,8 +21,6 @@ function AdminNewPlantController (AdminService, $state) {
     });
   }
 
-  
-
 }
 
 AdminNewPlantController.$inject = ['AdminService', '$state'];

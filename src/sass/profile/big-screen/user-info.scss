@@ -1,0 +1,33 @@
+// Tablet plus
+  @media screen and (min-width: 760px) {
+    .edit-user {
+
+      form {
+        max-width: 600px;
+        .control {
+          
+          label {
+
+          }
+          input, i {
+
+          }
+          input {
+            max-width: 300px;
+          }
+          i {
+
+          }
+          .fa-check-circle-o {
+
+          }
+          .fa-pencil {
+
+          }
+          .fa-ban {
+
+          }
+        }
+      }
+    }
+  }

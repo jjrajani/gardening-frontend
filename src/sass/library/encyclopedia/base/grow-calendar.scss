@@ -1,0 +1,10 @@
+//base grow-calendar
+
+.grow {
+  width: 100%;
+  padding: 10px 2.5%;
+  // shadowing
+  border: solid 1px rgba(17, 17, 17, 0.3);
+  box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.1),
+              -2px -2px 3px rgba(17, 17, 17, 0.1);
+}

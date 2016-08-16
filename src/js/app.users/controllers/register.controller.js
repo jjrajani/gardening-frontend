@@ -8,7 +8,6 @@ function RegisterController (UserService, $state) {
     $state.go('root.home')
   }
 
-
 }
 
 RegisterController.$inject = ['UserService', '$state'];

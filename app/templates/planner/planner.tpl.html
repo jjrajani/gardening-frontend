@@ -7,56 +7,154 @@
 
   <!-- NAV -->
 
-  <div class="tabs">
-    <ul>
-      <li><a>Library</a></li>
-      <li class="is-active"><a>Vegetables</a></li>
-      <li><a>Herbs</a></li>
-      <li><a>Seasons</a></li>
+  <nav class="nav-top has-shadow">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item is-tab">Library</a>
+        <a class="nav-item is-tab is-active">Vegetables</a>
+        <a class="nav-item is-tab">Herbs</a>
+        <a class="nav-item is-tab">Season</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <ul class="plants">
+      <li class="plant large" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">{{plant.name}}</p>
+        <img src="">
+        <p class="size-seed">{{plant.seed_count}} sd | {{plant.size}} sq</p>
+      </li>
+
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Asparagus</p>
+        <img src="">
+        <p class="size">1 sd | 1 sq</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Beet Root</p>
+        <img src="">
+        <p class="seed">4 sds | 1 sq</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Cabbage</p>
+        <img src="">
+        <p class="seed">4 sds | 1 sw</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Carrots</p>
+        <img src="">
+        <p class="seed">9 sds | 1 sq</p>
+      </li>
+      <li class="plant large" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Eggplant</p>
+        <img src="">
+        <p class="seed">1 sd | 4 sqs</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Pole Beans</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Kale</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      <li class="plant large" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Kale</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      <li class="plant large" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Kale</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Kale</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Kale</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Kale</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Kale</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      <li class="plant" ng-repeat="plant in vm.plants" ng-click="vm.setCurrentPlant(plant)"
+          jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid'}">
+        <p class="plant-title">Kale</p>
+        <img src="">
+        <p class="seed">1 sq | 1 sd</p>
+      </li>
+      
     </ul>
   </div>
-    
-  <!-- Library -->
-    <div class="library">
-      <ul class="plants">
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-        <planner-plant-card></planner-plant-card>
-      </ul>
-    </div>
 
     <div class="plan">
       <div class="garden" layout-wrap>
         <div class="row">
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
         </div>
         <div class="row">
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
         </div>
         <div class="row">
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
-          <div class="space"></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
+          <div class="space" data-drop="true" jqyoui-droppable='{onDrop: "vm.drop()"}'></div>
         </div>
 
       </div>
@@ -66,3 +164,19 @@
   </div>
   
 </div>
+<footer>
+      <p>
+        <strong>myGarden</strong> by <a href="">humdrum</a> <!-- Link humdrum to a page with our wonderful faces!! :D -->
+      </p>
+      <p>
+        <a class="icon" href="https://github.com/jjrajani">
+          <i class="fa fa-github"></i>
+        </a>
+      </p>
+      <!-- INSERT JOSH GITHUB -->
+      <p>
+        <a class="icon" href="https://github.com/">
+          <i class="fa fa-github"></i>
+        </a>
+      </p>
+  </footer>

@@ -5,6 +5,7 @@ function LayoutController (UserService, $rootScope) {
   vm.logOut = logOut;
   vm.isAdmin = false;
 
+  console.log('LayoutController')
 
   init ()
   

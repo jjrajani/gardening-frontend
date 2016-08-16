@@ -1,0 +1,29 @@
+// mobile encyclopedia
+
+
+@import 'grow-calendar';
+// @import 'growing';
+// @import 'harvesting';
+// @import 'problems';
+@import 'spacing';
+// @import 'specs';
+// @import 'starting';
+// @import 'watering';
+
+// $darkborder: rgba(17, 17, 17, 0.3);
+// $lightborder: rgba(17, 17, 17, 0.1);
+
+.encyclopedia {
+  @media screen and (max-width: 760px) {
+    .content {
+      flex-direction: column;
+      border: solid $darkborder 1px;
+      .title {
+        justify-content: center;
+        border: solid black 1px;
+      }
+      nav {
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
 function HomeController ($state) {
   let vm = this;
+  
+  vm.loggedIn = false;
+
   vm.planner = planner;
   vm.library = library;
   vm.fellow = fellow;

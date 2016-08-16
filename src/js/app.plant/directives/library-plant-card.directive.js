@@ -2,10 +2,12 @@ function libraryPlantCard () {
   return {
     restrict: 'E',
     scope: {
-      plant: '=',
-      name: '@'
+      name: '@',
+      plant: '='
     },
-    templateUrl: 'templates/library/plant-card.tpl.html'
+    templateUrl: 'templates/library/plant-card.tpl.html',
+    controller: 'LibraryPlantCardController',
+    controllerAs: 'vm'
   };
 }
 

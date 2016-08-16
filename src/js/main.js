@@ -1,4 +1,5 @@
 import angular from 'angular';
+import 'angular-dragdrop';
 
 import './app.core';
 import './app.users';
@@ -9,4 +10,4 @@ import './app.library';
 import './app.fellow';
 
 angular
-  .module('app', ['app.core', 'app.users', 'app.admin', 'app.planner', 'app.plant', 'app.library', 'app.fellow'])
+  .module('app', ['app.core', 'app.users', 'app.admin', 'app.planner', 'app.plant', 'app.library', 'app.fellow', 'ngDragDrop']) // , 'ngDragDrop'
