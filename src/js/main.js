@@ -8,6 +8,7 @@ import './app.planner';
 import './app.plant';
 import './app.library';
 import './app.fellow';
+import './app.nav';
 
 angular
-  .module('app', ['app.core', 'app.users', 'app.admin', 'app.planner', 'app.plant', 'app.library', 'app.fellow', 'ngDragDrop']) // , 'ngDragDrop'
+  .module('app', ['app.core', 'app.users', 'app.admin', 'app.planner', 'app.plant', 'app.library', 'app.fellow', 'ngDragDrop', 'app.nav']) // , 'ngDragDrop'

@@ -5,7 +5,7 @@ function navCard () {
       name: '@',
       plant: '='
     },
-    templateUrl: 'templates/nav/nav-card.tpl.html',
+    templateUrl: 'templates/nav/navcard.tpl.html',
     controller: 'NavCardController',
     controllerAs: 'vm'
   };

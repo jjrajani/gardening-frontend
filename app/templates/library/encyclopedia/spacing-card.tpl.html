@@ -1,0 +1,17 @@
+<h3 class="title">Spacing</h3>
+<div class="measure">
+  <div class="l">
+    <p class="line">12"</p>
+  </div>
+
+  <div class="r">
+    <p class="line" ng-class="vm.seedClass">{{12 / vm.sqRoot(1)}}"</p>
+
+    <ul class="space">
+      <li class="seed" ng-class="vm.seedClass" ng-repeat="seed in vm.getSeeds(plant.seed_count)">
+        <p class="seed">s</p>
+      </li>
+    </ul>
+
+  </div>
+</div>

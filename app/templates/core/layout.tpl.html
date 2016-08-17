@@ -9,20 +9,12 @@
         <a class="nav-item" href="/#/profile">
           Profile
         </a>
-        <span class="nav-item">
-          <a class="button" href="/#/login" ng-hide="vm.loggedIn">
-            <span>Login</span>
+        <a class="nav-item" href="/#/admin" class="button" ng-show="vm.isAdmin">
+          Admin
         </a>
-        <a class="button is-primary" href="/#/register" ng-hide="vm.loggedIn">
-          <span>Register</span>
+        <a class="nav-item" href="/#/" class="button" ng-click="vm.logOut()" ng-show="vm.loggedIn">
+          Logout
         </a>
-        <a href="/#/admin" class="button" ng-show="vm.isAdmin">
-          <span>Admin</span>
-        </a>
-        <a href="/#/" class="button" ng-click="vm.logOut()" ng-show="vm.loggedIn">
-          <span>Logout</span>
-        </a>
-        </span>
       </div>
     </nav>
   </div>
