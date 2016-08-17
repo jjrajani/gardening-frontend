@@ -2,7 +2,7 @@ function LibraryController (LibraryService) {
   
   let vm = this;
   
-  console.log('LibraryController')
+  
 
 
 }
