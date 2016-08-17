@@ -1,23 +1,9 @@
-function LibraryPlantCardController () {
-  
-  console.log('in here')
+function SpacingController () {
 
   let vm = this;
-  vm.select = select;
-  vm.selected = 9;
-  vm.getSeeds = getSeeds;
   vm.seedClass = "";
   vm.sqRoot = sqRoot;
-  vm.navOpen = false;
-  // vm.seedSpace = 12 / sqrt of seed_count
-
-
-
-  function select(tab) {
-    vm.selected = tab;
-    vm.navOpen = false;
-    console.log(vm.selected)
-  }
+  vm.getSeeds = getSeeds;
 
   function getSeeds(num) {
     if (num === 1) {
@@ -41,5 +27,5 @@ function LibraryPlantCardController () {
   }
 }
 
-LibraryPlantCardController.$inject = [];
-export { LibraryPlantCardController };
+SpacingController.$inject = [];
+export { SpacingController };

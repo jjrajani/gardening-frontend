@@ -1,0 +1,54 @@
+<div class="plant" data-id="{{plant.id}}">
+
+  <div class="encyclopedia">
+    <div class="content">
+    <div class="title">
+      <h3 class="title-r">{{plant.name}}</h3>
+    </div>
+    <!-- <encyc-nav-card></encyc-nav-card> -->
+    <!-- Need help linking the selected tab between the nav and the following ul -->
+    <!-- | | | -->
+    <!-- V V V -->
+
+    <nav>
+<i class="fa fa-bars" aria-hidden="true" ng-click="vm.navOpen = !vm.navOpen"></i>
+<ul ng-show="vm.navOpen"> <!-- This one damnit -->
+  <li ng-class="{active : vm.selected === 1}" ng-click="vm.select(1)">Overview</li>
+  <li ng-class="{active : vm.selected === 2}" ng-click="vm.select(2)">Grow Calendar</li>
+  <li ng-class="{active : vm.selected === 3}" ng-click="vm.select(3)">Starting</li>
+  <li ng-class="{active : vm.selected === 4}" ng-click="vm.select(4)">Spacing</li>
+  <li ng-class="{active : vm.selected === 5}" ng-click="vm.select(5)">Growing</li>
+  <li ng-class="{active : vm.selected === 6}" ng-click="vm.select(6)">Watering</li>
+  <li ng-class="{active : vm.selected === 7}" ng-click="vm.select(7)">Harvesting</li>
+  <li ng-class="{active : vm.selected === 8}" ng-click="vm.select(8)">Common Problems</li>
+</ul>
+</nav>
+
+    <div class="overview" ng-show="vm.selected === 1">
+      <overview-card></overview-card>
+    </div>
+
+
+    <div class="grow" ng-show="vm.selected === 2">
+        <grow-cal-card></grow-cal-card>
+    </div>
+    <div class="starting" ng-show="vm.selected === 3">
+        <starting-card></starting-card>
+    </div>
+    <div class="spacing" ng-show="vm.selected === 4">
+      <spacing-card></spacing-card>
+    </div>
+    <div class="growing" ng-show="vm.selected === 5">
+      <growing-card></growing-card>
+    </div>
+    <div class="watering" ng-show="vm.selected === 6">
+      <watering-card></watering-card>
+    </div>
+    <div class="harvesting" ng-show="vm.selected === 7">
+        <harvesting-card></harvesting-card>
+    </div>
+    <div class="problems" ng-show="vm.selected === 8">
+      <problems-card></problems-card>
+    </div>
+  </div>
+</div>
