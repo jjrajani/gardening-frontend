@@ -1,6 +1,7 @@
 function NavCardController (NavService) {
 
   let vm = this;
+  vm.selected = 1;
   vm.setCurrentPlant = setCurrentPlant;
   vm.navPlants = {};
   vm.showAll = showAll;

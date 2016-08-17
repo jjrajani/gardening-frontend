@@ -1,12 +1,12 @@
 
 // Controllers
-import { NavCardController } from './controllers/nav-card.controller';
+import { NavCardController } from './controllers/navcard.controller';
 
 // Directives
-import { navCard } from './directives/nav-card.directive';
+import { navCard } from './directives/navcard.directive';
 
 //Services
-import { NavService } from './services/nav-card.service';
+import { NavService } from './services/navcard.service';
 angular
   .module('app.nav', [])
   .directive('navCard', navCard)

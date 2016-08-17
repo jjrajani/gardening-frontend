@@ -1,15 +1,15 @@
 <nav class="nav-top has-shadow">
   <div class="container">
     <div class="nav-left">
-      <a class="nav-item is-tab" ng-click="vm.showAll(vm.plants)">Library</a>
+      <a class="nav-item is-tab category" ng-click="vm.showAll(vm.plants)">Library</a>
       <a class="nav-item is-tab is-active" ng-click="vm.categoryFilter(vm.plants, 'vegetable')">Vegetables</a>
       <a class="nav-item is-tab" ng-click="vm.categoryFilter(vm.plants, 'herb')">Herbs</a>
       <a class="nav-item is-tab" ng-click="vm.showSeasons = !vm.showSeasons">Season</a>
       <ul ng-show="vm.showSeasons">
-        <li><a href="" ng-click="vm.seasonFilter(vm.plants, 'spring')">Spring</a></li>
-        <li><a href="" ng-click="vm.seasonFilter(vm.plants, 'summer')">Summer</a></li>
-        <li><a href="" ng-click="vm.seasonFilter(vm.plants, 'fall')">Fall</a></li>
-        <li><a href="" ng-click="vm.seasonFilter(vm.plants, 'winter')">Winter</a></li>
+        <li class="season"><a href="" ng-click="vm.seasonFilter(vm.plants, 'spring')">Spring</a></li>
+        <li class="season"><a href="" ng-click="vm.seasonFilter(vm.plants, 'summer')">Summer</a></li>
+        <li class="season"><a href="" ng-click="vm.seasonFilter(vm.plants, 'fall')">Fall</a></li>
+        <li class="season"><a href="" ng-click="vm.seasonFilter(vm.plants, 'winter')">Winter</a></li>
       </ul>
     </div>
   </div>
