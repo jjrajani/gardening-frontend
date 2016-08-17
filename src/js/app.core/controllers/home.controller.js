@@ -1,11 +1,13 @@
-function HomeController ($state) {
+function HomeController ($state, UserService, $rootScope, $cookies) {
   let vm = this;
   
-  vm.loggedIn = false;
-
-  vm.planner = planner;
-  vm.library = library;
-  vm.fellow = fellow;
+  vm.loggedIn   = false;
+  vm.login      = login;
+  vm.planner    = planner;
+  vm.library    = library;
+  vm.fellow     = fellow;
+  vm.logOut     = logOut;
+  vm.register   = register;
 
   console.log('HomeController')
 
@@ -21,7 +23,38 @@ function HomeController ($state) {
     $state.go('root.fellow')
   }
 
+  init ()
+  
+  $rootScope.$on('loginChange', (event, status) => {
+    vm.loggedIn = status;
+  });
+
+  function init () {
+    vm.loggedIn = UserService.isLoggedIn();
+    vm.isAdmin = UserService.isAdmin();
+  }
+
+  function logOut () {
+    UserService.logOut();
+    vm.loggedIn = false;
+    vm.isAdmin = false
+  }
+  
+  function login (user) {
+    UserService.login(user).then( res => {
+      $cookies.put('access_token', res.data.access_token)
+      $cookies.put('admin', res.data.admin)
+      $state.go('root.home');
+    })
+  }    
+
+  function register (user) {
+    UserService.register(user);
+    $state.go('root.home')
+  }  
+
 }
 
-HomeController.$inject = ['$state'];
+
+HomeController.$inject = ['$state', 'UserService', '$rootScope', '$cookies'];
 export { HomeController };
