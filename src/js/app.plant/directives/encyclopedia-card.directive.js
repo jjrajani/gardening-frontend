@@ -5,7 +5,7 @@ function encyclopediaCard () {
       name: '@',
       plant: '='
     },
-    templateUrl: 'templates/library/plant-card.tpl.html',
+    templateUrl: 'templates/library/encyclopedia.tpl.html',
     controller: 'EncyclopediaCardController',
     controllerAs: 'vm'
   };

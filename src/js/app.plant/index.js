@@ -17,6 +17,6 @@ angular
   .module('app.plant', [])
   .controller('PlannerPlantCardController', PlannerPlantCardController)
   .controller('EncyclopediaCardController', EncyclopediaCardController)
-  .directive('libraryPlantCard', encyclopediaCard)
+  .directive('encyclopediaCard', encyclopediaCard)
   .directive('plannerPlantCard', plannerPlantCard)
   ;

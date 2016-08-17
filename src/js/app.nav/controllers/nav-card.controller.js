@@ -2,15 +2,19 @@ function NavCardController (NavService) {
 
   let vm = this;
   vm.setCurrentPlant = setCurrentPlant;
-
-  console.log('hello nav')
+  vm.navPlants = {};
+  vm.showAll = showAll;
+  vm.showSeasons = false;
+  vm.seasonFilter = seasonFilter;
+  vm.categoryFilter = categoryFilter;
+  
 
   init ()
 
   function init() {
     NavService.getPlants().then( res => {
       vm.plants = res.data;
-      console.log(vm.plants[0].category)
+      vm.navPlants = res.data;
       vm.setCurrentPlant(vm.plants[0])
     }) 
   }
@@ -19,11 +23,23 @@ function NavCardController (NavService) {
     vm.current = plant;
   }
 
-  function vegetables (plants) {
-    console.log(vm.plants)
+  function categoryFilter (plants, category) {
+    let library = plants.filter( (plant) => {
+      return plant.category.toLowerCase() === category
+    });
+    vm.navPlants = library;
+  }
+  // full library
+  function showAll (plants) {
+    vm.navPlants = plants;
   }
 
-  vegetables()
+  function seasonFilter(plants, season) {
+    let library = plants.filter ( (plant) => {
+      return plant.season.toLowerCase().includes(season)
+    })
+    vm.navPlants = library;
+  }
 }
 
 NavCardController.$inject = ['NavService'];
