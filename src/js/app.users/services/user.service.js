@@ -27,6 +27,7 @@ function UserService (SERVER, $state, $http, $cookies) {
 
   function logOut () {
     $cookies.remove('access_token')
+    $cookies.remove('admin')
   }
 
   function isLoggedIn () {
@@ -35,7 +36,11 @@ function UserService (SERVER, $state, $http, $cookies) {
 
   function isAdmin () {
     let admin = $cookies.get('admin')
-    return (admin) ? true : false;
+    if (admin === true) {
+      return true
+    } else {
+      return false
+    }
   }
 }
 
