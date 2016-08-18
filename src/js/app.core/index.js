@@ -10,6 +10,8 @@ import { run } from './utilities/run';
 import { LayoutController } from './controllers/layout.controller';
 import { HomeController } from './controllers/home.controller';
 
+import { GardenService } from './services/garden.service';
+
 angular
   .module('app.core', ['ui.router', 'ngCookies'])
   .config(config)
@@ -17,4 +19,5 @@ angular
   .constant('SERVER', serverConstant)
   .controller('LayoutController', LayoutController)
   .controller('HomeController', HomeController)
+  .service('GardenService', GardenService)
 ;
