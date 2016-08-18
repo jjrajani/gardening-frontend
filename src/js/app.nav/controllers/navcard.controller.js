@@ -9,7 +9,7 @@ function NavCardController (NavService) {
   vm.seasonFilter = seasonFilter;
   vm.categoryFilter = categoryFilter;
   
-
+console.log("navContoller")
   init ()
 
   function init() {

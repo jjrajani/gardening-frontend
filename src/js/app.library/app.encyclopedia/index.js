@@ -35,6 +35,7 @@ import { encycNavCard } from './directives/encyc-nav.directive';
 angular
   .module('app.encyclopedia', [])
   //controllers
+  .controller('NavCardController', NavCardController)
   .controller('OverviewController', OverviewController)
   .controller('GrowCalController', GrowCalController)
   .controller('StartingController', StartingController)
@@ -45,6 +46,7 @@ angular
   .controller('ProblemsController', ProblemsController)
   .controller('EncycNavController', EncycNavController)
   //directives
+  .directive('navCard', navCard)
   .directive('overviewCard', overviewCard)
   .directive('growCalCard', growCalCard)
   .directive('startingCard', startingCard)
