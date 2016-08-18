@@ -34,13 +34,13 @@
 </div>
 
 <!-- Login Big Screen-->
-<div class="user lg-sc">
+<div class="user lg-sc" ng-hide="vm.loggedIn">
   <div class="login">
   <h3 class="subtitle">Login</h3>
-    <form>
+    <form ng-submit="vm.login(user)">
       <div class="inputs">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="username" placeholder="Password">
+        <input type="text" name="email" placeholder="email" ng-model="user.email">
+        <input type="password" name="password" placeholder="Password" ng-model="user.password">
       </div>
       <button>Login</button>
     </form>

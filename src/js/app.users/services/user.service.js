@@ -7,6 +7,8 @@ function UserService (SERVER, $state, $http, $cookies) {
   this.logOut = logOut;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
+  this.updateEmail = updateEmail;
+  this.updateLocation = updateLocation;
 
   function register (user) {
     return $http.post(SERVER.URL + 'register', user)
@@ -41,6 +43,16 @@ function UserService (SERVER, $state, $http, $cookies) {
     } else {
       return false
     }
+  }
+
+  function updateEmail (user) {
+    let email = {email: user}
+    return $http.post(SERVER.URL + 'users', email, this.headers())
+  }
+
+  function updateLocation (user) {
+    let location = {location: user}
+    return $http.post(SERVER.URL + 'users', location, this.headers())
   }
 }
 

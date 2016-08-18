@@ -1,17 +1,17 @@
 <div class="profile wrapper">
   <div class="user-info">
-    <p class="subtitle">hudrum</p> <!-- {{ user.username }} -->
-    <p>Active Gardens: </p> <!-- {{ user.gardens.active }} -->
-    <p class="lg-sc">Gardening Since: </p> <!-- {{ user.created_at }} -->
+    <p class="subtitle">{{vm.user.firstname}} {{vm.user.lastname}}</p> <!-- {{ user.username }} -->
+    <p>Active Gardens: {{vm.active}}</p> <!-- {{ user.gardens.active }} -->
+    <p class="lg-sc">Gardening Since: {{vm.user.created_at.split('-')[0]}}</p> <!-- {{ user.created_at }} -->
   </div>
 
   <div class="edit-user">
-    <img src="#"> <!-- {{user.avatar}} -->
+    <img src="http://placecage.com/130/300"> <!-- {{user.avatar}} -->
     <form>
       <p class="control">
-        <label>humdrum@hum.drum</label>
-        <input type="text" name="email" ng-show="vm.showEmail" placeholder="humdrum@hum.drum"> <!--{{user.email}}-->
-        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showEmail" ng-click="vm.updateEmail()"></i>
+        <label>{{ vm.user.email }}</label>
+        <input type="text" name="email" ng-show="vm.showEmail" ng-model="vm.user.email"> <!--{{user.email}}-->
+        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showEmail" ng-click="vm.updateEmail(vm.user.email)"></i>
         <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editEmail()" ng-hide="vm.showEmail"></i>
         <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showEmail" ng-click="vm.editEmail()"></i>
       </p>
@@ -26,10 +26,10 @@
       </p>
 
       <p class="control">
-        <label>Atl, Ga</label> <!-- {{ user.location }} -->
+        <label> {{vm.user.location}} </label> <!-- {{ user.location }} -->
         <input type="text" name="location" ng-show="vm.showLocation" placeholder="City">
-        <input type="text" name="location" ng-show="vm.showLocation" placeholder="Location">
-        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showLocation" ng-click="vm.updateLocation()"></i>
+        <input type="text" name="location" ng-show="vm.showLocation" placeholder="Location" ng-model="vm.user.location">
+        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showLocation" ng-click="vm.updateLocation(vm.user.location)"></i>
         <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editLocation()" ng-hide="vm.showLocation"></i>
         <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showLocation" ng-click="vm.editLocation()"></i>
       </p>
@@ -54,49 +54,54 @@
       </ul>
     </div>
     <div class="new-garden" ng-show='vm.gardenState === 0'>
-          <form>
+          <form class="newGarden" ng-submit="vm.addGarden(garden)">
             <p class="control">
             <label for="name">Garden Name</label>
-              <input id="name" type="text" placeholder="">
+              <input id="name" type="text" placeholder="" ng-model="garden.name" class="input">
             </p>
             <p class="control">
             <label for="tags">Garden Tags</label>
-              <input id='tags' type="text" placeholder="Comma Seperated">
+              <input id='tags' type="text" placeholder="Comma Seperated" ng-model="garden.tags" class="input">
             </p>
             <p class="control">
               <label>Height</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
+              <span class="select">
+                <select ng-model="garden.height">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </span>  
             </p>
             <p class="control">
               <label>Width</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-              </select>
+              <span class="select">
+                <select ng-model="garden.width">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                </select>
+              </span>
             </p>
             <p class="control">
               <label>Image Upload</label>
-              <input type="url">
+              <!--<input type="url" ng-model="garden.image">-->
             </p>
+            <button class="button">Add</button>
           </form>
         </div>
     <div class="overview" ng-show="vm.gardenState">
