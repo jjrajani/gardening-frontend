@@ -10,6 +10,7 @@ import { WateringController } from './controllers/watering.controller';
 import { HarvestingController } from './controllers/harvesting.controller';
 import { ProblemsController } from './controllers/problems.controller';
 import { EncycNavController } from './controllers/encyc-nav.controller';
+import { EncyclopediaCardController } from './controllers/encyclopedia-card.controller';
 
 //Directives
 import { overviewCard } from './directives/overview.directive';
@@ -21,6 +22,7 @@ import { wateringCard } from './directives/watering.directive';
 import { harvestingCard } from './directives/harvesting.directive';
 import { problemsCard } from './directives/problems.directive';
 import { encycNavCard } from './directives/encyc-nav.directive';
+import { encyclopediaCard } from './directives/encyclopedia-card.directive';
 
 //Services
 // import { OverviewService } from './services/overview.service';
@@ -35,7 +37,6 @@ import { encycNavCard } from './directives/encyc-nav.directive';
 angular
   .module('app.encyclopedia', [])
   //controllers
-  .controller('NavCardController', NavCardController)
   .controller('OverviewController', OverviewController)
   .controller('GrowCalController', GrowCalController)
   .controller('StartingController', StartingController)
@@ -45,8 +46,8 @@ angular
   .controller('HarvestingController', HarvestingController)
   .controller('ProblemsController', ProblemsController)
   .controller('EncycNavController', EncycNavController)
+  .controller('EncyclopediaCardController', EncyclopediaCardController)
   //directives
-  .directive('navCard', navCard)
   .directive('overviewCard', overviewCard)
   .directive('growCalCard', growCalCard)
   .directive('startingCard', startingCard)
@@ -56,6 +57,7 @@ angular
   .directive('harvestingCard', harvestingCard)
   .directive('problemsCard', problemsCard)
   .directive('encycNavCard', encycNavCard)
+  .directive('encyclopediaCard', encyclopediaCard)
   //services
   // .service('OverviewService', OverviewService)
   // .service('GrowCalService', OverviewService)

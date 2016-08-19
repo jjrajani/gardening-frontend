@@ -17,15 +17,6 @@
       </p>
 
       <p class="control">
-        <label>Change Password</label>
-        <input type="password" name="password" ng-show="vm.showPassword" placeholder="type password">
-        <input type="password" name="password" ng-show="vm.showPassword" placeholder="re-enter password">
-        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showPassword" ng-click="vm.updatePassword()"></i>
-        <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editPassword()" ng-hide="vm.showPassword"></i>
-        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showPassword" ng-click="vm.editPassword()"></i>
-      </p>
-
-      <p class="control">
         <label> {{vm.user.location}} </label> <!-- {{ user.location }} -->
         <input type="text" name="location" ng-show="vm.showLocation" placeholder="City">
         <input type="text" name="location" ng-show="vm.showLocation" placeholder="Location" ng-model="vm.user.location">

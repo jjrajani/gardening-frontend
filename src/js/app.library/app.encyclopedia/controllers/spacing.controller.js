@@ -1,9 +1,10 @@
-function SpacingController () {
+function SpacingController ($rootScope) {
 
   let vm = this;
   vm.seedClass = "";
   vm.sqRoot = sqRoot;
   vm.getSeeds = getSeeds;
+  vm.plant = {};
 
   function getSeeds(num) {
     if (num === 1) {
@@ -25,7 +26,11 @@ function SpacingController () {
     console.log(Math.pow(num, 0.5));
     return Math.pow(num, 0.5);
   }
+
+  $rootScope.$on('newPlantSelection', function (event, data) {
+    vm.plant = data;
+  })
 }
 
-SpacingController.$inject = [];
+SpacingController.$inject = ['$rootScope'];
 export { SpacingController };

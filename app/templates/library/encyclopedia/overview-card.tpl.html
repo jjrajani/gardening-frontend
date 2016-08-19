@@ -1,27 +1,23 @@
 <h3 class="title">Overveiw</h3>
       <div class="imgs">
-        <img src="">
+        <img src="{{vm.plant.image}}">
       </div>
       <div class="specs">
         <ul>Botanical Info
-          <li>Family</li>
-          <li>Height</li>
-          <li>Hardy</li>
+          <li>{{vm.plant.family || 'update database'}}</li>
+          <li>Height: {{vm.plant.height || 'update database'}}</li>
+          <li>Hardy: {{vm.plant.hardy || 'update database'}}</li>
         </ul>
-        <p>Spacing: Plants per Space</p>
+        <p>Spacing: {{vm.plant.seed_count || 'update database'}}Seed{{vm.plant.seed_count > 1 ? 's' : ''}} per Space</p>
         <ul>
-          Growing Season(s)
-          <li>Summer</li>
+          <li>
+            Growing Season(s): {{vm.plant.season}}
+          </li>
         </ul>
-        <p>Seed to Harvest: x weeks</p>
-        <p>Seed Store: x Years</p>
+        <p>Seed to Harvest: {{vm.plant.maturity}} weeks</p>
+        <p>Seed Store: {{vm.plant.seed_store || "update database"}} Years</p>
       </div>
       <div class="content">
         <p class="subtitle">Desription:</p>
-        <p class="description">{{plant.description}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="description">{{plant.description || "update database"}}</p>
       </div>

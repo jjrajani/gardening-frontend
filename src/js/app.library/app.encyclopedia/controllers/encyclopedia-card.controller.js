@@ -1,4 +1,6 @@
-function EncyclopediaCardController () {
+function EncyclopediaCardController ($scope) {
+
+  console.log($scope);
   
   console.log('EncyclopediaCardController')
 
@@ -9,9 +11,10 @@ function EncyclopediaCardController () {
   function select(tab) {
     vm.selected = tab;
     vm.navOpen = false;
-    console.log(vm.selected)
   }
+
+  // emit here
 }
 
-EncyclopediaCardController.$inject = [];
+EncyclopediaCardController.$inject = ['$scope'];
 export { EncyclopediaCardController };

@@ -2,7 +2,7 @@ function encyclopediaCard () {
   return {
     restrict: 'E',
     scope: {
-      name: '@',
+      current: '=',
       plant: '='
     },
     templateUrl: 'templates/library/encyclopedia.tpl.html',

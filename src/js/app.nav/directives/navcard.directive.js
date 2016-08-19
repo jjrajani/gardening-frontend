@@ -2,7 +2,8 @@ function navCard () {
   return {
     restrict: 'E',
     scope: {
-      name: '@',
+      plants: '=',
+      current: '=',
       plant: '='
     },
     templateUrl: 'templates/nav/navcard.tpl.html',

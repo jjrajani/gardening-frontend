@@ -8,7 +8,7 @@ function LayoutController (UserService, $rootScope) {
   console.log('LayoutController')
 
   init ()
-  
+  //respond to parent screaming
   $rootScope.$on('loginChange', (event, status) => {
     vm.loggedIn = status;
   });
