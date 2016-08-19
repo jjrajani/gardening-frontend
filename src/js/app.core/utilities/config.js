@@ -68,9 +68,14 @@ function config ($stateProvider, $urlRouterProvider) {
     })
   // Planner
     .state('root.planner', {
-      url: '/planner',
+      url: '/gardens/:id/planner',
       templateUrl: 'templates/planner/planner.tpl.html',
       controller: 'PlannerController as vm'
+    })
+    .state('root.garden', {
+      url: '/gardens/new',
+      templateUrl: 'templates/gardens/new.tpl.html',
+      controller: 'GardenController as vm'
     })
   // Library
     .state('root.library', {
