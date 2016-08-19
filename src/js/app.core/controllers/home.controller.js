@@ -3,7 +3,7 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
   
   vm.loggedIn   = false;
   vm.login      = login;
-  vm.planner    = planner;
+  // vm.planner    = planner;
   vm.library    = library;
   vm.fellow     = fellow;
   vm.logOut     = logOut;
@@ -11,9 +11,9 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
 
   console.log('HomeController')
 
-  function planner () {
-    $state.go('root.planner')
-  }
+  // function planner () {
+  //   $state.go('root.planner')
+  // }
 
   function library () {
     $state.go('root.library')

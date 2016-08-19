@@ -9,6 +9,11 @@ import './app.plant';
 import './app.library';
 import './app.fellow';
 import './app.nav';
+import './app.garden';
 
 angular
-  .module('app', ['app.core', 'app.users', 'app.admin', 'app.planner', 'app.plant', 'app.library', 'app.fellow', 'ngDragDrop', 'app.nav']) // , 'ngDragDrop'
+  .module('app', ['app.core', 'app.users', 
+                  'app.admin', 'app.planner', 
+                  'app.plant', 'app.library', 
+                  'app.fellow', 'ngDragDrop', 
+                  'app.nav', 'app.garden']) // , 'ngDragDrop'

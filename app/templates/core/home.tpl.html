@@ -7,10 +7,12 @@
   <div class="content">
   
     <!-- Planner -->
-    <div ng-click="vm.planner()" class="planner">
+    <!--<div ng-click="vm.planner()" class="planner">-->
+    <div class="planner">      
         <a href=""><h3 class="title"><span class="green">my</span><span class="orange">Garden</span> Planner</h3></a>
         <p ng-hide="vm.loggedIn">Start planning your garden.</p>
-        <a href="" ng-show="vm.loggedIn">New Garden</a>
+        <a href="/#/gardens/new" ng-show="vm.loggedIn">New Garden</a>
+        
         <!-- If user logged in href = new garden -->
         <!-- If user not logged in href = login/register page -->
     </div>
