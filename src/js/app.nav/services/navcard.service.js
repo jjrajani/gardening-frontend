@@ -1,4 +1,4 @@
-function NavService (SERVER, $http) {
+function NavCardService (SERVER, $http) {
 
   this.getPlants = getPlants;
   this.singlePlant = singlePlant;
@@ -13,5 +13,5 @@ function NavService (SERVER, $http) {
 
 }
 
-NavService.$inject = ['SERVER', '$http'];
-export { NavService };
+NavCardService.$inject = ['SERVER', '$http'];
+export { NavCardService };

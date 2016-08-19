@@ -2,13 +2,9 @@ import angular from 'angular';
 
 //Directives
 import { plannerPlantCard } from './directives/planner-plant-card.directive';
-import { encyclopediaCard } from './directives/encyclopedia-card.directive';
-
 
 // Controllers
 import { PlannerPlantCardController } from './controllers/planner-plant-card.controller';
-import { EncyclopediaCardController } from './controllers/encyclopedia-card.controller';
-
 
 // Services
 
@@ -16,7 +12,5 @@ import { EncyclopediaCardController } from './controllers/encyclopedia-card.cont
 angular
   .module('app.plant', [])
   .controller('PlannerPlantCardController', PlannerPlantCardController)
-  .controller('EncyclopediaCardController', EncyclopediaCardController)
-  .directive('encyclopediaCard', encyclopediaCard)
   .directive('plannerPlantCard', plannerPlantCard)
   ;

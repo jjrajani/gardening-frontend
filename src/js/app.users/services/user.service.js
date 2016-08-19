@@ -7,8 +7,7 @@ function UserService (SERVER, $state, $http, $cookies) {
   this.logOut = logOut;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
-  this.updateEmail = updateEmail;
-  this.updateLocation = updateLocation;
+  this.updateUser = updateUser;
 
   function register (user) {
     return $http.post(SERVER.URL + 'register', user)
@@ -28,8 +27,9 @@ function UserService (SERVER, $state, $http, $cookies) {
   }
 
   function logOut () {
-    $cookies.remove('access_token')
-    $cookies.remove('admin')
+    $cookies.remove('access_token');
+    $cookies.remove('admin');
+    $state.reload();
   }
 
   function isLoggedIn () {
@@ -45,14 +45,9 @@ function UserService (SERVER, $state, $http, $cookies) {
     }
   }
 
-  function updateEmail (user) {
-    let email = {email: user}
-    return $http.post(SERVER.URL + 'users', email, this.headers())
-  }
-
-  function updateLocation (user) {
+  function updateUser (user) {
     let location = {location: user}
-    return $http.post(SERVER.URL + 'users', location, this.headers())
+    return $http.post(SERVER.URL + 'users', user, this.headers())
   }
 }
 

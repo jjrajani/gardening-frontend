@@ -6,10 +6,10 @@ import { NavCardController } from './controllers/navcard.controller';
 import { navCard } from './directives/navcard.directive';
 
 //Services
-import { NavService } from './services/navcard.service';
+import { NavCardService } from './services/navcard.service';
 angular
   .module('app.nav', [])
   .directive('navCard', navCard)
-  .service('NavService', NavService)
+  .service('NavCardService', NavCardService)
   .controller('NavCardController', NavCardController)
   ;

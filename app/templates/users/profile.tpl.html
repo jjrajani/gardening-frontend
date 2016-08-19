@@ -1,37 +1,24 @@
 <div class="profile wrapper">
   <div class="user-info">
-    <p class="subtitle">{{vm.user.firstname}} {{vm.user.lastname}}</p> <!-- {{ user.username }} -->
-    <p>Active Gardens: {{vm.active}}</p> <!-- {{ user.gardens.active }} -->
+    <p class="subtitle">{{vm.user.username || 'N/A'}}</p> <!-- {{ user.username }} -->
+    <p>Active Gardens: {{vm.activeGardens.length}}</p> <!-- {{ user.gardens.active }} -->
     <p class="lg-sc">Gardening Since: {{vm.user.created_at.split('-')[0]}}</p> <!-- {{ user.created_at }} -->
   </div>
 
   <div class="edit-user">
-    <img src="http://placecage.com/130/300"> <!-- {{user.avatar}} -->
+    <img src="{{vm.user.avatar || '#'}}"> <!-- {{user.avatar}} -->
     <form>
+    <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showEdit" ng-click="vm.submitEdit()"></i>
+        <i class="fa fa-pencil" aria-hidden="true" ng-hide="vm.showEdit" ng-click="vm.edit()"></i>
+        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showEdit" ng-click="vm.edit()"></i>
       <p class="control">
         <label>{{ vm.user.email }}</label>
-        <input type="text" name="email" ng-show="vm.showEmail" ng-model="vm.user.email"> <!--{{user.email}}-->
-        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showEmail" ng-click="vm.updateEmail(vm.user.email)"></i>
-        <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editEmail()" ng-hide="vm.showEmail"></i>
-        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showEmail" ng-click="vm.editEmail()"></i>
-      </p>
-
-      <p class="control">
-        <label>Change Password</label>
-        <input type="password" name="password" ng-show="vm.showPassword" placeholder="type password">
-        <input type="password" name="password" ng-show="vm.showPassword" placeholder="re-enter password">
-        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showPassword" ng-click="vm.updatePassword()"></i>
-        <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editPassword()" ng-hide="vm.showPassword"></i>
-        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showPassword" ng-click="vm.editPassword()"></i>
+        <input type="email" name="email" ng-show="vm.showEdit" ng-model="vm.user.email" placeholder="New email"> <!--{{user.email}}-->
       </p>
 
       <p class="control">
         <label> {{vm.user.location}} </label> <!-- {{ user.location }} -->
-        <input type="text" name="location" ng-show="vm.showLocation" placeholder="City">
-        <input type="text" name="location" ng-show="vm.showLocation" placeholder="Location" ng-model="vm.user.location">
-        <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showLocation" ng-click="vm.updateLocation(vm.user.location)"></i>
-        <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editLocation()" ng-hide="vm.showLocation"></i>
-        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showLocation" ng-click="vm.editLocation()"></i>
+        <input type="text" name="location" ng-show="vm.showEdit" placeholder="City, St" ng-model="vm.user.location">
       </p>
     </form>
   </div>
@@ -39,25 +26,33 @@
   <div class="gardens">
     <div class="nav l">
       <p class="title"><span class="green">My</span><span class="orange">Gardens</span></p>
-      <ul ng-click="vm.gardenState = 0">
-        <p ng-class="{active: vm.gardenState === 0}">New Garden</p>
+      <ul>
+        <p ng-click="vm.gardenState = 0" ng-class="{active: vm.gardenState === 0}">New Garden</p>
       </ul>
-      <ul ng-click="vm.gardenState = 1">
-        <p ng-class="{active: vm.gardenState === 1}">Active</p>
-        <li ng-show="vm.gardenState === 1" ng-click="vm.gardenSelected = 1" ng-class="{active: vm.gardenSelected === 1}">Vegetables</li>
-        <li ng-show="vm.gardenState === 1" ng-click="vm.gardenSelected = 2" ng-class="{active: vm.gardenSelected === 2}">Herbs</li>
+      <ul>
+        <ul ng-class="{active: vm.gardenState === 1}">
+          <h3 ng-click="vm.gardenState = 1">Active</h3>
+        
+          <li ng-repeat="garden in vm.activeGardens">{{garden.name || 'n/a'}}</li>
+        </ul>
+        <!-- <li ng-show="vm.gardenState === 1" ng-class="{active: vm.gardenSelected === 1}">Vegetables</li>
+        <li ng-show="vm.gardenState === 1" ng-class="{active: vm.gardenSelected === 2}">Herbs</li> -->
       </ul>
-      <ul ng-click="vm.gardenState = 2">
-        <p ng-class="{active: vm.gardenState === 2}">Planning</p>
-        <li ng-show="vm.gardenState === 2" ng-click="vm.gardenSelected = 3" ng-class="{active: vm.gardenSelected === 3}">Winter</li>
-        <li ng-show="vm.gardenState === 2" ng-click="vm.gardenSelected = 4" ng-class="{active: vm.gardenSelected === 4}">Garage</li>
+      <ul>
+        <ul ng-class="{active: vm.gardenState === 2}">
+        <h2 ng-click="vm.gardenState = 2">Planning</h2>
+          <li ng-repeat="garden in vm.planningGardens" ng-click="vm.selectGarden(garden.id)" ng-show="vm.gardenState === 2">{{garden.name || 'n/a'}}</li>
+        </ul>
+
+        <!-- <li ng-show="vm.gardenState === 2" ng-click="vm.gardenSelected = 3" ng-class="{active: vm.gardenSelected === 3}">Winter</li>
+        <li ng-show="vm.gardenState === 2" ng-click="vm.gardenSelected = 4" ng-class="{active: vm.gardenSelected === 4}">Garage</li> -->
       </ul>
     </div>
     <div class="new-garden" ng-show='vm.gardenState === 0'>
           <form class="newGarden" ng-submit="vm.addGarden(garden)">
             <p class="control">
             <label for="name">Garden Name</label>
-              <input id="name" type="text" placeholder="" ng-model="garden.name" class="input">
+              <input id="name" type="text" ng-model="garden.name" class="input">
             </p>
             <p class="control">
             <label for="tags">Garden Tags</label>
@@ -99,13 +94,14 @@
             </p>
             <p class="control">
               <label>Image Upload</label>
-              <!--<input type="url" ng-model="garden.image">-->
+              <!--<input type="url" ng-model="vm.garden.image">-->
             </p>
             <button class="button">Add</button>
           </form>
         </div>
     <div class="overview" ng-show="vm.gardenState">
       <div class="nav">
+      <i class="fa fa-trash" aria-hidden="true" class="deleteGarden" ng-click="vm.deleteGarden(vm.selectedGarden.id)"></i>
         <p ng-class="{active: vm.overviewTab === 1}" ng-click="vm.overviewTab = 1">Overview</p>
         <p ng-class="{active: vm.overviewTab === 2}" ng-click="vm.overviewTab = 2">Comment</p>
       </div>
@@ -114,14 +110,14 @@
         <div class="overview borderless" ng-show="vm.overviewTab === 1">
           <ul>
             <li>
-              <p>humdrum</p> <!-- {{garden.name}} -->
+              <p>Name: {{vm.selectedGarden.name}}</p>
             </li>
             <li>
-              <p><span>H: </span>4ft</p> <!-- {{garden.height}} -->
-              <p><span>W: </span>8ft</p> <!-- {{garden.width}} -->
+              <p><span>H: </span>{{vm.selectedGarden.height}}ft</p> <!-- {{garden.height}} -->
+              <p><span>W: </span>{{vm.selectedGarden.width}}ft</p> <!-- {{garden.width}} -->
             </li>
             <li>
-              <p>Herb, Side Yard, Fall</p> <!-- {{garden.tags}} -->
+              <p>Tags: {{vm.selectedGarden.tags}}</p> <!-- {{garden.tags}} -->
             </li>
           </ul>
           <img src="#">

@@ -1,27 +1,28 @@
-function NavCardController (NavService) {
+function NavCardController (NavCardService, $scope) {
 
   let vm = this;
   vm.selected = 1;
   vm.setCurrentPlant = setCurrentPlant;
+  vm.current = {};
   vm.navPlants = {};
   vm.showAll = showAll;
   vm.showSeasons = false;
   vm.seasonFilter = seasonFilter;
   vm.categoryFilter = categoryFilter;
-  
-console.log("navContoller")
-  init ()
 
+  init ();
+  
   function init() {
-    NavService.getPlants().then( res => {
+    NavCardService.getPlants().then( res => {
       vm.plants = res.data;
       vm.navPlants = res.data;
       vm.setCurrentPlant(vm.plants[0])
-    }) 
+    })
   }
 
   function setCurrentPlant (plant) {
     vm.current = plant;
+    $scope.$emit('selectedPlantChange', vm.current)
   }
 
   function categoryFilter (plants, category) {
@@ -41,7 +42,21 @@ console.log("navContoller")
     })
     vm.navPlants = library;
   }
+
+
+  // firing an event upwars
+
+
 }
 
-NavCardController.$inject = ['NavService'];
+NavCardController.$inject = ['NavCardService', '$scope'];
 export { NavCardController };
+
+
+
+
+
+
+
+
+

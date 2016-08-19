@@ -3,7 +3,7 @@
   <div class="encyclopedia">
     <div class="content">
     <div class="title">
-      <h3 class="title-r">{{plant.name}}</h3>
+      <h3 class="title-r">{{current}}</h3>
     </div>
     <!-- <encyc-nav-card></encyc-nav-card> -->
     <!-- Need help linking the selected tab between the nav and the following ul -->
@@ -25,7 +25,7 @@
 </nav>
 
     <div class="overview" ng-show="vm.selected === 1">
-      <overview-card></overview-card>
+      <overview-card plant="vm.current"></overview-card>
     </div>
 
 
