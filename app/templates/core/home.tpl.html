@@ -10,7 +10,6 @@
     <div ng-click="vm.planner()" class="planner">
         <a href=""><h3 class="title"><span class="green">my</span><span class="orange">Garden</span> Planner</h3></a>
         <p ng-hide="vm.loggedIn">Start planning your garden.</p>
-        <a href="" ng-show="vm.loggedIn">New Garden</a>
         <!-- If user logged in href = new garden -->
         <!-- If user not logged in href = login/register page -->
     </div>
@@ -18,13 +17,9 @@
     <!-- Library -->
     <div ng-click="vm.library()" class="library">
       <a href="/#/library"><h3 class="title">Plants Library</h3></a>
-      <div>
-        <a class="button" href="">Vegetables</a>
-        <a class="button" href="">Herbs</a>
-        <a class="button" href="">By Season</a>
-      </div>
     </div>
 
+    <a href="" ng-show="vm.loggedIn">My Gardens</a>
 </div>
 
 <!-- Login Mobile-->

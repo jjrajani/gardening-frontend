@@ -1,3 +1,4 @@
+@import 'mobile/profile';
 @import 'mobile/user-info';
 
 .profile {
@@ -5,17 +6,13 @@
   border: solid 1px blue;
   display: flex;
   flex-direction: column;
-
+  .user-info {
+    display: flex;
+  }
   .overview {
     position: relative;
     i.fa-trash { 
       position: absolute;
-      right: 10px;
-      top: 30px;
-      z-index: 300;
-      &:hover {
-        color: red;
-      }
     }
   }
 }
