@@ -37,14 +37,14 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
   function logOut () {
     UserService.logOut();
     vm.loggedIn = false;
-    vm.isAdmin = false
+    vm.isAdmin = false;
   }
   
   function login (user) {
     UserService.login(user).then( res => {
       $cookies.put('access_token', res.data.access_token)
       $cookies.put('admin', res.data.admin)
-      $state.go('root.home');
+      $state.go('root.profile');
     })
   }    
 

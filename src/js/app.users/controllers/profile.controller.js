@@ -1,92 +1,86 @@
-function ProfileController (GardenService, ProfileService, UserService) {
+function ProfileController (GardenService, ProfileService, UserService, $state) {
 
   let vm = this;
   
-
   vm.gardenState = 0;
-
+  vm.overviewTab = 1
   // this toggles from 0 to >0 to show comments
   vm.gardenComments = 0;
 
-  vm.editEmail = editEmail;
-  vm.updateEmail = updateEmail;
-
-  vm.editPassword = editPassword;
-  vm.updatePassword = updatePassword;
-
-  vm.editLocation = editLocation;
-  vm.updateLocation = updateLocation;
-
-  vm.editComment = editComment; 
-  vm.updateComment = updateComment; 
-
+  // Edit user Info
+  vm.showEdit = false;
+  vm.edit = edit;
+  vm.submitEdit = submitEdit;
+  
   vm.editComment = false;
-  vm.showEmail = false;
 
+  // Create Gardens & Garden Listings
   vm.addGarden = addGarden;
+  vm.gardenFilter = gardenFilter;
+  vm.activeGardens = '';
+  vm.planningGardens = '';
+  vm.selectGarden = selectGarden;
+  vm.selectedGarden = '';
+  vm.deleteGarden = deleteGarden;
 
   init()
 
-  function editComment () {
-    vm.showComment = !vm.showComment;
-  }
-  function updateComment () {
-    vm.editComment();
-    console.log("comment not updated cause we need to write the code")
-  }
-
-
   console.log('profile controller');
 
-  function editEmail () {
-    vm.showEmail = !vm.showEmail;
-  }
-  function updateEmail (user) {
-    vm.editEmail();
-    UserService.updateEmail(user).then( res => {
-      console.log(res)
-    })
-    
+  function edit () {
+    vm.showEdit = !vm.showEdit;
   }
 
-  function editPassword () {
-    vm.showPassword = !vm.showPassword;
-  }
-  function updatePassword () {
-    vm.editPassword();
-    console.log("password not updated cause we need to write the code")
+  function submitEdit () {
+    console.log(vm.user);
+    UserService.updateUser(vm.user);
+    vm.edit();
   }
 
-  function editLocation () {
-    vm.showLocation = !vm.showLocation;
-  }
-  function updateLocation (user) {
-    vm.editLocation();
-    UserService.updateLocation(user).then( res => {
-      console.log(res)
-    })
-  }
+  // Garden Functions
 
   function addGarden (garden) {
     GardenService.createGarden(garden).then(res => {
-      console.log(res)
+      vm.garden = {};
+      $state.reload();
     });
+  }
+
+  function gardenFilter() {
+    GardenService.getGardens().then( res => {
+      vm.activeGardens = vm.gardens.filter(function (garden) {
+        return garden.status === true;
+      });
+      vm.planningGardens = vm.gardens.filter(function (garden) {
+        return garden.status === false;
+      });
+    })
+  }
+
+  function selectGarden (id) {
+    let garden = vm.gardens.filter((garden) => {
+      return garden.id === id;
+    })
+    vm.selectedGarden = garden[0];
+    console.log(vm.gardenState)
+    vm.gardenState = 'tree';
+    console.log(vm.gardenState)
+  }
+
+  function deleteGarden(id) {
+    console.log(id)
   }
 
   function init () {
     ProfileService.getProfile().then( res => {
-      // console.log(res)
       vm.user = res.data.user
       vm.gardens = res.data.gardens
-      // console.log(vm.gardens.length)
-      vm.active = vm.gardens.filter(function (garden) {
-        return garden.status === false
-      })
-
-      // Use this response to show user info and ng-repeat gardens
+      vm.gardenFilter();
+      vm.selectedGarden = vm.gardens[0];
     })
+    
   }
 }
 
-ProfileController.$inject = ['GardenService', 'ProfileService', 'UserService'];
+ProfileController.$inject = ['GardenService', 'ProfileService', 'UserService', '$state'];
 export { ProfileController };

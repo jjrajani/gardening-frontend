@@ -6,7 +6,7 @@ function wateringCard () {
     },
     templateUrl: 'templates/library/encyclopedia/watering-card.tpl.html',
     controller: 'WateringController',
-    controllerAs: 'wm'
+    controllerAs: 'vm'
   }
 };
 
