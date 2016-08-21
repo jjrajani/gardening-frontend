@@ -1,11 +1,11 @@
 <nav class="nav-top has-shadow">
   <div class="container">
     <div class="nav-left">
-      <a class="nav-item is-tab category" ng-click="vm.showAll(vm.plants)">Library</a>
-      <a class="nav-item is-tab is-active" ng-click="vm.categoryFilter(vm.plants, 'vegetable')">Vegetables</a>
-      <a class="nav-item is-tab" ng-click="vm.categoryFilter(vm.plants, 'herb')">Herbs</a>
-      <a class="nav-item is-tab" ng-click="vm.showSeasons = !vm.showSeasons">Season</a>
-      <ul ng-show="vm.showSeasons">
+      <a class="nav-item is-tab category" ng-click="vm.showAll(vm.plants)" ng-class="{'is-active': vm.filter === 0}">Library</a>
+      <a class="nav-item is-tab" ng-click="vm.categoryFilter(vm.plants, 'vegetable')"  ng-class="{'is-active': vm.filter === 1}">Vegetables</a>
+      <a class="nav-item is-tab" ng-click="vm.categoryFilter(vm.plants, 'herb')"  ng-class="{'is-active': vm.filter === 2}">Herbs</a>
+      <a class="nav-item is-tab" ng-click="vm.showSeasons()"  ng-class="{'is-active': vm.seasonsShowing}">Season</a>
+      <ul ng-show="vm.seasonsShowing">
         <li class="season"><a href="" ng-click="vm.seasonFilter(vm.plants, 'spring')">Spring</a></li>
         <li class="season"><a href="" ng-click="vm.seasonFilter(vm.plants, 'summer')">Summer</a></li>
         <li class="season"><a href="" ng-click="vm.seasonFilter(vm.plants, 'fall')">Fall</a></li>
@@ -17,9 +17,10 @@
 
 <div class="content">
   <ul class="plants">
-    <li class="plant" ng-repeat="plant in vm.navPlants" ng-click="vm.setCurrentPlant(plant)">
+    <li class="plant" ng-repeat="plant in vm.navPlants" ng-mousedown="vm.setCurrentPlant(plant)" jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
+          data-jqyoui-options="{helper: 'clone', revert: 'invalid', cursorAt: {left: 5, top: 5}}">
       <p class="plant-title">{{plant.name}}</p>
-      <img src="">
+      <img src="#">
       <p class="size-seed">{{plant.seed_count}} sd | {{plant.size}} sq</p>
     </li>
   </ul>

@@ -1,23 +1,28 @@
+<div class="imgs">
+  <img src="{{vm.plant.image}}">
+</div>
 <h3 class="title">Overveiw</h3>
-      <div class="imgs">
-        <img src="{{vm.plant.image}}">
-      </div>
-      <div class="specs">
-        <ul>Botanical Info
-          <li>{{vm.plant.family || 'update database'}}</li>
-          <li>Height: {{vm.plant.height || 'update database'}}</li>
-          <li>Hardy: {{vm.plant.hardy || 'update database'}}</li>
-        </ul>
-        <p>Spacing: {{vm.plant.seed_count || 'update database'}}Seed{{vm.plant.seed_count > 1 ? 's' : ''}} per Space</p>
-        <ul>
-          <li>
-            Growing Season(s): {{vm.plant.season}}
-          </li>
-        </ul>
-        <p>Seed to Harvest: {{vm.plant.maturity}} weeks</p>
-        <p>Seed Store: {{vm.plant.seed_store || "update database"}} Years</p>
-      </div>
-      <div class="content">
-        <p class="subtitle">Desription:</p>
-        <p class="description">{{plant.description || "update database"}}</p>
-      </div>
+<div class="specs">
+  <ul><p class="subtitle">Botanical Info</p>
+    <li><span class="tag">Family:</span> {{vm.plant.family || 'update database'}}</li>
+    <li><span class="tag">Height:</span> {{vm.plant.height || 'update database'}}</li>
+    <li><span class="tag">Hardy:</span> {{vm.plant.hardy || 'update database'}}</li>
+  </ul>
+  <li><span class="tag">Spacing:</span> {{vm.plant.seed_count || 'update database'}} Seed{{vm.plant.seed_count > 1 ? 's' : ''}} per Space</li>
+  <ul>
+    <li>
+      <span class="tag">Growing Season(s):</span> {{vm.plant.season}}
+    </li>
+  </ul>
+  <li><span class="tag">Seed to Harvest:</span> {{vm.plant.maturity}} weeks</li>
+  <li><span class="tag">Seed Store:</span> {{vm.plant.seed_store || "update database"}} Years</li>
+</div>
+<div class="content">
+  <li class="subtitle">Desription:</li>
+  <li class="description">{{plant.description || "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}</li>
+</div>

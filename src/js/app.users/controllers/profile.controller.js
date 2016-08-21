@@ -3,7 +3,7 @@ function ProfileController (GardenService, ProfileService, UserService, $state) 
   let vm = this;
   
   vm.gardenState = 0;
-  vm.overviewTab = 1
+  vm.overviewTab = 2;
   // this toggles from 0 to >0 to show comments
   vm.gardenComments = 0;
 
@@ -62,9 +62,6 @@ function ProfileController (GardenService, ProfileService, UserService, $state) 
       return garden.id === id;
     })
     vm.selectedGarden = garden[0];
-    console.log(vm.gardenState)
-    vm.gardenState = 'tree';
-    console.log(vm.gardenState)
   }
 
   function deleteGarden(id) {

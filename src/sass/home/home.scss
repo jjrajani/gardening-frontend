@@ -11,28 +11,61 @@ $green: #49BF02;
   img {
     width: 100%;
     height: 300px;
-    border-top: solid 1px $lightborder;
-    border-bottom: solid 1px $lightborder;
   }
 
   .content {
     display: flex;
     justify-content: space-around;
-    background-color: white;
     margin: 0;
     padding: 0 0 40px 0;
+    background-color: #0F0F0F;
+    a {
+      border-bottom: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 95%;
+      margin: 10px 2.5%;
+      padding: 20px;
+      border-radius: 4px;
+      &.new-garden {
+        color: white;
+        font-weight: 600;
+        background-color: $green;
+        letter-spacing: 0.06;
+        &:hover, &:focus {
+        background-color: orange;
+        .orange {
+          color: white;
+        }
+      }
+      }
+    }
     .planner, .library {
-      margin: 2.5%;
-      padding: 20px 1.5%;
+      margin: 10px 2.5%;
+      padding: 10px 1.5%;
       background-color: white;
       border: solid $darkborder 1px;
       border-radius: 4px;
       box-shadow: 1px 1px 3px rgba(17,17,17,0.1),
                   -1px -1px 3px rgba(17,17,17,0.1);
+      .title {
+        margin: 0;
+      }
+      a{
+      }
+      &:hover, &:focus {
+        background-color: orange;
+        .orange {
+          color: white;
+        }
+      }
     }
     .planner {
       
       a {
+
         h3 {
           // padding: 8px 0;
         }

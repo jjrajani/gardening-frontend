@@ -8,48 +8,39 @@
   <div class="edit-user">
     <img src="{{vm.user.avatar || '#'}}"> <!-- {{user.avatar}} -->
     <form>
-    <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showEdit" ng-click="vm.submitEdit()"></i>
-        <i class="fa fa-pencil" aria-hidden="true" ng-hide="vm.showEdit" ng-click="vm.edit()"></i>
-        <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showEdit" ng-click="vm.edit()"></i>
+    <p class="control">
+      <label ng-hide="vm.showEdit">{{ vm.user.email }}</label>
+      <input type="email" name="email" ng-show="vm.showEdit" ng-model="vm.user.email" placeholder="New email"> <!--{{user.email}}-->
+    </p>
+    <i class="fa fa-ban" aria-hidden="true" ng-show="vm.showEdit" ng-click="vm.edit()"></i>
       <p class="control">
-        <label>{{ vm.user.email }}</label>
-        <input type="email" name="email" ng-show="vm.showEdit" ng-model="vm.user.email" placeholder="New email"> <!--{{user.email}}-->
-      </p>
-
-      <p class="control">
-        <label> {{vm.user.location}} </label> <!-- {{ user.location }} -->
+        <label ng-hide="vm.showEdit"> {{vm.user.location}} </label> <!-- {{ user.location }} -->
         <input type="text" name="location" ng-show="vm.showEdit" placeholder="City, St" ng-model="vm.user.location">
       </p>
+      <i class="fa fa-check-circle-o" aria-hidden="true" ng-show="vm.showEdit" ng-click="vm.submitEdit()"></i>
+      <i class="fa fa-pencil" aria-hidden="true" ng-hide="vm.showEdit" ng-click="vm.edit()"></i>
     </form>
   </div>
 
   <div class="gardens">
-    <div class="nav l">
-      <p class="title"><span class="green">My</span><span class="orange">Gardens</span></p>
-      <ul>
+    <div class="nav">
+      <!-- <p class="title"><span class="green">{{user.user_name || 'humdrum'}}s</span><span class="orange">Gardens</span></p> -->
+      <ul class="garden-categories">
         <p ng-click="vm.gardenState = 0" ng-class="{active: vm.gardenState === 0}">New Garden</p>
+        <p ng-class="{active: vm.gardenState === 1}" ng-click="vm.gardenState = 1">Active</p>
+        <p ng-click="vm.gardenState = 2" ng-class="{active: vm.gardenState === 2}">Planning</p>
       </ul>
-      <ul>
-        <ul ng-class="{active: vm.gardenState === 1}">
-          <h3 ng-click="vm.gardenState = 1">Active</h3>
-        
-          <li ng-repeat="garden in vm.activeGardens">{{garden.name || 'n/a'}}</li>
-        </ul>
-        <!-- <li ng-show="vm.gardenState === 1" ng-class="{active: vm.gardenSelected === 1}">Vegetables</li>
-        <li ng-show="vm.gardenState === 1" ng-class="{active: vm.gardenSelected === 2}">Herbs</li> -->
-      </ul>
-      <ul>
-        <ul ng-class="{active: vm.gardenState === 2}">
-        <h2 ng-click="vm.gardenState = 2">Planning</h2>
-          <li ng-repeat="garden in vm.planningGardens" ng-click="vm.selectGarden(garden.id)" ng-show="vm.gardenState === 2">{{garden.name || 'n/a'}}</li>
-        </ul>
 
-        <!-- <li ng-show="vm.gardenState === 2" ng-click="vm.gardenSelected = 3" ng-class="{active: vm.gardenSelected === 3}">Winter</li>
-        <li ng-show="vm.gardenState === 2" ng-click="vm.gardenSelected = 4" ng-class="{active: vm.gardenSelected === 4}">Garage</li> -->
+      <ul class="garden-list" ng-show="vm.gardenState === 1">
+        <li ng-repeat="garden in vm.activeGardens">{{garden.name || 'n/a'}}</li>
       </ul>
+      <ul class="garden-list" ng-show="vm.gardenState === 2">
+        <li ng-repeat="garden in vm.planningGardens" ng-click="vm.selectGarden(garden.id)" ng-class="{active: vm.selectedGarden.id === garden.id}">{{garden.name || 'n/a'}}</li>
+      </ul>
+
     </div>
     <div class="new-garden" ng-show='vm.gardenState === 0'>
-          <form class="newGarden" ng-submit="vm.addGarden(garden)">
+          <form class="newGarden">
             <p class="control">
             <label for="name">Garden Name</label>
               <input id="name" type="text" ng-model="garden.name" class="input">
@@ -96,18 +87,13 @@
               <label>Image Upload</label>
               <!--<input type="url" ng-model="vm.garden.image">-->
             </p>
-            <button class="button">Add</button>
           </form>
+          <button ng-click="vm.addGarden(garden)" class="button">Create Garden</button>
         </div>
-    <div class="overview" ng-show="vm.gardenState">
-      <div class="nav">
-      <i class="fa fa-trash" aria-hidden="true" class="deleteGarden" ng-click="vm.deleteGarden(vm.selectedGarden.id)"></i>
-        <p ng-class="{active: vm.overviewTab === 1}" ng-click="vm.overviewTab = 1">Overview</p>
-        <p ng-class="{active: vm.overviewTab === 2}" ng-click="vm.overviewTab = 2">Comment</p>
-      </div>
-
+    <div class="overview-nav-box" ng-show="vm.gardenState">
       <div class="content">
-        <div class="overview borderless" ng-show="vm.overviewTab === 1">
+        <div class="overview" ng-show="vm.overviewTab === 1">
+        <i class="fa fa-trash" aria-hidden="true" class="deleteGarden" ng-click="vm.deleteGarden(vm.selectedGarden.id)"></i>
           <ul>
             <li>
               <p>Name: {{vm.selectedGarden.name}}</p>
@@ -125,11 +111,13 @@
           <img src="#">
         </div>
         <form class="new-comment" ng-show="vm.overviewTab === 2">
+          <label>New Comment</label>
           <p class="control">
-            <textarea placeholder="New Comment"></textarea>
+            <textarea></textarea>
           </p>
+          <label>Tags, comma seperated</label>
           <p class="control">
-            <input type="text" name="tag" placeholder="Tags, comma seperated">
+            <input type="text" name="tag" placeholder="Ex: side yard, garage, front door">
           </p>
           <button class="button">Comment</button>
         </form>
@@ -180,6 +168,10 @@
             </form>
           </li>
         </ul>
+      </div>
+      <div class="nav">
+        <p ng-class="{active: vm.overviewTab === 1}" ng-click="vm.overviewTab = 1">Overview</p>
+        <p ng-class="{active: vm.overviewTab === 2}" ng-click="vm.overviewTab = 2">Comment</p>
       </div>
     </div>
   </div>

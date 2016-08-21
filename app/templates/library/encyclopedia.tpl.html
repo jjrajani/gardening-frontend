@@ -11,16 +11,16 @@
     <!-- V V V -->
 
     <nav>
-<i class="fa fa-bars" aria-hidden="true" ng-click="vm.navOpen = !vm.navOpen"></i>
-<ul ng-show="vm.navOpen"> <!-- This one damnit -->
-  <li ng-class="{active : vm.selected === 1}" ng-click="vm.select(1)">Overview</li>
-  <li ng-class="{active : vm.selected === 2}" ng-click="vm.select(2)">Grow Calendar</li>
-  <li ng-class="{active : vm.selected === 3}" ng-click="vm.select(3)">Starting</li>
-  <li ng-class="{active : vm.selected === 4}" ng-click="vm.select(4)">Spacing</li>
-  <li ng-class="{active : vm.selected === 5}" ng-click="vm.select(5)">Growing</li>
-  <li ng-class="{active : vm.selected === 6}" ng-click="vm.select(6)">Watering</li>
-  <li ng-class="{active : vm.selected === 7}" ng-click="vm.select(7)">Harvesting</li>
-  <li ng-class="{active : vm.selected === 8}" ng-click="vm.select(8)">Common Problems</li>
+<!-- <i class="fa fa-bars" aria-hidden="true" ng-click="vm.navOpen = !vm.navOpen"></i> ng-show="vm.navOpen"-->
+<ul class="chapters"> <!-- This one damnit -->
+  <li ng-class="{active : vm.selected === 1}" ng-click="vm.select(1)"><p>Overview</p></li>
+  <li ng-class="{active : vm.selected === 2}" ng-click="vm.select(2)" ng-hide="true"><p>Grow Calendar</p></li>
+  <li ng-class="{active : vm.selected === 3}" ng-click="vm.select(3)"><p>Starting</p></li>
+  <li ng-class="{active : vm.selected === 4}" ng-click="vm.select(4)" ng-hide="true"><p>Spacing</p></li>
+  <li ng-class="{active : vm.selected === 5}" ng-click="vm.select(5)"><p>Growing</p></li>
+  <li ng-class="{active : vm.selected === 6}" ng-click="vm.select(6)"><p>Watering</p></li>
+  <li ng-class="{active : vm.selected === 7}" ng-click="vm.select(7)"><p>Harvesting</p></li>
+  <li ng-class="{active : vm.selected === 8}" ng-click="vm.select(8)"><p>Common Problems</p></li>
 </ul>
 </nav>
 

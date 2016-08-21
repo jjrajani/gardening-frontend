@@ -1,5 +1,6 @@
 @import 'bulma';
 @import 'joshua';
+@import 'colors';
 
 @import 'layout/layout';
 @import 'home/home';
@@ -17,8 +18,8 @@
 $grey: #F5F7FA;
 $green: #49BF02;
 
-body {
-  background-color: lighten($grey, 2%);
+html, body {
+  background-color: #0f0f0f;
 }
 
 .large {
@@ -79,5 +80,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 40px;
+  width: 100%;
 }

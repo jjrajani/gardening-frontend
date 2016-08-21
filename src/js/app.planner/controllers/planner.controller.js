@@ -1,10 +1,27 @@
-function PlannerController () {
+function PlannerController ($rootScope, GardenService, $cookies) {
 
   let vm = this;
   vm.drop = drop;
   vm.start = start;
+  vm.getNumberArray = getNumberArray
 
   console.log('PlannerController');
+  vm.garden = {};
+
+  function getNumberArray (num) {
+    return new Array(num)
+  }
+
+
+  GardenService.getGardens().then( res => {
+    let id = $cookies.get('current_garden')
+    vm.garden = res.data.filter( garden => {
+      return String(garden.id) === id
+    })
+    vm.rows = vm.garden[0].height
+    vm.spacesInRows = vm.garden[0].width
+    vm.spaceWidth = String(100/vm.spacesInRows) + "%";
+  })
 
   function start(event, ui) {
     $(ui.helper).addClass('clone');
@@ -38,8 +55,14 @@ function PlannerController () {
       $(this).remove();
     }
   });
+
+  // $rootScope.$on('selectedPlantChange', function (event, data) {
+  //   $rootScope.$broadcast('newPlantSelection', data)
+  // })
+
+
 }
 }
 
-PlannerController.$inject = [];
+PlannerController.$inject = ['$rootScope', 'GardenService', '$cookies'];
 export { PlannerController };

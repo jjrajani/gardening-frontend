@@ -1,5 +1,124 @@
-navcard {
-  margin-top: 100px;
+nav-card {
+  .nav-left {
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 100%;
+    a {
+      color: white;
+      &.nav-item{
+        &.is-active {
+          color: $green;
+          border-bottom-color: $orange;
+          &:hover {
+            // border-bottom-color: $orange;
+            // color: $green;
+          }
+        }
+        &:hover {
+          border-bottom-color: $green;
+          color: $orange;
+        }
+      }
+      &.tab {
+        &.is-active {
+        color: $green;
+        border-bottom-color: $orange;
+          &:hover {
+
+          }
+        }
+        &:hover {
+          border-bottom-color: $green;
+        }
+      }
+    }
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      li {
+        margin: 3px 5px;
+        padding: 5px 10px;
+        border: solid 1px $green;
+        border-radius: 4px;
+        color: white;
+      }
+    }
+  }
+  .content {
+    margin-top: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #0f0f0f;
+    .plants {
+      display: flex;
+      width: 100%;
+      height: 131px;
+      margin: 0;
+      padding: 0;
+      overflow: scroll;
+      .plant {
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+        min-width: 100px;
+        margin: 0 10px;
+        padding: 5px;
+        border: solid black 1px;
+        justify-content: space-between;
+        align-items: center;
+        p {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          margin: 0;
+          color: white;
+        }
+        img {
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
+  }
+}
+
+.four {
+  background-color: purple;
+  height: 200px;
+  // width: 200px;
+  border: solid yellow 3px;
+}
+
+.one {
   background-color: blue;
-  max-width: 100px;
+  height: 100px;
+  // width: 100px;
+  border: solid green 3px;
+}
+
+.one-half {
+  background-color: blue;
+  height: 100px;
+  width: 200px;
+  border: solid green 3px;
+}
+
+.one-fourth {
+  background-color: pink;
+  height: 100px;
+  width: 100px;
+  border: solid blue 3px;
+}
+
+.one-ninth {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border: solid black 1px;
 }
