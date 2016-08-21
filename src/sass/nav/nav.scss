@@ -39,12 +39,17 @@ nav-card {
       width: 100%;
       display: flex;
       justify-content: flex-start;
+      background-color: $orange;
+      margin: 3px 0;
       li {
-        margin: 3px 5px;
-        padding: 5px 10px;
-        border: solid 1px $green;
+        margin: 8px 5px;
+        padding: 3px 10px;
+        background-color: $green;
         border-radius: 4px;
         color: white;
+        &.active {
+          background-color: #0f0f0f;
+        }
       }
     }
   }
@@ -54,6 +59,9 @@ nav-card {
     width: 100%;
     z-index: 1;
     background-color: #0f0f0f;
+    &.pad {
+      margin-top: 110px;
+    }
     .plants {
       display: flex;
       width: 100%;
@@ -71,6 +79,13 @@ nav-card {
         border: solid black 1px;
         justify-content: space-between;
         align-items: center;
+        &.four {
+          background-color: pink;
+          z-index: 100;
+          p {
+            display: none;
+          }
+        }
         p {
           width: 100%;
           display: flex;

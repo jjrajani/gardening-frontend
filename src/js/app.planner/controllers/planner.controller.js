@@ -2,7 +2,7 @@ function PlannerController ($rootScope, GardenService, $cookies) {
 
   let vm = this;
   vm.drop = drop;
-  vm.start = start;
+  // vm.start = start;
   vm.getNumberArray = getNumberArray
 
   console.log('PlannerController');
@@ -21,47 +21,58 @@ function PlannerController ($rootScope, GardenService, $cookies) {
     vm.rows = vm.garden[0].height
     vm.spacesInRows = vm.garden[0].width
     vm.spaceWidth = String(100/vm.spacesInRows) + "%";
+    let rowWidth = $('.row')[0].offsetWidth;
+    vm.spaceHeight = String(rowWidth / (vm.spacesInRows)) + "px";
   })
 
-  function start(event, ui) {
-    $(ui.helper).addClass('clone');
-  }
+  $(window).resize( function () {
+    vm.rows = vm.garden[0].height
+    vm.spacesInRows = vm.garden[0].width
+    vm.spaceWidth = String(100/vm.spacesInRows) + "%";
+    let rowWidth = $('.row')[0].offsetWidth;
+    vm.spaceHeight = String(rowWidth / (vm.spacesInRows)) + "px";
+    let spaces = $('.space')
+    spaces.each(space => {
+      spaces[space].style.height = vm.spaceHeight;
+    })
+  })
 
   function drop(event, ui) {
+    console.log(event)
+    let target = $(event.target)
+    console.log('target', target)
+    let space = event.target;
     let clone = ui.helper.clone();
-    $('.garden').append(clone);
+    target.append(clone);
     makeDraggable(clone);
-    console.log(clone);
-    var toMoveX = (clone[0].offsetTop - $('.garden')[0].offsetTop);
-    var toMoveY = (clone[0].offsetLeft - $('.garden')[0].offsetLeft);
-    toMoveX = (Math.floor(toMoveX/100)*100);
-    toMoveY = (Math.floor(toMoveY/100)*100);
-    if (toMoveY === -100) {
-      toMoveY = 0;
-    } // need logic for right side of garden
-    if (toMoveX === -100 ) {
-      toMoveX = 0;
-      // need logic for bottom side of garden
-    }
-    // set aboslute position to grid system
-    clone[0].style.top = String(toMoveX + $('.garden')[0].offsetTop) + 'px';
-    clone[0].style.left = String(toMoveY + $('.garden')[0].offsetLeft) + 'px';
+    console.log('event.target', event.target);
+    console.log('target', target)
+
+
+    let cloneX = clone[0].offsetTop
+    let cloneY = clone[0].offsetLeft
+    let targetX = target[0].offsetTop
+    let targetY = target[0].offsetLeft
+
+    clone[0].style.top = targetX + 'px';
+    clone[0].style.left = targetY + 'px';
   }
 
   function makeDraggable (elem) {
-  $(elem).draggable({
-    cursorAt: {left: 5, top: 5},
-    stop: function (event, ui) {
-      $(this).remove();
-    }
-  });
+    $(elem).draggable({
+      cursorAt: {left: 5, top: 5},
+      stop: function (event, ui) {
+        $(this).remove();
+      }
+    });
+  }
 
   // $rootScope.$on('selectedPlantChange', function (event, data) {
   //   $rootScope.$broadcast('newPlantSelection', data)
   // })
 
 
-}
+// }
 }
 
 PlannerController.$inject = ['$rootScope', 'GardenService', '$cookies'];

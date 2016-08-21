@@ -9,6 +9,7 @@ $rootScope.$on('selectedPlantChange', function (event, data) {
   $rootScope.$broadcast('newPlantSelection', data)
 })
 
+// set draggable objs false
 
 }
 

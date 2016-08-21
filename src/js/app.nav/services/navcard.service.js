@@ -4,6 +4,8 @@ function NavCardService (SERVER, $http) {
   this.singlePlant = singlePlant;
   this.stringify = stringify;
 
+  this.categoryFilter = categoryFilter;
+
   function getPlants () {
     return $http.get(SERVER.URL + 'plants')
   }
@@ -32,6 +34,37 @@ function NavCardService (SERVER, $http) {
     }
     return string
   };
+  /////////////////////
+  // Library Filters
+  /////////////////////
+
+  function categoryFilter (library, category ) {
+    categoryLibrary = library.filter( (plant) => {
+      return plant.category.toLowerCase() === category
+    })
+    return categoryLibrary;
+  }
+
+  function seasonFilter (library, season) {
+    seasonLibrary = library.filter( (plant) => {
+      return  plant.season.toLowerCase() === season
+    })
+  }
+
+  function showAll (plants) {
+    vm.navPlants = plants;
+    vm.filter = 0;
+    vm.setCurrentPlant(vm.navPlants[0]);
+  }
+
+  //////////////////////////////////////////
+  //////////////////////////////////////////
+
+  // Emits
+  ////////////
+  function emitCurrentPlant (plant) {
+    $scope.$emit('selectedPlantChange', vm.current)
+  }
 
 }
 

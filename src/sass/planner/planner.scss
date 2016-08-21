@@ -37,11 +37,6 @@
       width: 90%;
       .space {
         border: solid blue 1px;
-        &:before {
-          content: "";
-          display: block;
-          padding-top: 100%;
-        }
       }
     }
   }

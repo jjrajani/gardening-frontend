@@ -13,7 +13,8 @@
     <div class="plan">
       <div class="garden" layout-wrap>
         <div class="row" ng-repeat="row in vm.getNumberArray(vm.rows) track by $index">
-          <div class="space" ng-repeat="space in vm.getNumberArray(vm.spacesInRows) track by $index" ng-style="{'width': vm.spaceWidth}">
+          <div class="space" ng-repeat="space in vm.getNumberArray(vm.spacesInRows) track by $index" ng-style="{'width': vm.spaceWidth, 'height': vm.spaceHeight}" jqyoui-droppable="{onDrop: 'vm.drop(event, ui)'}"
+          data-jqyoui-options data-drop="true">
           </div>
         </div>
       </div>
