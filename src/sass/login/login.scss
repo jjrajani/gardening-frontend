@@ -1,0 +1,24 @@
+.login {
+  width: 100%;
+  form {
+    margin : 30px auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 10px 2.5%;
+    background-color: #292929;
+    input {
+      margin: 10px 0;
+    }
+    button {
+      width: 100%;
+      &:hover {
+        background-color: $orange;
+        color: white;
+      }
+      &:focus {
+        background-color: $green;
+        color: white;
+      }
+    }
+  }
+}

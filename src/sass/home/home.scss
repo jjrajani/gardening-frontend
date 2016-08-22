@@ -34,12 +34,15 @@ $green: #49BF02;
         font-weight: 600;
         background-color: $green;
         letter-spacing: 0.06;
-        &:hover, &:focus {
+        &:hover {
         background-color: orange;
-        .orange {
-          color: white;
+          .orange {
+            color: white;
+          }
         }
-      }
+        &:focus {
+          background-color: $green;
+        }
       }
     }
     .planner, .library {
@@ -55,10 +58,13 @@ $green: #49BF02;
       }
       a{
       }
-      &:hover, &:focus {
-        background-color: orange;
+      &:hover {
+        background-color: $orange;
         .orange {
           color: white;
+        }
+        p {
+          background-color: $green;
         }
       }
     }
@@ -90,6 +96,20 @@ $green: #49BF02;
           border-radius: 4px;
           color: white;
         }
+      }
+    }
+  }
+  .user {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    button {
+      width: 45%;
+      &:hover {
+        background-color: $orange;
+      }
+      &:focus {
+        background-color: $green;
       }
     }
   }

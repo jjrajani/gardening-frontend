@@ -4,7 +4,7 @@ function NavCardController (NavCardService, $scope) {
   vm.selected = 1;
   vm.setCurrentPlant = setCurrentPlant;
   vm.current = {};
-  vm.showAll = showAll;
+  // vm.showAll = showAll;
   vm.seasonsShowing = false;
   vm.showSeasons = showSeasons;
   vm.start = start;
@@ -36,10 +36,15 @@ function NavCardController (NavCardService, $scope) {
 
     function selectCategory (category) {
       vm.categoryTab = category;
-      vm.categoryLibrary = vm.plants.filter( (plant) => {
-        return plant.category.toLowerCase() === vm.categoryTab;
-      })
-      vm.displayedLibrary = vm.categoryLibrary;
+      vm.selectedSeason = '';
+      if (category === 'library') {
+        vm.displayedLibrary = vm.plants;
+      } else {
+        vm.categoryLibrary = vm.plants.filter( (plant) => {
+          return plant.category.toLowerCase() === vm.categoryTab;
+        })
+        vm.displayedLibrary = vm.categoryLibrary;
+      }
     }
 
     function showSeasons() {
@@ -47,7 +52,6 @@ function NavCardController (NavCardService, $scope) {
       if ( vm.seasonsShowing === false ) {
         vm.displayedLibrary = vm.categoryLibrary;
       }
-      console.log("seasonsShowing", vm.seasonsShowing)
         let content = $('.content');
         let div = $('.encyc-cont');
         let chapters = $('.chapters');
@@ -63,13 +67,6 @@ function NavCardController (NavCardService, $scope) {
       })
       vm.displayedLibrary = vm.seasonLibrary;
     }
-
-  
-  function showAll () {
-    vm.displayedLibrary = vm.plants;
-    vm.categoryTab = 'library';
-    vm.setCurrentPlant(vm.navPlants[0]);
-  }
 ////////////////////////////////////////////////////////////
 /////////////  DragDrop Functions  /////////////////////////
 ////////////////////////////////////////////////////////////
@@ -81,14 +78,39 @@ function NavCardController (NavCardService, $scope) {
 // Size 5 = 9seeds 1sq
 
   function start(event, ui) {
-    let styleClass = NavCardService.stringify(vm.current.size, vm.current.seed_count);
-    $(ui.helper).addClass(styleClass);
-    $(ui.helper).addClass('clone four');
-    let space = $('.space')[0].offsetWidth
-    space = String(space) + 'px';
-    $(ui.helper).css({'width': space, 'height': space})
-  }
+    $(ui.helper).addClass('clone');
+    $(ui.helper).empty()
+    for (var i = 0; i < vm.current.seed_count; i++) {
+      if (vm.current.seed_count === 1) {
+        ui.helper.append(`<p class="seed-one flip">S</p>`);
+      } else if (vm.current.seed_count === 4 || vm.current.seed_count === 2 ) {
+        ui.helper.append(`<p class="seed-two flip">S</p>`);
+      } else if (vm.current.seed_count === 9 ) {
+        ui.helper.append(`<p class="seed-three flip">S</p>`);
+      } else if (vm.current.seed_count === 16 ) {
+        ui.helper.append(`<p class="seed-four flip">S</p>`);
+      }
+    }
+    let spaceWidth = $('.space')[0].offsetWidth
+    let spaceHeight = $('.space')[0].offsetHeight
 
+    if (vm.current.size === 1) { 
+      spaceWidth = spaceWidth; 
+      spaceHeight = spaceHeight;
+    }
+    if (vm.current.size === 2) { 
+      spaceWidth = 2 * spaceWidth;
+      spaceHeight = spaceHeight;
+    }
+    if (vm.current.size === 4) {
+      spaceWidth = 2 * spaceWidth
+      spaceHeight = 2 * spaceHeight;
+    }
+
+    spaceWidth = String(spaceWidth) + 'px';
+
+    $(ui.helper).css({'width': spaceWidth, 'height': spaceHeight})
+  }
   ////////////////////////////////////////////////////////////
   ///////////// END //////////////////////////////////////////
   ////////////////////////////////////////////////////////////

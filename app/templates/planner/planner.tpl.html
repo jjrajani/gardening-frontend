@@ -2,23 +2,23 @@
   <div class="small-screen">
     <p>Our Garden Planner performs best on a large screen.  Tablet or desktop monitor required.</p>
   </div>
-
+  <button class="save" ng-click="">Save Garden</button>
   <div class="big-screen">
 
   <!-- NAV -->
 
   <nav-card></nav-card>
 
-  <!-- <garden-card></garden-card> -->
+  <!-- <garden-card></garden-card> --> 
     <div class="plan">
       <div class="garden" layout-wrap>
         <div class="row" ng-repeat="row in vm.getNumberArray(vm.rows) track by $index">
-          <div class="space" ng-repeat="space in vm.getNumberArray(vm.spacesInRows) track by $index" ng-style="{'width': vm.spaceWidth, 'height': vm.spaceHeight}" jqyoui-droppable="{onDrop: 'vm.drop(event, ui)'}"
-          data-jqyoui-options data-drop="true">
+        {{$index}}
+          <div class="space" ng-repeat="space in vm.getNumberArray(vm.spacesInRows) track by $index" ng-style="{'width': vm.spaceWidth, 'height': vm.spaceHeight}" jqyoui-droppable="{onDrop: 'vm.drop(event, ui, $index)'}"
+          data-jqyoui-options data-drop="true"> {{$index}}
           </div>
         </div>
       </div>
-
     </div>
 
   </div>

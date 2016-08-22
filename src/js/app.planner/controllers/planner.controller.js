@@ -2,8 +2,10 @@ function PlannerController ($rootScope, GardenService, $cookies) {
 
   let vm = this;
   vm.drop = drop;
-  // vm.start = start;
-  vm.getNumberArray = getNumberArray
+  vm.currentPlant = {}
+  vm.getNumberArray = getNumberArray;
+  vm.addPlant = addPlant;
+  vm.plants = [];
 
   console.log('PlannerController');
   vm.garden = {};
@@ -22,8 +24,16 @@ function PlannerController ($rootScope, GardenService, $cookies) {
     vm.spacesInRows = vm.garden[0].width
     vm.spaceWidth = String(100/vm.spacesInRows) + "%";
     let rowWidth = $('.row')[0].offsetWidth;
-    vm.spaceHeight = String(rowWidth / (vm.spacesInRows)) + "px";
+    vm.spaceHeight = String(rowWidth / (vm.spacesInRows))
+    if ( vm.spaceHeight > 120 ) {
+      vm.spaceHeight = "100px"
+      vm.spaceWidth = "100px"
+    }
   })
+
+  function addPlant (plant) {
+    
+  }
 
   $(window).resize( function () {
     vm.rows = vm.garden[0].height
@@ -37,25 +47,24 @@ function PlannerController ($rootScope, GardenService, $cookies) {
     })
   })
 
-  function drop(event, ui) {
-    console.log(event)
+  function drop(event, ui, $index) {
     let target = $(event.target)
-    console.log('target', target)
     let space = event.target;
     let clone = ui.helper.clone();
     target.append(clone);
     makeDraggable(clone);
-    console.log('event.target', event.target);
-    console.log('target', target)
-
-
     let cloneX = clone[0].offsetTop
     let cloneY = clone[0].offsetLeft
     let targetX = target[0].offsetTop
     let targetY = target[0].offsetLeft
-
     clone[0].style.top = targetX + 'px';
     clone[0].style.left = targetY + 'px';
+    console.log("Current plant ID --")
+    console.log(vm.currentPlant.id)
+    console.log("Current Space Target --")
+    console.log(event);
+    console.log("Current garden ID --")
+    console.log(vm.garden[0].id);
   }
 
   function makeDraggable (elem) {
@@ -67,10 +76,9 @@ function PlannerController ($rootScope, GardenService, $cookies) {
     });
   }
 
-  // $rootScope.$on('selectedPlantChange', function (event, data) {
-  //   $rootScope.$broadcast('newPlantSelection', data)
-  // })
-
+  $rootScope.$on('selectedPlantChange', function (event, data) {
+    vm.currentPlant = data;
+  })
 
 // }
 }

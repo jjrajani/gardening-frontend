@@ -24,6 +24,7 @@
   }
   .plan {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 45px 0 0 0;
     padding: 200px 0 0;
@@ -31,13 +32,34 @@
   .garden {
     width: 100%;
     .row {
-      display: flex;
+      max-width: 90%;
       margin: 0 auto;
-      border: solid blue 1px;
-      width: 90%;
+      display: flex;
+      justify-content: center;
       .space {
-        border: solid blue 1px;
+        border: solid 1px $orange;
       }
     }
+  }
+}
+
+.hidden {
+  display: none;
+  visibility: none;
+}
+
+.save {
+  width: 20%;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: $green;
+  color: white;
+  border: solid $green 1px;
+  position: absolute;
+  top: 15px;
+  right: 20%;
+  z-index: 10000;
+  &:hover {
+    background-color: $orange;
   }
 }

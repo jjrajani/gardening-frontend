@@ -26,10 +26,14 @@
     <div class="nav">
       <!-- <p class="title"><span class="green">{{user.user_name || 'humdrum'}}s</span><span class="orange">Gardens</span></p> -->
       <ul class="garden-categories">
-        <p ng-click="vm.gardenState = 0" ng-class="{active: vm.gardenState === 0}">New Garden</p>
+        <p ng-click="vm.clearState()" ng-class="{active: vm.gardenState === 0}">New Garden</p>
         <p ng-class="{active: vm.gardenState === 1}" ng-click="vm.gardenState = 1">Active</p>
         <p ng-click="vm.gardenState = 2" ng-class="{active: vm.gardenState === 2}">Planning</p>
       </ul>
+      <div class="overview-tab" ng-hide="vm.gardenState === 0">
+        <p ng-class="{active: vm.overviewTab === 1}" ng-click="vm.overviewTab = 1">Overview</p>
+        <p ng-class="{active: vm.overviewTab === 2}" ng-click="vm.overviewTab = 2">Comment</p>
+      </div>
 
       <ul class="garden-list" ng-show="vm.gardenState === 1">
         <li ng-repeat="garden in vm.activeGardens">{{garden.name || 'n/a'}}</li>
@@ -49,40 +53,42 @@
             <label for="tags">Garden Tags</label>
               <input id='tags' type="text" placeholder="Comma Seperated" ng-model="garden.tags" class="input">
             </p>
-            <p class="control">
-              <label>Height</label>
-              <span class="select">
-                <select ng-model="garden.height">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-              </span>  
-            </p>
-            <p class="control">
-              <label>Width</label>
-              <span class="select">
-                <select ng-model="garden.width">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                </select>
-              </span>
-            </p>
+            <div class="size">
+              <p class="control">
+                <label>Height</label>
+                <span class="select">
+                  <select ng-model="garden.height">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </span>  
+              </p>
+              <p class="control">
+                <label>Width</label>
+                <span class="select">
+                  <select ng-model="garden.width">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                  </select>
+                </span>
+              </p>
+            </div>
             <p class="control">
               <label>Image Upload</label>
               <!--<input type="url" ng-model="vm.garden.image">-->
@@ -96,19 +102,21 @@
         <i class="fa fa-trash" aria-hidden="true" class="deleteGarden" ng-click="vm.deleteGarden(vm.selectedGarden.id)"></i>
           <ul>
             <li>
-              <p>Name: {{vm.selectedGarden.name}}</p>
+              <p><span class="tag">Name:</span> {{vm.selectedGarden.name}}</p>
             </li>
             <li>
-              <p><span>H: </span>{{vm.selectedGarden.height}}ft</p> <!-- {{garden.height}} -->
-              <p><span>W: </span>{{vm.selectedGarden.width}}ft</p> <!-- {{garden.width}} -->
+              <p><span class="tag">H:</span> {{vm.selectedGarden.height}}ft</p> <!-- {{garden.height}} -->
+              <p><span class="tag">W:</span> {{vm.selectedGarden.width}}ft</p> <!-- {{garden.width}} -->
             </li>
             <li>
-              <p>Tags: {{vm.selectedGarden.tags}}</p> <!-- {{garden.tags}} -->
+              <p><span class="tag">Tags:</span> {{vm.selectedGarden.tags}}</p> <!-- {{garden.tags}} -->
             </li>
           </ul>
-          <img src="#">
-          <img src="#">
-          <img src="#">
+          <div class="imgs">
+            <img src="#">
+            <img src="#">
+            <img src="#">
+          </div>
         </div>
         <form class="new-comment" ng-show="vm.overviewTab === 2">
           <label>New Comment</label>
@@ -168,10 +176,6 @@
             </form>
           </li>
         </ul>
-      </div>
-      <div class="nav">
-        <p ng-class="{active: vm.overviewTab === 1}" ng-click="vm.overviewTab = 1">Overview</p>
-        <p ng-class="{active: vm.overviewTab === 2}" ng-click="vm.overviewTab = 2">Comment</p>
       </div>
     </div>
   </div>

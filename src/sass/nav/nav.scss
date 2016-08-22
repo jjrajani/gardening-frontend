@@ -79,13 +79,6 @@ nav-card {
         border: solid black 1px;
         justify-content: space-between;
         align-items: center;
-        &.four {
-          background-color: pink;
-          z-index: 100;
-          p {
-            display: none;
-          }
-        }
         p {
           width: 100%;
           display: flex;
@@ -103,37 +96,42 @@ nav-card {
   }
 }
 
-.four {
-  background-color: purple;
-  height: 200px;
-  // width: 200px;
-  border: solid yellow 3px;
+.clone {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $green;
+  position: relative;
 }
 
-.one {
-  background-color: blue;
-  height: 100px;
-  // width: 100px;
-  border: solid green 3px;
-}
-
-.one-half {
-  background-color: blue;
-  height: 100px;
-  width: 200px;
-  border: solid green 3px;
-}
-
-.one-fourth {
-  background-color: pink;
-  height: 100px;
-  width: 100px;
-  border: solid blue 3px;
-}
-
-.one-ninth {
-  width: 100px;
-  height: 100px;
-  background-color: orange;
+.seed-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   border: solid black 1px;
+  color: white;
+}
+.seed-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border: solid black 1px;
+  color: white;
+}
+.seed-three {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.333%;
+  border: solid black 1px;
+  color: white;
+}
+.seed-four {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  border: solid black 1px;
+  color: white;
 }

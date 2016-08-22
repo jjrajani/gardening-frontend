@@ -1,7 +1,7 @@
 <nav class="nav-top has-shadow">
   <div class="container">
     <div class="nav-left">
-      <a class="nav-item is-tab category" ng-click="vm.showAll()" ng-class="{'is-active': vm.categoryTab === 'library'}">Library</a>
+      <a class="nav-item is-tab category" ng-click="vm.selectCategory('library')" ng-class="{'is-active': vm.categoryTab === 'library'}">Library</a>
       <a class="nav-item is-tab" ng-click="vm.selectCategory('vegetable')"  ng-class="{'is-active': vm.categoryTab === 'vegetable'}">Vegetables</a>
       <a class="nav-item is-tab" ng-click="vm.selectCategory('herb')"  ng-class="{'is-active': vm.categoryTab === 'herb'}">Herbs</a>
       <a class="nav-item is-tab" ng-click="vm.showSeasons()"  ng-class="{'is-active': vm.seasonsShowing}">Season</a>
