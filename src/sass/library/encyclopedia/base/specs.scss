@@ -1,7 +1,7 @@
 // base specs
 
 .specs {
-  margin: 47px 0 0 0;
+  margin: 17px 0 0 0;
   width: 100%;
   padding: 10px 2.5%;
   // shadowing
@@ -9,6 +9,7 @@
   box-shadow: 2px 2px 3px rgba(17, 17, 17, 0.1),
               -2px -2px 3px rgba(17, 17, 17, 0.1);
   .title {
+    position: fixed;
     width: 100%;
     color: white;
     margin: 0 0 0 0;

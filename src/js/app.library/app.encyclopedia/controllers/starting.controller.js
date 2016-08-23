@@ -6,7 +6,6 @@ function StartingController ($rootScope) {
 
   $rootScope.$on('newPlantSelection', function (event, data) {
     vm.plant = data;
-    console.log(data)
   })
 
 };

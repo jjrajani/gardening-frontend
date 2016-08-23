@@ -23,7 +23,6 @@ function SpacingController ($rootScope) {
   }
 
   function sqRoot(num) {
-    console.log(Math.pow(num, 0.5));
     return Math.pow(num, 0.5);
   }
 

@@ -1,21 +1,18 @@
-<div class="imgs">
-  <img src="{{vm.plant.image}}">
-</div>
-<h3 class="title">Overveiw</h3>
+<h3 class="title">{{vm.plant.name || 'Select a Plant'}}</h3>
 <div class="specs">
-  <ul><p class="subtitle">Botanical Info</p>
-    <li><span class="tag">Family:</span> {{vm.plant.family || 'update database'}}</li>
-    <li><span class="tag">Height:</span> {{vm.plant.height || 'update database'}}</li>
-    <li><span class="tag">Hardy:</span> {{vm.plant.hardy || 'update database'}}</li>
+  <ul><p class="subtitle">Botanical Info:</p>
+    <li><span class="tag">Family:</span> {{vm.plant.family || 'Tomato'}}</li>
+    <li><span class="tag">Height:</span> {{vm.plant.height || '5ft'}}</li>
+    <li><span class="tag">Hardy:</span> {{vm.plant.hardy || 'Summer Only'}}</li>
   </ul>
-  <li><span class="tag">Spacing:</span> {{vm.plant.seed_count || 'update database'}} Seed{{vm.plant.seed_count > 1 ? 's' : ''}} per Space</li>
+  <li><span class="tag">Spacing:</span> {{vm.plant.seed_count ? vm.plant.seed_count + 'Seed' : ""}} {{vm.plant.seed_count ? vm.plant.seed_count > 1 ? 's per Space' : 'per Space' : 'some feet'}}</li>
   <ul>
     <li>
-      <span class="tag">Growing Season(s):</span> {{vm.plant.season}}
+      <span class="tag">Growing Season(s):</span> {{vm.plant.season || Season}}
     </li>
   </ul>
-  <li><span class="tag">Seed to Harvest:</span> {{vm.plant.maturity}} weeks</li>
-  <li><span class="tag">Seed Store:</span> {{vm.plant.seed_store || "update database"}} Years</li>
+  <li><span class="tag">Seed to Harvest:</span> {{vm.plant.maturity ? vm.plant.maturity + 'Weeks' : '12'}}</li>
+  <li><span class="tag">Seed Store:</span> {{vm.plant.seed_store ? vm.plant.seed_store + 'Years' : '3'}}</li>
 </div>
 <div class="content">
   <li class="subtitle">Desription:</li>

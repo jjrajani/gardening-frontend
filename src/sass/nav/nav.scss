@@ -1,11 +1,13 @@
 nav-card {
+  position: fixed;
+  min-width: 100%;
   .nav-left {
     border-top: solid black 2px;
     border-bottom: solid black 2px;
     display: flex;
     flex-wrap: wrap;
-    position: fixed;
     width: 100%;
+    letter-spacing: 0.08em;
     a {
       color: white;
       &.nav-item{
@@ -36,35 +38,35 @@ nav-card {
       }
     }
     ul {
-      width: 100%;
+      min-width: 100%;
       display: flex;
       justify-content: flex-start;
-      background-color: $orange;
-      margin: 3px 0;
+      border-top: solid 1px $green;
+      border-bottom: solid 1px $green;
+      margin: 0;
       li {
-        margin: 8px 5px;
+        margin: 0;
         padding: 3px 10px;
-        background-color: $green;
-        border-radius: 4px;
+        background-color: #0f0f0f;
         color: white;
+        letter-spacing: 0.08em;
         &.active {
-          background-color: #0f0f0f;
+          background-color: $green;
+        }
+        &:hover {
+          background-color: $orange;
         }
       }
     }
   }
   .content {
-    margin-top: 60px;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
+    min-width: 100%;
     background-color: #0f0f0f;
-    &.pad {
-      margin-top: 110px;
-    }
+    margin: 20px 0;
+    border-bottom: solid black 1px;
     .plants {
       display: flex;
-      width: 100%;
+      min-width: 100%;
       height: 131px;
       margin: 0;
       padding: 0;

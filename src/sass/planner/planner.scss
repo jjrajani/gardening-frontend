@@ -11,23 +11,15 @@
     display: none;
     visibility: hidden;
   }
-
-.nav-top {
-    position: fixed;
-    width: 100%;
-    background-color: white;
-    z-index: 100;
-    .container {
-      border-top: solid #ccc 1px;
-      border-radius: 10px;
-    }
-  }
   .plan {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 45px 0 0 0;
-    padding: 200px 0 0;
+    padding: 218px 0 0;
+    &.plan-pad {
+      padding: 265px 0 0;
+    }
   }
   .garden {
     width: 100%;

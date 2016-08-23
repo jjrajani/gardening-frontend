@@ -1,8 +1,4 @@
-function EncyclopediaCardController ($scope) {
-
-  console.log($scope);
-  
-  console.log('EncyclopediaCardController')
+function EncyclopediaCardController ($rootScope) {
 
   let vm = this;
   vm.select = select;
@@ -13,8 +9,12 @@ function EncyclopediaCardController ($scope) {
     vm.navOpen = false;
   }
 
+$rootScope.$on('newPlantSelection', function (event, data) {
+    vm.plant = data;
+  })
+
   // emit here
 }
 
-EncyclopediaCardController.$inject = ['$scope'];
+EncyclopediaCardController.$inject = ['$rootScope'];
 export { EncyclopediaCardController };

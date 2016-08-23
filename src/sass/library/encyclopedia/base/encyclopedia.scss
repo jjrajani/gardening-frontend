@@ -12,17 +12,27 @@
 
 .encyclopedia {
   display: flex;
-  box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
+  // box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
   background-color: #0f0f0f;
   border: solid 1px rgba(17, 17, 17, 0.3);
   border-radius: 4px;
   width: 100%;
-  margin-top: 170px;
+  margin-top: 212px;
   position: fixed;
-  .chap-pad {
-    margin-top: 50px;
+  
+  .chapters {
+   
+    
   }
-  .encyc-cont {
-    margin-top: 47px;
-  }
+  #sticker {
+
+    }
+    .stick {
+      position: fixed;
+      top: 500px;
+    }
 }
+
+.chap-pad {
+    margin-top: 250px;
+  }

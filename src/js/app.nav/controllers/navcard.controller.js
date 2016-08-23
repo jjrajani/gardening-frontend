@@ -52,12 +52,13 @@ function NavCardController (NavCardService, $scope) {
       if ( vm.seasonsShowing === false ) {
         vm.displayedLibrary = vm.categoryLibrary;
       }
-        let content = $('.content');
         let div = $('.encyc-cont');
-        let chapters = $('.chapters');
+        let encyclopedia = $('.encyclopedia');
+        let planner = $('.plan');
+        planner.toggleClass('plan-pad')
         div.toggleClass('ency-pad');
-        content.toggleClass('pad');
-        content.toggleClass('chap-pad')
+        encyclopedia.toggleClass('chap-pad');
+
     }
 
     function selectSeason (season) {

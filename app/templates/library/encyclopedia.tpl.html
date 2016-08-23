@@ -2,9 +2,6 @@
 
   <div class="encyclopedia">
     <div class="content">
-    <div class="title">
-      <h3 class="title-r">{{current}}</h3>
-    </div>
     <!-- <encyc-nav-card></encyc-nav-card> -->
     <!-- Need help linking the selected tab between the nav and the following ul -->
     <!-- | | | -->
@@ -12,7 +9,7 @@
 
     <nav>
 <!-- <i class="fa fa-bars" aria-hidden="true" ng-click="vm.navOpen = !vm.navOpen"></i> ng-show="vm.navOpen"-->
-<ul class="chapters"> <!-- This one damnit -->
+<ul id="sticker" class="chapters"> <!-- This one damnit -->
   <li ng-class="{active : vm.selected === 1}" ng-click="vm.select(1)"><p>Overview</p></li>
   <li ng-class="{active : vm.selected === 2}" ng-click="vm.select(2)" ng-hide="true"><p>Grow Calendar</p></li>
   <li ng-class="{active : vm.selected === 3}" ng-click="vm.select(3)"><p>Starting</p></li>
@@ -23,8 +20,7 @@
   <li ng-class="{active : vm.selected === 8}" ng-click="vm.select(8)"><p>Common Problems</p></li>
 </ul>
 </nav>
-
-    <div class="overview encyc-cont" ng-show="vm.selected === 1">
+    <div class="overview" ng-show="vm.selected === 1">
       <overview-card plant="vm.current"></overview-card>
     </div>
 
