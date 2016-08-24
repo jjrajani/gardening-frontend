@@ -55,7 +55,7 @@ function PlannerController ($rootScope, GardenService, $cookies, PlannerService)
                 let seedHTML = `<li class="plant clone">`;
                 for (var c = 0; c < spacePlant[0].seed_count; c++) {
                   let seedClass = PlannerService.stringify(spacePlant[0].seed_count)
-                  seedHTML += `<p style="height: ${size}; width: ${size};" class="${seedClass}">${spacePlant[0].seed_count}</p>`
+                  seedHTML += `<p style="height: ${size}; width: ${size};" class="${seedClass}">s</p>`
                 }
                 seedHTML += "</li>"
                 dom_spaces[b].innerHTML = seedHTML;

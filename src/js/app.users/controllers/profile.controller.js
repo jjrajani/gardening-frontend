@@ -3,8 +3,8 @@ function ProfileController (GardenService, ProfileService, UserService, $state, 
   let vm = this;
 
   
-  vm.gardenState = 1;
-  vm.overviewTab = 1;
+  vm.gardenState = 0;
+  vm.overviewTab = 0;
   // this toggles from 0 to >0 to show comments
   vm.gardenComments = 0;
 
