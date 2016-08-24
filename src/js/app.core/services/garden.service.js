@@ -4,6 +4,7 @@ function GardenService (SERVER, $http, UserService) {
   this.getGardens = getGardens;
   this.getGarden = getGarden;
   this.saveGarden = saveGarden;
+  this.getSpaces = getSpaces;
 
   function createGarden (garden) {
     return $http.post(SERVER.URL + 'gardens', garden, UserService.headers())
@@ -18,9 +19,14 @@ function GardenService (SERVER, $http, UserService) {
   }
 
   function saveGarden (id, spaces) {
-    // let url = `${SERVER.URL}gardens/${id}/spaces`;
     return $http.put(SERVER.URL + 'gardens/' + id + '/spaces', {spaces: spaces}, UserService.headers())
   }
+
+  function getSpaces ( id ) {
+    // console.log("ID ____ ", id)
+    return $http.get(SERVER.URL + 'gardens/'+  id + '/spaces', UserService.headers())
+  }
+
 
 }
 

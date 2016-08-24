@@ -1,6 +1,6 @@
 <div class="profile wrapper">
   <div class="user-info">
-    <p class="subtitle">{{vm.user.username || 'humdrum'}}</p> <!-- {{ user.username }} -->
+    <p class="subtitle">{{vm.user.username || 'n/a'}}</p> <!-- {{ user.username }} -->
     <p class="subtitle lg-sc">Active Gardens: {{vm.activeGardens.length}}</p> <!-- {{ user.gardens.active }} -->
     <p class="subtitle">Gardening Since: {{vm.user.created_at.split('-')[0]}}</p> <!-- {{ user.created_at }} -->
   </div>
@@ -22,15 +22,15 @@
     </form>
   </div>
 
-  <div class="gardens">
+  <div class="garden-nav">
     <div class="nav">
       <!-- <p class="title"><span class="green">{{user.user_name || 'humdrum'}}s</span><span class="orange">Gardens</span></p> -->
       <ul class="garden-categories">
         <p ng-click="vm.clearState()" ng-class="{active: vm.gardenState === 0}">New Garden</p>
-        <p ng-class="{active: vm.gardenState === 1}" ng-click="vm.gardenState = 1">Active</p>
-        <p ng-click="vm.gardenState = 2" ng-class="{active: vm.gardenState === 2}">Planning</p>
+        <p ng-class="{active: vm.gardenState === 1}" ng-click="vm.gardenState = 1">Gardens</p>
+        <!-- <p ng-click="vm.gardenState = 2" ng-class="{active: vm.gardenState === 2}">Planning</p> -->
       </ul>
-      <div class="overview-tab" ng-hide="vm.gardenState === 0">
+      <!-- <div class="overview-tab" ng-hide="vm.gardenState === 0">
         <p ng-class="{active: vm.overviewTab === 1}" ng-click="vm.overviewTab = 1">Overview</p>
         <p ng-class="{active: vm.overviewTab === 2}" ng-click="vm.overviewTab = 2">Comment</p>
       </div>
@@ -40,144 +40,90 @@
       </ul>
       <ul class="garden-list" ng-show="vm.gardenState === 2">
         <li ng-repeat="garden in vm.planningGardens" ng-click="vm.selectGarden(garden.id)" ng-class="{active: vm.selectedGarden.id === garden.id}">{{garden.name || 'n/a'}}</li>
-      </ul>
+      </ul> -->
 
     </div>
     <div class="new-garden" ng-show='vm.gardenState === 0'>
-          <form class="newGarden">
+        <form class="newGarden">
+          <p class="control">
+          <label for="name">Garden Name</label>
+            <input id="name" type="text" ng-model="garden.name" class="input">
+          </p>
+          <p class="control">
+          <label for="tags">Garden Tags</label>
+            <input id='tags' type="text" placeholder="Comma Seperated" ng-model="garden.tags" class="input">
+          </p>
+          <div class="size">
             <p class="control">
-            <label for="name">Garden Name</label>
-              <input id="name" type="text" ng-model="garden.name" class="input">
+              <label>Height</label>
+              <span class="select">
+                <select ng-model="garden.height">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </span>  
             </p>
             <p class="control">
-            <label for="tags">Garden Tags</label>
-              <input id='tags' type="text" placeholder="Comma Seperated" ng-model="garden.tags" class="input">
+              <label>Width</label>
+              <span class="select">
+                <select ng-model="garden.width">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                </select>
+              </span>
             </p>
-            <div class="size">
-              <p class="control">
-                <label>Height</label>
-                <span class="select">
-                  <select ng-model="garden.height">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                  </select>
-                </span>  
-              </p>
-              <p class="control">
-                <label>Width</label>
-                <span class="select">
-                  <select ng-model="garden.width">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                  </select>
-                </span>
-              </p>
-            </div>
-            <p class="control">
-              <label>Image Upload</label>
-              <!--<input type="url" ng-model="vm.garden.image">-->
-            </p>
-          </form>
-          <button ng-click="vm.addGarden(garden)" class="button">Create Garden</button>
-        </div>
-    <div class="overview-nav-box" ng-show="vm.gardenState">
-      <div class="content">
-        <div class="overview" ng-show="vm.overviewTab === 1">
-        <i class="fa fa-trash" aria-hidden="true" class="deleteGarden" ng-click="vm.deleteGarden(vm.selectedGarden.id)"></i>
-          <ul>
-            <li>
-              <p><span class="tag">Name:</span> {{vm.selectedGarden.name}}</p>
-            </li>
-            <li>
-              <p><span class="tag">H:</span> {{vm.selectedGarden.height}}ft</p> <!-- {{garden.height}} -->
-              <p><span class="tag">W:</span> {{vm.selectedGarden.width}}ft</p> <!-- {{garden.width}} -->
-            </li>
-            <li>
-              <p><span class="tag">Tags:</span> {{vm.selectedGarden.tags}}</p> <!-- {{garden.tags}} -->
-            </li>
-          </ul>
-          <div class="imgs">
-            <img src="#">
-            <img src="#">
-            <img src="#">
           </div>
-        </div>
-        <form class="new-comment" ng-show="vm.overviewTab === 2">
-          <label>New Comment</label>
           <p class="control">
-            <textarea></textarea>
+            <label>Image Upload</label>
+            <!--<input type="url" ng-model="vm.garden.image">-->
           </p>
-          <label>Tags, comma seperated</label>
-          <p class="control">
-            <input type="text" name="tag" placeholder="Ex: side yard, garage, front door">
-          </p>
-          <button class="button">Comment</button>
         </form>
-        <ul class="comments" ng-show="vm.gardenComments > 0">
-          <li class="comment">
-            <p class="date">5.17.16</p>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-            <i class="fa fa-pencil-square" aria-hidden="true" ng-class="{hidden: vm.editComment === true }" ng-click="vm.editComment = !vm.editComment" ng-hide="vm.overviewTab === 1"></i>
-              <i class="fa fa-trash" aria-hidden="true" ng-hide="vm.overviewTab === 1"></i>
-              <i class="fa fa-check" aria-hidden="true" ng-class="{hidden: vm.editComment === false }" ng-click="vm.editComment = !vm.editComment" ng-hide="vm.overviewTab === 1"></i>
-            <form>
-              <p class="control">
-                 <!-- {{user.garden.comment}} -->
-                <textarea ng-show="vm.editComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </textarea>
-              </p>
-            </form>
-          </li>
-          <li class="comment">
-            <p class="date">5.17.16</p>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-            <i class="fa fa-pencil-square" aria-hidden="true" ng-class="{hidden: vm.editComment === true }" ng-click="vm.editComment = !vm.editComment" ng-hide="vm.overviewTab === 1"></i>
-              <i class="fa fa-trash" aria-hidden="true" ng-hide="vm.overviewTab === 1"></i>
-              <i class="fa fa-check" aria-hidden="true" ng-class="{hidden: vm.editComment === false }" ng-click="vm.editComment = !vm.editComment" ng-hide="vm.overviewTab === 1"></i>
-            <form>
-              <p class="control">
-                 <!-- {{user.garden.comment}} -->
-                <textarea ng-show="vm.editComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </textarea>
-              </p>
-            </form>
-          </li>
-          <li class="comment">
-            <p class="date">5.17.16</p>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-            <i class="fa fa-pencil-square" aria-hidden="true" ng-class="{hidden: vm.editComment === true }" ng-click="vm.editComment = !vm.editComment" ng-hide="vm.overviewTab === 1"></i>
-              <i class="fa fa-trash" aria-hidden="true" ng-hide="vm.overviewTab === 1"></i>
-              <i class="fa fa-check" aria-hidden="true" ng-class="{hidden: vm.editComment === false }" ng-click="vm.editComment = !vm.editComment" ng-hide="vm.overviewTab === 1"></i>
-            <form>
-              <p class="control">
-                 <!-- {{user.garden.comment}} -->
-                <textarea ng-show="vm.editComment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </textarea>
-              </p>
-            </form>
+      <button ng-click="vm.addGarden(garden)" class="button">Create Garden</button>
+    </div>
+    <div class="gardens" ng-show='vm.gardenState === 1'>
+      <div class="garden" ng-repeat="garden in vm.gardens">
+        <div class="top">
+          <h3 class="title">{{garden.name}}</h3>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+          <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editGarden(garden.id)"></i>
+          <p class="created">
+            <span class="bold">Planted</span>{{vm.dateStringify(garden.created_at)}}
+          </p>
+        </div>
+        <h5 class="subtitle">{{garden.tags}}</h5>
+        <p><span class="dimensions">Plot Deminsion: </span><span class="width">Width: {{garden.width}}</span><span class="height">Height: {{garden.height}}</span></p>
+        <p><span class="size">Plot Size: </span>{{vm.sqFt(garden.height, garden.width)}} square feet</p>
+        <ul class="plants">
+          <li ng-repeat="plant in garden.plants">
+            {{plant.name}}
+            {{plant}}
+            <h2>Hello</h2>
           </li>
         </ul>
       </div>
     </div>
+
+
+
+
+
+    
   </div>
 
 </div>

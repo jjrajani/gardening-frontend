@@ -77,7 +77,6 @@ function NavCardController (NavCardService, $scope) {
 // Size 3 = 1seed 1sq
 // Size 4 = 4seeds 1sq
 // Size 5 = 9seeds 1sq
-
   function start(event, ui) {
     $(ui.helper).addClass('clone');
     $(ui.helper).empty()
@@ -92,8 +91,8 @@ function NavCardController (NavCardService, $scope) {
         ui.helper.append(`<p class="seed-four flip">S</p>`);
       }
     }
-    let spaceWidth = $('.space')[0].offsetWidth
-    let spaceHeight = $('.space')[0].offsetHeight
+    let spaceWidth = $('.space-1')[0].offsetWidth
+    let spaceHeight = $('.space-1')[0].offsetHeight
 
     if (vm.current.size === 1) { 
       spaceWidth = spaceWidth; 
@@ -109,7 +108,6 @@ function NavCardController (NavCardService, $scope) {
     }
 
     spaceWidth = String(spaceWidth) + 'px';
-
     $(ui.helper).css({'width': spaceWidth, 'height': spaceHeight})
   }
   ////////////////////////////////////////////////////////////

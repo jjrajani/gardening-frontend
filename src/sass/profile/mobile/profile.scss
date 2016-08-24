@@ -24,7 +24,6 @@
       align-items: center;
       padding: 20px 0;
       background-color: #0f0f0f;
-      border-bottom: solid white 1px;
       img {
         width: 20%;
         height: 80px;
@@ -76,16 +75,16 @@
         }
       }
     }
-    .gardens {
+    .garden-nav {
       flex-direction: column;
       margin-top: 170px;
-      position: fixed;
       width: 100%;
       margin: 178px 0 0 0;
       .nav {
         display: flex;
         flex-wrap: wrap;
         background-color: #0f0f0f;
+        position: fixed;
         // .title {
         //   position: fixed;
         //   background-color: white;
@@ -106,7 +105,6 @@
           color: white;
           border-top: solid $green 1px;
           border-bottom: solid $green 1px;
-          margin-top: 13px;
           p {
             padding: 3px 10px;
             letter-spacing: 0.08em;
@@ -321,6 +319,82 @@
               }
             }
           }
+        }
+      }
+    }
+    .gardens {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      width: 90%;
+      margin: 20px auto;
+      padding: 10px 2.5%;
+      background-color: #020202;
+      border-radius: 10px;
+      .garden {
+        width: 90%;
+        margin: 20px auto;
+        border: solid #0f0f0f;
+        &:hover, &:focus {
+          .title {
+            background-color: $green;
+          }
+          &:nth-child(n) {
+            border-bottom: solid 1px $orange;
+          }
+        }
+        .top {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .title {
+            border: solid $green 1px;
+            width: 80%;
+            color: white;
+            padding: 10px;
+            margin: 0;
+          }
+          i {
+            width: 10%;
+            border: solid $orange 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.fa-pencil {
+              color: #020202;
+              background-color: $orange;
+              &:hover {
+                color: $orange;
+                background-color: #020202;
+              }
+            }
+            &.fa-trash {
+              color: $orange;
+              &:hover {
+                color: $green;
+                background-color: red;
+              }
+            }
+          }
+          .created{
+            display: flex;
+            justify-content: flex-end;
+            align-content: flex-start;
+            color: white;
+            width: 100%;
+            .bold {
+              padding: 0 5px 0 0;
+            }
+          }
+        }
+        .subtitle {
+          width: 100%;
+          display: flex;
+          border: solid 1px #020202;
+          color: white;
         }
       }
     }

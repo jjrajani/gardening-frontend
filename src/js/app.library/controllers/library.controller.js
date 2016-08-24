@@ -9,9 +9,6 @@ $rootScope.$on('selectedPlantChange', function (event, data) {
   $rootScope.$broadcast('newPlantSelection', data)
 })
 
-let sticker = $('#sticker');
-console.log(sticker)
-
 // set draggable objs false
 
 }

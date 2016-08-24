@@ -9,8 +9,9 @@ function EncyclopediaCardController ($rootScope) {
     vm.navOpen = false;
   }
 
-$rootScope.$on('newPlantSelection', function (event, data) {
+  $rootScope.$on('newPlantSelection', function (event, data) {
     vm.plant = data;
+    console.log(data)
   })
 
   // emit here

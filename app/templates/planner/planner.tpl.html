@@ -12,8 +12,8 @@
   <!-- <garden-card></garden-card> --> 
     <div class="plan">
       <div class="garden" layout-wrap>
-        <div class="row" ng-repeat="row in vm.getNumberArray(vm.rows) track by $index" ng-init="vm.gardenRow = $index" ng-attr-id="{{$index + 1}}">
-          <div class="space" ng-repeat="space in vm.getNumberArray(vm.spacesInRows) track by $index" ng-init="vm.gardenSpace = $index" ng-style="{'width': vm.spaceWidth, 'height': vm.spaceHeight}" jqyoui-droppable="{onDrop: 'vm.drop(event, ui, row, space)'}"
+        <div class="row-{{ $index+1 }}" ng-repeat="row in vm.getNumberArray(vm.rows) track by $index" ng-init="vm.gardenRow = $index" ng-attr-id="{{$index + 1}}">
+          <div class="space-{{ $index+1 }}" ng-repeat="space in vm.getNumberArray(vm.spacesInRows) track by $index" ng-init="vm.gardenSpace = $index" ng-style="{'width': vm.spaceWidth, 'height': vm.spaceHeight}" jqyoui-droppable="{onDrop: 'vm.drop(event, ui, row, space)'}"
           data-jqyoui-options data-drop="true" ng-attr-id="{{$index + 1}}">
           </div>
         </div>

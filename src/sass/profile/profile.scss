@@ -8,19 +8,13 @@
   .user-info {
     display: flex;
   }
-  .gardens {
+  .garden-nav {
     display: flex;
     .nav.l {
       display: flex;
     }
     .new-garden {
       display: flex;    
-    }
-  }
-  .overview {
-    position: relative;
-    i.fa-trash { 
-      position: absolute;
     }
   }
 }

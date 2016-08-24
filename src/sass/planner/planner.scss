@@ -16,20 +16,21 @@
     flex-direction: column;
     justify-content: center;
     margin: 45px 0 0 0;
-    padding: 218px 0 0;
-    &.plan-pad {
-      padding: 265px 0 0;
-    }
+    padding: 20px 0 0;
   }
   .garden {
     width: 100%;
-    .row {
+    .row-1, .row-2, .row-3 {
       max-width: 90%;
       margin: 0 auto;
       display: flex;
       justify-content: center;
-      .space {
+      .space-1, .space-2, .space-3, .space-4,
+      .space-5, .space-5, .space-7, .space-8, 
+      .space-9, .space-10, .space-11, .space-12, 
+      .space-13, .space-14, .space-15, .space-16 {
         border: solid 1px $orange;
+        font-size: 0.8em;
       }
     }
   }
