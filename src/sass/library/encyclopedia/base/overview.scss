@@ -10,11 +10,13 @@
       position: fixed;
       width: 100%;
       color: white;
+      font-weight: 600;
       margin: 0;
       padding: 5px 5%;
       text-align: right;
       background-color: $green;
       letter-spacing: 0.08em;
+      border-bottom: solid 1px $orange;
     }
   }
   p {
@@ -52,13 +54,17 @@
       border-bottom: solid 1px $orange;
     }
     .tag {
-      width: 150px;
+      width: 175px;
       margin: 5px 10px 5px 5px;
-      background-color: $green;
       color: white;
       font-weight: 600;
       letter-spacing: 0.08;
-      font-size: 1em;
+      font-size: 1.05em;
+      border-radius: 0;
+      background-color: #0f0f0f;
+      color: white;
+      border-bottom: solid 1px orange;
+      justify-content: flex-end;
     }
   }
   .content {
@@ -68,7 +74,6 @@
       margin: 0 0 20px 0;
       background-color: #0f0f0f;
       border-bottom: solid 1px $orange;
-      color: white;
     }
     li {
       width: 100%;

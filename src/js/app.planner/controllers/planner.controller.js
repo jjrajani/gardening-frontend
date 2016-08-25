@@ -18,10 +18,13 @@ function PlannerController ($rootScope, GardenService, $cookies, PlannerService)
     return new Array(num)
   }
 
-  function init() {
+  function init_plants() {
     PlannerService.getPlants().then(res => {
       vm.plantsInLibrary = res.data
+      init_gardens()
     })
+  }
+  function init_gardens () {
     GardenService.getGardens().then( res => {
       vm.gardenId = $cookies.get('current_garden')
       vm.garden = res.data.filter( garden => {
@@ -36,41 +39,44 @@ function PlannerController ($rootScope, GardenService, $cookies, PlannerService)
         vm.spaceHeight = "100px"
         vm.spaceWidth = "100px"
       }
-      GardenService.getSpaces(vm.gardenId).then( res => {
-        vm.currentPlants = res.data;
-        if (vm.currentPlants.length > 0) {
-          for (var a = 0; a < vm.currentPlants.length; a++) {
-            let spacePlant = vm.plantsInLibrary.filter( (plant) => {
-              return vm.currentPlants[a].plant_id === plant.id;
-            })
-            let gardenRow = PlannerService.row(vm.currentPlants[a].dom_id);
-            let gardenSpace = PlannerService.space(vm.currentPlants[a].dom_id);
-            let dom_row = $('.row-' + gardenRow);
-            let dom_space = $('.space-' + gardenSpace);
-            let dom_spaces = dom_row[0].children
-            let size = dom_spaces[0].offsetWidth;
-            size = PlannerService.sizify(size, spacePlant[0].seed_count);
-            for (var b = 0; b < dom_spaces.length; b++) {
-              if (dom_spaces[b].classList.contains('space-' + gardenSpace)) {
-                let seedHTML = `<li class="plant clone">`;
-                for (var c = 0; c < spacePlant[0].seed_count; c++) {
-                  let seedClass = PlannerService.stringify(spacePlant[0].seed_count)
-                  seedHTML += `<p style="height: ${size}; width: ${size};" class="${seedClass}">s</p>`
-                }
-                seedHTML += "</li>"
-                dom_spaces[b].innerHTML = seedHTML;
+      init_spaces()
+    });
+  }
+  function init_spaces () {
+    vm.gardenId = $cookies.get('current_garden')
+    GardenService.getSpaces(vm.gardenId).then( res => {
+      vm.currentPlants = res.data;
+      if (vm.currentPlants.length > 0) {
+        for (var a = 0; a < vm.currentPlants.length; a++) {
+          let spacePlant = vm.plantsInLibrary.filter( (plant) => {
+            return vm.currentPlants[a].plant_id === plant.id;
+          })
+          let gardenRow = PlannerService.row(vm.currentPlants[a].dom_id);
+          let gardenSpace = PlannerService.space(vm.currentPlants[a].dom_id);
+          let dom_row = $('.row-' + gardenRow);
+          let dom_space = $('.space-' + gardenSpace);
+          let dom_spaces = dom_row[0].children
+          let size = dom_spaces[0].offsetWidth;
+          size = PlannerService.sizify(size, spacePlant[0].seed_count);
+          for (var b = 0; b < dom_spaces.length; b++) {
+            if (dom_spaces[b].classList.contains('space-' + gardenSpace)) {
+              let seedHTML = `<li class="plant clone">`;
+              for (var c = 0; c < spacePlant[0].seed_count; c++) {
+                let seedClass = PlannerService.stringify(spacePlant[0].seed_count)
+                seedHTML += `<p style="height: ${size}; width: ${size};" class="${seedClass}"><img src="${spacePlant[0].image}" style="width: 100%;"></p>`
               }
-              makeDraggable($('.clone'))
+              seedHTML += "</li>"
+              dom_spaces[b].innerHTML = seedHTML;
             }
-
+            makeDraggable($('.clone'))
           }
         }
-
-      })
+      }
     });
-    // GardenService.getSpaces(vm.garden.id).then( res => {
-    //   console.log(res)
-    // })
+  }
+
+  function init() {
+    init_plants()
   }
   
 

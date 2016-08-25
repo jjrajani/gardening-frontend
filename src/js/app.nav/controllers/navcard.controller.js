@@ -16,11 +16,21 @@ function NavCardController (NavCardService, $scope) {
   function init() {
     NavCardService.getPlants().then( res => {
       vm.plants = res.data;
+      vm.plants.sort(compare);
       vm.displayedLibrary = vm.plants;
       vm.categoryLibrary = vm.plants;
       vm.setCurrentPlant(vm.plants[0])
+      $scope.$applyAsync();
     })
   }
+
+  function compare(a,b) {
+  if (a.name < b.name)
+    return -1;
+  if (a.name > b.name)
+    return 1;
+  return 0;
+}
 
   function setCurrentPlant (plant) {
     vm.current = plant;
@@ -80,19 +90,19 @@ function NavCardController (NavCardService, $scope) {
   function start(event, ui) {
     $(ui.helper).addClass('clone');
     $(ui.helper).empty()
-    for (var i = 0; i < vm.current.seed_count; i++) {
-      if (vm.current.seed_count === 1) {
-        ui.helper.append(`<p class="seed-one flip">S</p>`);
-      } else if (vm.current.seed_count === 4 || vm.current.seed_count === 2 ) {
-        ui.helper.append(`<p class="seed-two flip">S</p>`);
-      } else if (vm.current.seed_count === 9 ) {
-        ui.helper.append(`<p class="seed-three flip">S</p>`);
-      } else if (vm.current.seed_count === 16 ) {
-        ui.helper.append(`<p class="seed-four flip">S</p>`);
-      }
-    }
     let spaceWidth = $('.space-1')[0].offsetWidth
     let spaceHeight = $('.space-1')[0].offsetHeight
+    for (var i = 0; i < vm.current.seed_count; i++) {
+      if (vm.current.seed_count === 1) {
+        ui.helper.append(`<p class="seed-one flip"><img src="${vm.current.image}" style="width: 100%; max-height:"></p>`);
+      } else if (vm.current.seed_count === 4 || vm.current.seed_count === 2 ) {
+        ui.helper.append(`<p class="seed-two flip"><img src="${vm.current.image}" style="width: 100%; max-height: ${spaceHeight}px;"></p>`);
+      } else if (vm.current.seed_count === 9 ) {
+        ui.helper.append(`<p class="seed-three flip"><img src="${vm.current.image}" style="width: 100%; max-height: ${spaceHeight}px;"></p>`);
+      } else if (vm.current.seed_count === 16 ) {
+        ui.helper.append(`<p class="seed-four flip"><img src="${vm.current.image}" style="width: 100%; max-height: ${spaceHeight}px;"></p>`);
+      }
+    }
 
     if (vm.current.size === 1) { 
       spaceWidth = spaceWidth; 

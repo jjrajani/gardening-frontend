@@ -8,9 +8,15 @@
   starting-card {
     .content {
       background-color: lighten(#0f0f0f, 10%);
-      margin: 30px 0 0;
+      margin: 30px 0 30px;
       p {
         color: white;
+        &.paragraph {
+          padding: 0 2.5%;
+          &:last-child {
+            padding: 0 2.5% 14px;
+          }
+        }
       }
     }
     h3 {
@@ -18,12 +24,13 @@
         position: fixed;
         width: 100%;
         color: white;
+        font-weight: 600;
         margin: 0;
-        padding: 5.5px 5%;
-        // border-top: solid 1px $orange;
+        padding: 5px 5%;
         text-align: right;
         background-color: $green;
         letter-spacing: 0.08em;
+        border-bottom: solid 1px $orange;
       }
     }
     .label {

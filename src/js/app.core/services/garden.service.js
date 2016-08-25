@@ -5,9 +5,14 @@ function GardenService (SERVER, $http, UserService) {
   this.getGarden = getGarden;
   this.saveGarden = saveGarden;
   this.getSpaces = getSpaces;
+  this.deleteGarden = deleteGarden;
 
   function createGarden (garden) {
     return $http.post(SERVER.URL + 'gardens', garden, UserService.headers())
+  }
+
+  function deleteGarden (id) {
+    return $http.delete(SERVER.URL + 'gardens/' + id, UserService.headers())
   }
 
   function getGardens () {

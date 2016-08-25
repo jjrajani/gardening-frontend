@@ -7,18 +7,25 @@ $darkborder: rgba(17, 17, 17, 0.3);
 $green: #49BF02;
 
 .home {
-
-  img {
-    width: 100%;
-    height: 300px;
+  .jumbotron {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0 20px 0;
+    img {
+      position: absolute;
+      top: -100px;
+    }
   }
-
   .content {
     display: flex;
     justify-content: space-around;
-    margin: 0;
-    padding: 0 0 40px 0;
+    margin: 0 auto;
+    padding: 0 0 10px 0;
     background-color: #0F0F0F;
+    max-width: 1189px;
     a {
       border-bottom: none;
       display: flex;
@@ -47,6 +54,7 @@ $green: #49BF02;
     }
     .planner, .library {
       margin: 10px 2.5%;
+      font-weight: 600;
       padding: 10px 1.5%;
       background-color: white;
       border: solid $darkborder 1px;
@@ -105,6 +113,7 @@ $green: #49BF02;
     justify-content: space-around;
     button {
       width: 45%;
+      font-weight: 600;
       &:hover {
         background-color: $orange;
       }

@@ -45,7 +45,13 @@ function ProfileController (GardenService, ProfileService, UserService, $state, 
   function init () {
     ProfileService.getPlants().then( res=> {
       vm.plants = res.data;
+      getPlants();
     });
+    
+    $scope.$applyAsync();
+  }
+
+  function getPlants () {
     ProfileService.getProfile().then( res => {
       vm.user = res.data.user;
       vm.gardens = res.data.gardens;
@@ -61,7 +67,6 @@ function ProfileController (GardenService, ProfileService, UserService, $state, 
         })
       })
     })
-    $scope.$applyAsync();
   }
 
   // Garden Functions
@@ -69,12 +74,16 @@ function ProfileController (GardenService, ProfileService, UserService, $state, 
   function addGarden (garden) {
     GardenService.createGarden(garden).then(res => {
       vm.garden = {};
-      $state.reload();
+      $cookies.put('current_garden', res.data.id);
+      $state.go('root.planner', {id: res.data.id});
     });
   }
 
   function deleteGarden(id) {
-    console.log(id)
+    GardenService.deleteGarden(id).then(res => {
+      $state.reload()
+    })
+
   }
 
   function getGardenSpaces (id) {

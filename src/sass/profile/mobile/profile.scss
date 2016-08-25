@@ -25,7 +25,7 @@
       padding: 20px 0;
       background-color: #0f0f0f;
       img {
-        width: 20%;
+        width: 80px;
         height: 80px;
         margin: 8px 0;
       }
@@ -142,6 +142,7 @@
       }
       .new-garden {
         flex-direction: column;
+        align-items: center;
         margin: 20px auto;
         padding: 20px 0;
         width: 100%;
@@ -176,12 +177,12 @@
           }
         }
         button {
-          background-color: $orange;
+          background-color: $green;
           color: white;
           border: none;
-          width: 60%;
-          align-self: flex-end;
-          margin: 20px 2.5% 0 0;
+          width: 90%;
+          max-width: 800px;
+          margin: 20px 2.5%;
 
         }
       }
@@ -343,6 +344,18 @@
           }
           &:nth-child(n) {
             border-bottom: solid 1px $orange;
+          }
+        }
+        .plants {
+          display: flex;
+          max-width: 100%;
+          overflow-y: scroll;
+          .plant {
+            img {
+              height: 75px;
+              min-width: 75px;
+              max-width: 75px;
+            }
           }
         }
         .top {

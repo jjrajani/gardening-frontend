@@ -20,7 +20,8 @@
     <li class="plant draggable" ng-repeat="plant in vm.displayedLibrary" ng-mousedown="vm.setCurrentPlant(plant)" jqyoui-draggable="{onStart: 'vm.start()'}" data-drag="true"
           data-jqyoui-options="{helper: 'clone', revert: 'invalid', cursorAt: {left: 5, top: 5}}">
       <p class="plant-title">{{plant.name}}</p>
-      <img src="#">
+      <img src="{{plant.image}}">
+
       <p class="size-seed">{{plant.seed_count}} sd | {{plant.size}} sq</p>
     </li>
   </ul>

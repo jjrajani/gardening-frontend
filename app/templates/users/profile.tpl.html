@@ -6,7 +6,7 @@
   </div>
 
   <div class="edit-user">
-    <img src="{{vm.user.avatar || '#'}}"> <!-- {{user.avatar}} -->
+    <img src="{{vm.user.avatar || 'https://avatars1.githubusercontent.com/u/14117380?v=3&s=460'}}"> <!-- {{user.avatar}} -->
     <form>
     <p class="control">
       <label ng-hide="vm.showEdit">{{ vm.user.email }}</label>
@@ -55,7 +55,7 @@
           </p>
           <div class="size">
             <p class="control">
-              <label>Height</label>
+              <label>Height (ft)</label>
               <span class="select">
                 <select ng-model="garden.height">
                   <option value="1">1</option>
@@ -66,7 +66,7 @@
               </span>  
             </p>
             <p class="control">
-              <label>Width</label>
+              <label>Width (ft)</label>
               <span class="select">
                 <select ng-model="garden.width">
                   <option value="1">1</option>
@@ -100,7 +100,7 @@
       <div class="garden" ng-repeat="garden in vm.gardens">
         <div class="top">
           <h3 class="title">{{garden.name}}</h3>
-          <i class="fa fa-trash" aria-hidden="true"></i>
+          <i class="fa fa-trash" aria-hidden="true" ng-click="vm.deleteGarden(garden.id)"></i>
           <i class="fa fa-pencil" aria-hidden="true" ng-click="vm.editGarden(garden.id)"></i>
           <p class="created">
             <span class="bold">Planted</span>{{vm.dateStringify(garden.created_at)}}
@@ -110,9 +110,9 @@
         <p><span class="dimensions">Plot Deminsion: </span><span class="width">Width: {{garden.width}}</span><span class="height">Height: {{garden.height}}</span></p>
         <p><span class="size">Plot Size: </span>{{vm.sqFt(garden.height, garden.width)}} square feet</p>
         <ul class="plants">
-          <li ng-repeat="plant in garden.plants">
-            {{plant.name}}
-            <h2>Hello</h2>
+          <li class="plant" ng-repeat="plant in garden.plants">
+            <img src="{{plant.image}}" style="min-width: 100px; max-width: 100px; height: 100px;">
+            <p>{{plant.name}}</p>
           </li>
         </ul>
       </div>

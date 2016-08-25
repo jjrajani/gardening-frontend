@@ -8,6 +8,7 @@ function AdminSinglePlantController (AdminService, $stateParams) {
   function init () {
     AdminService.getPlant($stateParams.id).then(res => {
       vm.plant = res.data
+      console.log(vm.plant.id)
     })
   }
 
