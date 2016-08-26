@@ -1,2 +1,5 @@
-<h3 class="title">Watering</h3>
-<p><span class="subtitle">Watering: </span>{{vm.plant.watering}}</p>
+<h3 class="title">{{vm.plant.name || "Select a Plant"}}</h3>
+<div class="content">
+  <p class="label">Watering: </p>
+  <p class="paragraph">{{vm.plant.water}}</p>
+</div>

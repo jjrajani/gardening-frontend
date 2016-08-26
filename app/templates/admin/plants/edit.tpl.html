@@ -1,24 +1,21 @@
-<div class="update-plant">
-  <form class="update-plant-form" ng-submit="vm.updatePlant(vm.plant)">
-
+<div class="new-plant">
+  <form class="new-plant-form" ng-submit="vm.updatePlant(plant)">
+  <label for="name" class="label">Id</label>
     <p class="control">
-      <input type="text" class="input" ng-model="vm.plant.name" placeholder="Name">
+      <input type="text" class="input" ng-model="plant.id" placeholder="Name" name="name">
     </p>
-    <label class="label">Season</label>
+    <label for="name" class="label">Name</label>
     <p class="control">
-      <span class="select">
-        <select ng-model="vm.plant.season">
-          <option value="Spring">Spring</option>
-          <option value="Summer">Summer</option>
-          <option value="Fall">Fall</option>
-          <option value="Winter">Winter</option>
-        </select>
-      </span>
+      <input type="text" class="input" ng-model="plant.name" placeholder="Name" name="name">
+    </p>
+    <label class="label">Image Url</label>
+    <p class="control">
+      <input type="text" name="image" ng-model="plant.image">
     </p>
     <label class="label">Category</label>
     <p class="control"> 
       <span class="select">
-        <select ng-model="vm.plant.category">
+        <select ng-model="plant.category">
           <option value="Fruit">Fruit</option>
           <option value="Flower">Flower</option>
           <option value="Herb">Herb</option>
@@ -26,47 +23,143 @@
         </select>
       </span>
     </p>
-    <label class="label">Size</label>
+    <label class="label">Family</label>
     <p class="control">
-      <input type="number" class="input" ng-model="vm.plant.size" placeholder="Size">
+      <input type="text" class="input" ng-model="plant.family" placeholder="Family">
     </p>
-    <label class="label">Sun</label>
+    <label class="label">Season</label>
     <p class="control">
-      <input type="number" class="input" ng-model="vm.plant.sun" placeholder="Sun">
+      <span class="select">
+        <select ng-model="plant.season">
+          <option value="Spring">Spring</option>
+          <option value="Summer">Summer</option>
+          <option value="Fall">Fall</option>
+          <option value="Winter">Winter</option>
+        </select>
+      </span>
     </p>
+
+    <label class="label">Spaces</label>
+    <p class="control">
+      <input type="text" class="input" ng-model="plant.size" placeholder="Size">
+    </p>
+
     <label class="label">Seed Count</label>
     <p class="control">
-      <input type="number" class="input" ng-model="vm.plant.seed_count" placeholder="Seed Count">
+      <input type="text" class="input" ng-model="plant.seed_count" placeholder="Seed Count">
     </p>
+
+    <label for="sun" class="label">Sun</label>
+    <p class="control">
+      <input id="sun" type="text" class="input" ng-model="plant.sun" placeholder="Sun">
+    </p>
+
+    <label for="common_problems" class="label">Common Problems</label>
+    <p class="control">
+      <textarea id="problems" name="problems" ng-model="plant.common_problems"></textarea>
+    </p>
+
+    <label for="family" class="label" name="family">Family</label>
+    <p class="control">
+      <input type="text" class="input" name="family" ng-model="plant.family">
+    </p>
+
+
+
+
+
+    <label for="seed-store" class="label">Seed Store</label>
+    <p class="control">
+      <input type="text" class="input" ng-model="plant.seed_store">
+    </p>
+
+    <label class="label">Production</label>
+    <p class="control">
+      <input class="input" type="text" ng-model="plant.production"></input>
+    </p>
+
+    <label class="label">Seed to Harvest</label>
+    <p class="control">
+      <textarea ng-model="plant.seed_to_harvest"></textarea>
+    </p>
+
+    <label class="label">Description</label>
+    <p class="control">
+      <textarea ng-model="plant.description"></textarea>
+    </p>
+
+    <label class="label">Harvesting How</label>
+    <p class="control">
+      <textarea ng-model="plant.harvesting_how"></textarea>
+    </p>
+
+    <label class="label">Harvesting When</label>
+    <p class="control">
+      <textarea ng-model="plant.harvesting_when"></textarea>
+    </p>
+
+    <label class="label">Maintenance</label>
+    <p class="control">
+      <textarea ng-model="plant.maintenance"></textarea>
+    </p>
+
+    <label class="label">Watering</label>
+    <p class="control">
+      <textarea ng-model="plant.water"></textarea>
+    </p>
+
+    <label class="label">Fertilizing</label>
+    <p class="control">
+      <textarea ng-model="plant.fertilizing"></textarea>
+    </p>
+
+    <label class="label">Seed Indoors</label>
+    <p class="control">
+      <textarea ng-model="plant.seed_indoors"></textarea>
+    </p>
+
+    <label class="label">Height</label>
+    <p class="control">
+      <textarea ng-model="plant.height"></textarea>
+    </p>
+
+    <label class="label">Seed Outdoors</label>
+    <p class="control">
+      <textarea ng-model="plant.seed_outdoors"></textarea>
+    </p>
+
+    <label class="label">Starting Location</label>
+    <p class="control">
+      <textarea ng-model="plant.starting_location"></textarea>
+    </p>
+
+    <label class="label">Transplanting</label>
+    <p class="control">
+      <textarea ng-model="plant.transplanting"></textarea>
+    </p>
+
+    <label class="label">Secrets</label>
+    <p class="control">
+      <textarea ng-model="plant.secrets"></textarea>
+    </p>
+    <!-- 
+    
+    
+    
     <label class="label">Maturity</label>
     <p class="control">
-      <input type="number" class="input" ng-model="vm.plant.maturity" placeholder="Maturity">
+      <input type="number" class="input" ng-model="plant.maturity" placeholder="Maturity">
     </p>
     <label class="label">Production</label>
     <p class="control">
-      <input type="number" class="input" ng-model="vm.plant.production" placeholder="Production">
+      <input type="number" class="input" ng-model="plant.production" placeholder="Production">
     </p>
-    <label class="label">Family</label>
-    <p class="control">
-      <input type="text" class="input" ng-model="vm.plant.family" placeholder="Family">
-    </p>
-    <label class="label">Fertilizers</label>
-    <p class="control">
-      <textarea class="textarea" ng-model="vm.plant.fertilizers" placeholder="Fertilizers"></textarea>
-    </p>
+    
     <label class="label">Secrets</label>
     <p class="control">
-      <textarea class="textarea" ng-model="vm.plant.secrets" placeholder="Secrets"></textarea>
-    </p>    
-    <label class="label">Image</label>
-    <p class="control">
-      <input type="text" class="input" ng-model="vm.plant.image">
+      <textarea class="textarea" ng-model="plant.secrets" placeholder="Secrets"></textarea>
     </p>
-    <!--<p class="control">
-      <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
-      <input type="filepicker" data-fp-apikey="A9umldpYmRBuR4UTXk6Dkz" onchange="alert(event.fpfile.url)">
-      <input type="text" class="input" ng-model="plant.image"> 
-    </p>-->
+     -->
     <button class="button">Submit</button>
   </form>
 </div>

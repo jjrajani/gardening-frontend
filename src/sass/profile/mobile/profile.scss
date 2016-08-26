@@ -1,0 +1,415 @@
+.profile {
+  @media screen and (min-width: 400px) {
+    .user-info {
+      width: 100%;
+      position: fixed;
+      border: solid 1px black;
+      height: 100%;
+      justify-content: space-around;
+      align-items: center;
+      height: 50px;
+      background-color: #0f0f0f;
+      .subtitle {
+        margin: 0;
+        color: white;
+        font-weight: 400;
+      }
+    }
+    .edit-user {
+      width: 100%;
+      position: fixed;
+      margin: 50px 0 0 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px 0;
+      background-color: #0f0f0f;
+      img {
+        width: 80px;
+        height: 80px;
+        margin: 8px 0;
+      }
+      p {
+        margin: 0;
+        padding: 5px;
+      }
+      form {
+        margin: 8px 0;
+        // border: solid 1px white;
+        border-radius: 3px;
+        width: 65%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        color: white;
+        .control {
+          border-bottom: solid white 1px;
+          margin: 5px auto 5px 2.5%;
+          height: 32px;
+        }
+        .fa-pencil, .fa-ban, .fa-check-circle-o {
+          width: 20%;
+          margin: 5px 0;
+          height: 32px;
+          font-size: 1.3em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            color: orange;
+          }
+        }
+        .fa-check-circle-o {
+          border: solid pink 1px;
+          margin-right: 5%;
+          &:hover {
+            color: green;
+          }
+        }
+        .fa-ban {
+          border: solid pink 1px;
+          margin-right: 5%;
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+    .garden-nav {
+      flex-direction: column;
+      margin-top: 170px;
+      width: 100%;
+      margin: 178px 0 0 0;
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #0f0f0f;
+        position: fixed;
+        // .title {
+        //   position: fixed;
+        //   background-color: white;
+        //   width: 100%;
+        //   padding: 8px 0 8px 0;
+        //   box-shadow: inset 1px 1px 5px #aaa,
+        //               inset -1px -1px 5px #aaa,
+        //               inset 2px 2px 15px #aaa,
+        //               inset -2px -2px 15px #aaa;
+        // }
+        ul {
+          // margin: 43px 0 0 0;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          background-color: #0f0f0f;
+          color: white;
+          border-top: solid $green 1px;
+          border-bottom: solid $green 1px;
+          p {
+            padding: 3px 10px;
+            letter-spacing: 0.08em;
+            &.active {
+              background-color: $green;
+            }
+          }
+          &.garden-categories {
+            position: fixed;
+
+          }
+          &.garden-list {
+            justify-content: flex-start;
+            margin: 0 0 0 0;
+            background-color: #292929;
+            display: flex;
+            flex-wrap: wrap;
+          li {
+            margin: 8px 0;
+            background-color: $orange;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 3px 12px;
+            margin: 1.25%;
+            letter-spacing: 0.08;
+            &.active {
+              background-color: $green;
+              color: white;
+              font-weight: 600;
+              box-shadow: none;
+            }
+          }
+        }
+        }
+      }
+      .new-garden {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+        padding: 20px 0;
+        width: 100%;
+        max-width: 800px;
+        // background-color: blue;
+        form {
+          margin: 10px 2.5%;
+          border: solid $darkborder 1px;
+          border-radius: 4px;
+          padding: 10px 2.5%;
+          background-color: #292929;
+          p {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            input {
+              min-width: 80%;
+              max-width: 80%;
+            }
+          }
+          div {
+            display: flex;
+            // justify-content: space-between;
+            max-width: 100%;
+            p {
+              width: 50%;
+              padding: 0 5%;
+              &:nth-child(1) {
+                padding-left: 0;
+              }
+            }
+          }
+        }
+        button {
+          background-color: $green;
+          color: white;
+          border: none;
+          width: 90%;
+          max-width: 800px;
+          margin: 20px 2.5%;
+
+        }
+      }
+      .overview-tab {
+            background-color: $orange;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            p {
+              padding: 5px 0;
+              color: white;
+              letter-spacing: 0.08em;
+              width: 50%;
+              &.active {
+                background-color: $green;
+              }
+            }
+          }
+      .overview-nav-box {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        .nav  {
+          display: flex;
+          justify-content: space-around;
+          background-color: white;
+          padding: 8px 0;
+          background-color: #0f0f0f;
+          // box-shadow: inset 1px 1px 3px #aaa,
+          //             inset -1px -1px 3px #aaa,
+          //             inset 2px 2px 8px #aaa,
+          //             inset -2px -2px 8px #aaa;
+          p {
+            display: flex;
+            height: 35px;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border: solid $darkborder 1px;
+            border-radius: 4px;
+            width: 47.5%;
+            margin: 10px 0;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            &.active {
+              background-color: $green;
+              color: white;
+            }
+          }
+          i {
+            border: solid blue 1px;
+          }
+        }
+        .content {
+          display: flex;
+          border: solid 1px $darkborder;          
+          padding: 10px 2.5%;
+          margin: 10px 0;
+          min-width: 100%;
+          .new-comment {
+            background-color: #292929;
+            border: solid 1px $lightborder;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 15px 5%;
+            label {
+              padding: 0 0 5px 1.25%;
+            }
+            textarea {
+              width: 100%;
+              resize: none;
+              min-height: 70px;
+              border-radius: 4px;
+              border: solid 1px $lightborder;
+              &:focus {
+
+              }
+            }
+            input {
+              width: 100%;
+              height: 32px;
+              border-radius: 4px;
+              border: solid 1px $lightborder;
+            }
+            button {
+              border: solid 1px $lightborder;
+              width: 200px;
+              align-self: flex-end;
+              margin: 5px 0;
+            }
+          }
+          .overview {
+            background-color: #292929;
+            border: solid 1px $lightborder;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0;
+            padding: 15px 5%;
+            .fa-trash {
+              position: absolute;
+              right: 10%;
+              top: 20px;
+              z-index: 300;
+              &:hover {
+                color: red;
+              }
+            }
+            span {
+              background-color: $green;
+              color: white;
+              padding: 5px 10px;
+              margin: 5px 10px 5px 0;
+              font-weight: 600;
+              letter-spacing: 0.08em;
+              min-width: 20%;
+            }
+            p {
+              color: white;
+            }
+            .imgs {
+              display: flex;
+              justify-content: flex-start;
+              overflow-y: scroll;
+              img {
+                min-width: 100px;
+                max-width: 100px;
+                min-height: 100px;
+                max-height: 100px;
+                margin: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .gardens {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      width: 90%;
+      margin: 20px auto;
+      padding: 10px 2.5%;
+      background-color: #020202;
+      border-radius: 10px;
+      .garden {
+        width: 90%;
+        margin: 20px auto;
+        border: solid #0f0f0f;
+        &:hover, &:focus {
+          .title {
+            background-color: $green;
+          }
+          &:nth-child(n) {
+            border-bottom: solid 1px $orange;
+          }
+        }
+        .plants {
+          display: flex;
+          max-width: 100%;
+          overflow-y: scroll;
+          .plant {
+            img {
+              height: 75px;
+              min-width: 75px;
+              max-width: 75px;
+            }
+          }
+        }
+        .top {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .title {
+            border: solid $green 1px;
+            width: 80%;
+            color: white;
+            padding: 10px;
+            margin: 0;
+          }
+          i {
+            width: 10%;
+            border: solid $orange 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.fa-pencil {
+              color: #020202;
+              background-color: $orange;
+              &:hover {
+                color: $orange;
+                background-color: #020202;
+              }
+            }
+            &.fa-trash {
+              color: $orange;
+              &:hover {
+                color: $green;
+                background-color: red;
+              }
+            }
+          }
+          .created{
+            display: flex;
+            justify-content: flex-end;
+            align-content: flex-start;
+            color: white;
+            width: 100%;
+            .bold {
+              padding: 0 5px 0 0;
+            }
+          }
+        }
+        .subtitle {
+          width: 100%;
+          display: flex;
+          border: solid 1px #020202;
+          color: white;
+        }
+      }
+    }
+  }
+}

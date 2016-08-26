@@ -11,10 +11,15 @@
     .sm-sc {
       display: flex;
       justify-content: space-around;
-      background-color: white;
+      background-color: #0f0f0f;
       button {
         width: 45%;
         height: 40px;
+        border: none;
+        &:focus, &:hover {
+          background-color: $orange;
+          color: white;
+        }
       }
     }
   }

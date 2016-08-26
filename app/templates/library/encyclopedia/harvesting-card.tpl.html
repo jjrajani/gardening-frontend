@@ -1,10 +1,7 @@
-<h3 class="title">Harvesting</h3>
-<img src="#">
-<img src="#">
-<div class="l">
-  <p class="subtitle">How: </p>
-  <p>{{vm.plant.harvesting_how || 'update database'}}</p>
-
-  <p class="subtitle">When: </p>
-  <p>{{vm.plant.harvesting_when || 'update database'}}</p>
+<h3 class="title">{{vm.plant.name || 'Select a Plant'}}</h3>
+<div class="content">
+  <p class="label">How: </p>
+  <p class="paragraph">{{vm.plant.harvesting_how}}</p>
+  <p class="label">When:</p>
+  <p class="paragraph">{{vm.plant.harvesting_when}}</p>
 </div>

@@ -1,55 +1,51 @@
-# Installation
+#### myGarden App
+---
+##### Problem
+---
+All the available resources I've found to help educate people of good gardening habits are presented in large amounts of text that take` hours to sift through before one grasps an understanding of the basics.
 
-#### Prerequisites
+I think this is crazy. 
 
-Make sure you have an up to date installation of `npm`
-with `brew update` followed by either `brew install npm` or `brew upgrade npm`.
+Gardening is fun, simple, and really not much work on a small single-family scale. It should be presented as such.
 
-Then use npm to install the following apps with `npm install -g $APP_NAME`
-* `gulp-cli`
-* `surge`
+---
 
-Finally, I would strongly encourage you to install the `newapp` script from [here][newapp].
+##### Purpose
+---
+Consolidate Information: 
+  * plant specs, requirements
+  * good practices
+  * helpful hints/gardener secrets
 
-[newapp]: https://gist.github.com/kingcons/a25733c233faf10847cbb4ff557e6843
+Present Information in an easily digestible way:
+    * Use visual representations
+    * Interactive interface
+    * Present only the information that is required at the moment but make access to deeper information readily accessible.
 
-# Usage
+Promote Responsibly
+    * Tailor application to have a bias towards organic, non-chemical, environmentally friendly habits and proceedures.
+---
 
-#### If you are using the `newapp` tool
+##### Philisophical Reasoning
+---
+###### Considering we, as humans, all consume food to survive, it only seems logical that we should know how to garden.  This app attempts to consolidate plant specs and requirements into an easily digestible, visually pleasing, and intuitive interface.  Upon reaching my landing page, the user should already feel as though they are creating something, mentally visualizing the garden they will soon be planting in their backyards.
+---
+---
+###### Contained within -
+* ###### Preliminary Layout
+    * Landing Page - jumbotron slideshow of attractive gardens
+    * Home Page - New User
+        * Minified plant library
+        * Click and draggable placement of veggie cards into garden space
+    * Home Page - Registered User
+        * My Garden Page
+            *  Access to entire plant library
+            *  Holds plants desired
+            *  Holds plants actual
+            *  Holds Garden plot size
+            *  Holds garden designs
 
-*NOTE:* If you do not use a lowercased project/folder name, the automatic deploy to surge with `npm run deploy` will fail as surge.sh always expects lowercased names.
+* ###### Suggested Initial Features
+    * User should be able to search for which garden certain plants are in.  which gardens contain tomatoes?
 
-1. Run `$ newapp template <project name>`
-2. Change in to your new project
-3. Initialize Git `$ git init`
-4. Build
-
-#### If you are NOT using the `newapp` tool
-
-1. Clone down this repo
-2. Rename and change into the project folder
-3. Remove `git` from it `$ rm -rf .git`
-4. Initialize Git `$ git init`
-5. Install the dependencies `$ npm install`
-6. Build 
-
-
-# Features
-
-This template features a couple different tools. First it utalizes both NPM and Gulp for different tasks.
-
-## Gulp Tasks
-
-All tasks are listed below, but ideally you will just need to run `gulp start` and be done with it.
-
-- `gulp start`: This is the primary task that will fire up the server and allow you to start building
-- `gulp server`: This will start a Browsersync server with live-reload
-- `gulp sass`: This will compile your SASS
-- `gulp browserify`: This will transpile your JS from ES6 to ES5
-- `gulp watch`: This will start a watcher for files
-
-## NPM Scripts
-
-- `npm run test`: This will launch Mocha in your terminal and run any tests
-- `npm run deploy`: This will deploy your application to Surge.sh for you
-- `npm run lint`: This will run ESLint on your `/src/js` folder
+------

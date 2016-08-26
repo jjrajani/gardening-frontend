@@ -1,9 +1,10 @@
-function ProfileController (GardenService, ProfileService, UserService, $state) {
+function ProfileController (GardenService, ProfileService, UserService, $state, SERVER, $cookies, $scope) {
 
   let vm = this;
+
   
   vm.gardenState = 0;
-  vm.overviewTab = 1
+  vm.overviewTab = 0;
   // this toggles from 0 to >0 to show comments
   vm.gardenComments = 0;
 
@@ -16,12 +17,16 @@ function ProfileController (GardenService, ProfileService, UserService, $state) 
 
   // Create Gardens & Garden Listings
   vm.addGarden = addGarden;
-  vm.gardenFilter = gardenFilter;
-  vm.activeGardens = '';
-  vm.planningGardens = '';
-  vm.selectGarden = selectGarden;
-  vm.selectedGarden = '';
   vm.deleteGarden = deleteGarden;
+  vm.clearState = clearState;
+// Edit garden
+  vm.editGarden = editGarden
+  //Get Spaces in Gardens
+  vm.getGardenSpaces = getGardenSpaces;
+
+  // Text Splices
+  vm.dateStringify = dateStringify;
+  vm.sqFt = sqFt;
 
   init()
 
@@ -32,9 +37,36 @@ function ProfileController (GardenService, ProfileService, UserService, $state) 
   }
 
   function submitEdit () {
-    console.log(vm.user);
+    // console.log(vm.user);
     UserService.updateUser(vm.user);
     vm.edit();
+  }
+
+  function init () {
+    ProfileService.getPlants().then( res=> {
+      vm.plants = res.data;
+      getPlants();
+    });
+    
+    $scope.$applyAsync();
+  }
+
+  function getPlants () {
+    ProfileService.getProfile().then( res => {
+      vm.user = res.data.user;
+      vm.gardens = res.data.gardens;
+      vm.gardens.forEach(function(garden, index){
+        GardenService.getSpaces(garden.id).then(res => {
+          vm.gardens[index].plants = res.data;
+          if (vm.gardens[index].plants.length > 0) {
+            vm.gardens[index].plants = vm.gardens[index].plants.map( function (plant) {
+              var plantArr = vm.plants.filter(plantData => plantData.id === plant.plant_id);
+              return plant = plantArr[0];
+            })
+          }
+        })
+      })
+    })
   }
 
   // Garden Functions
@@ -42,45 +74,44 @@ function ProfileController (GardenService, ProfileService, UserService, $state) 
   function addGarden (garden) {
     GardenService.createGarden(garden).then(res => {
       vm.garden = {};
-      $state.reload();
+      $cookies.put('current_garden', res.data.id);
+      $state.go('root.planner', {id: res.data.id});
     });
   }
 
-  function gardenFilter() {
-    GardenService.getGardens().then( res => {
-      vm.activeGardens = vm.gardens.filter(function (garden) {
-        return garden.status === true;
-      });
-      vm.planningGardens = vm.gardens.filter(function (garden) {
-        return garden.status === false;
-      });
-    })
-  }
-
-  function selectGarden (id) {
-    let garden = vm.gardens.filter((garden) => {
-      return garden.id === id;
-    })
-    vm.selectedGarden = garden[0];
-    console.log(vm.gardenState)
-    vm.gardenState = 'tree';
-    console.log(vm.gardenState)
-  }
-
   function deleteGarden(id) {
-    console.log(id)
+    GardenService.deleteGarden(id).then(res => {
+      $state.reload()
+    })
+
   }
 
-  function init () {
-    ProfileService.getProfile().then( res => {
-      vm.user = res.data.user
-      vm.gardens = res.data.gardens
-      vm.gardenFilter();
-      vm.selectedGarden = vm.gardens[0];
-    })
-    
+  function getGardenSpaces (id) {
+    // console.log(id)
+  }
+
+  function clearState() {
+    vm.gardenState = 0;
+    vm.overviewTab = 1;
+  }
+
+  // Text Splices
+  function dateStringify(date) {
+    date = ProfileService.dateStringify(date);
+    return date;
+  }
+
+  function sqFt(height, width) {
+   let size = ProfileService.sqFt(height, width);
+   return size
+  }
+
+  //edit garden
+  function editGarden (id) {
+    $cookies.put('current_garden', id)
+    $state.go('root.planner', {id: id});
   }
 }
 
-ProfileController.$inject = ['GardenService', 'ProfileService', 'UserService', '$state'];
+ProfileController.$inject = ['GardenService', 'ProfileService', 'UserService', '$state', 'SERVER', '$cookies', "$scope"];
 export { ProfileController };

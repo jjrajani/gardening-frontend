@@ -1,87 +1,87 @@
 .encyclopedia {
   .content {
-@media screen and (min-width: 760px) {
-  .spacing {
-    .measure {
-      width: 225px;
-      height: 225px;
-      display: flex;
-      .l {
-        margin: 26px 5px 0 0;
-        border: solid blue 1px;
-        border-left: none;
-        height: 198px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        p {
-          margin: 0;
-          transform: rotate(0.75turn);
-        }
-      }
-      .r {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        .line {
-          margin: 0;
-          border: solid red 1px;
-          border-top: none;
-          align-self: flex-end;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          &.four {
-            width: 100px;
-          }
-          &.nine {
-            width: 33.3333%;
-          }
-        }
-        .space {
-          border: solid green 1px;
-          display: flex;
-          flex-wrap: wrap;
-          width: 200px;
-          height: 200px;
-          margin: 5px 0 0 0;
-          .seed {
-            width: 198px;
-            height: 196px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            p {
-              border: solid brown 1px;
-              margin: 1px 0 0 0;
-              height: 197px;
-            }
-            &.four {
-              width: 50%;
-              height: 99px;
+// @media screen and (min-width: 760px) {
+//   .spacing {
+//     .measure {
+//       width: 225px;
+//       height: 225px;
+//       display: flex;
+//       .l {
+//         margin: 26px 5px 0 0;
+//         border: solid blue 1px;
+//         border-left: none;
+//         height: 198px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: flex-end;
+//         p {
+//           margin: 0;
+//           transform: rotate(0.75turn);
+//         }
+//       }
+//       .r {
+//         display: flex;
+//         flex-direction: column;
+//         width: 200px;
+//         .line {
+//           margin: 0;
+//           border: solid red 1px;
+//           border-top: none;
+//           align-self: flex-end;
+//           width: 100%;
+//           display: flex;
+//           justify-content: center;
+//           &.four {
+//             width: 100px;
+//           }
+//           &.nine {
+//             width: 33.3333%;
+//           }
+//         }
+//         .space {
+//           border: solid green 1px;
+//           display: flex;
+//           flex-wrap: wrap;
+//           width: 200px;
+//           height: 200px;
+//           margin: 5px 0 0 0;
+//           .seed {
+//             width: 198px;
+//             height: 196px;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
+//             margin: 0;
+//             p {
+//               border: solid brown 1px;
+//               margin: 1px 0 0 0;
+//               height: 197px;
+//             }
+//             &.four {
+//               width: 50%;
+//               height: 99px;
               
-              p {
-                width: 100%;
-                height: 100px;
-                border: solid brown 1px;
-              }
-            }
-            &.nine {
-              width: 33.333333%;
-              height: 66.666666px;
-              p {
-                width: 100%;  
-                height: 66.66666px;
-                border: solid brown 1px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+//               p {
+//                 width: 100%;
+//                 height: 100px;
+//                 border: solid brown 1px;
+//               }
+//             }
+//             &.nine {
+//               width: 33.333333%;
+//               height: 66.666666px;
+//               p {
+//                 width: 100%;  
+//                 height: 66.66666px;
+//                 border: solid brown 1px;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 }
 }

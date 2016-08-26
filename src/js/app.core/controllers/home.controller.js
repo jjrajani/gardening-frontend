@@ -3,11 +3,12 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
   
   vm.loggedIn   = false;
   vm.login      = login;
-  // vm.planner    = planner;
   vm.library    = library;
   vm.fellow     = fellow;
   vm.logOut     = logOut;
   vm.register   = register;
+  vm.goLogin    = goLogin;
+  vm.goRegister = goRegister;
 
   console.log('HomeController')
 
@@ -21,6 +22,14 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
 
   function fellow () {
     $state.go('root.fellow')
+  }
+
+  function goLogin () {
+    $state.go('root.login')
+  }
+
+  function goRegister () {
+    $state.go('root.register')
   }
 
   init ()

@@ -1,5 +1,11 @@
-<h3 class="title">Starting</h3>
-<p><span class="subtitle">Location:</span> {{vm.plant.location || "update database"}}</p>
-<p><span class="subtitle">Seeds Indoors: </span>{{vm.plant.seed_indoors || 'update database'}}</p>
-<p><span class="subtitle">Transplanting: </span>{{vm.plant.seed_outdoors || 'update database'}}</p>
-<p><span class="subtitle">Seeds Outdoors: </span>{{vm.plant.seed_outdoors || 'update database'}}</p>
+<h3 class="title">{{vm.plant.name || "Select a Plant"}}</h3>
+<div class="content">
+  <p class="label">Location:</p>
+  <p class="paragraph">{{vm.plant.starting_location}}</p>
+  <p class="label">Seeds Indoors: </p>
+  <p class="paragraph">{{vm.plant.seed_indoors}}</p>
+  <p class="label">Seeds Outdoors: </p>
+  <p class="paragraph">{{vm.plant.seed_outdoors}}</p>
+  <p class="label">Transplanting: </p>
+  <p class="paragraph">{{vm.plant.transplanting}}</p>
+</div>

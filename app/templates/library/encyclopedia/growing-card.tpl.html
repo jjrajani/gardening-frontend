@@ -1,4 +1,7 @@
-<h3 class="title">Growing</h3>
-<p><span class="subtitle">Watering: </span>{{vm.plant.watering || 'update database'}}</p>
-<p><span class="subtitle">Fertilizing: </span>{{vm.plant.fertilizing || 'update database'}}</p>
-<p><span class="subtitle">Maintenance: </span>{{vm.plant.maintenance || 'update database'}}</p>
+<h3 class="title">{{vm.plant.name || 'Select a Plant'}}</h3>
+<div class="content">
+  <p class="label">Maintenance: </p>
+  <p class="paragraph">{{vm.plant.maintenance}}</p>
+  <p class="label">Fertilizing: </p>
+  <p class="paragraph">{{vm.plant.fertilizing}}</p>
+</div>

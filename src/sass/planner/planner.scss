@@ -11,62 +11,48 @@
     display: none;
     visibility: hidden;
   }
-
-.nav-top {
-    position: fixed;
-    width: 100%;
-    background-color: white;
-    z-index: 100;
-    .container {
-      border-top: solid #ccc 1px;
-      border-radius: 10px;
-    }
-  }
-  .content {
-    .plants {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
-      background-color: #FCFCFD;
-      padding: 50px 0 0;
-      .plant {
-        position: relative;
-        display: flex;
-        margin: 0;
-        flex-direction: column;
-        align-items: center;
-        p {
-          margin: 0;
-          padding: 3px;
-        }
-        img {
-          border: solid pink 1px;
-          height: 90px;
-          min-width: 90px;
-          max-width: 90px;
-          margin: 0 10px;
-        }
-      }
-    }
-  }
-
   .plan {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 45px 0;
-    padding: 50px 0 0;
+    margin: 45px 0 0 0;
+    padding: 20px 0 0;
   }
   .garden {
-    display: inline-block;
-    .row {
-      display: flex;
+    width: 100%;
+    .row-1, .row-2, .row-3 {
+      max-width: 90%;
       margin: 0 auto;
-      .space {
-        width: 100px;
-        height: 100px;
-        border: solid blue 1px;
+      display: flex;
+      justify-content: center;
+      .space-1, .space-2, .space-3, .space-4,
+      .space-5, .space-5, .space-6, .space-7, .space-8, 
+      .space-9, .space-10, .space-11, .space-12, 
+      .space-13, .space-14, .space-15, .space-16 {
+        border: solid 1px $orange;
+        font-size: 0.8em;
       }
     }
+  }
+}
+
+.hidden {
+  display: none;
+  visibility: none;
+}
+
+.save {
+  width: 20%;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: $green;
+  color: white;
+  border: solid $green 1px;
+  position: absolute;
+  top: 15px;
+  right: 20%;
+  z-index: 10000;
+  &:hover {
+    background-color: $orange;
   }
 }
