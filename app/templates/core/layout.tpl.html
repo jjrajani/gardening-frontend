@@ -6,7 +6,7 @@
       </div>
 
       <div class="nav-right nav-menu">
-        <a class="nav-item" href="/#/profile">
+        <a class="nav-item" href="/#/profile" ng-show="vm.loggedIn">
           Profile
         </a>
         <a class="nav-item" href="/#/admin" class="button" ng-show="vm.isAdmin">
@@ -14,6 +14,9 @@
         </a>
         <a class="nav-item" href="/#/" class="button" ng-click="vm.logOut()" ng-show="vm.loggedIn">
           Logout
+        </a>
+        <a class="nav-item" href="/#/login" class="button" ng-hide="vm.loggedIn">
+          Login
         </a>
       </div>
     </nav>
