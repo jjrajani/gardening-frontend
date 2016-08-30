@@ -1,8 +1,9 @@
 function HomeController ($state, UserService, $rootScope, $cookies) {
   let vm = this;
-  
+
   vm.loggedIn   = false;
   vm.login      = login;
+  vm.newGarden  = newGarden
   vm.library    = library;
   vm.fellow     = fellow;
   vm.logOut     = logOut;
@@ -17,7 +18,23 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
   // }
 
   function library () {
-    $state.go('root.library')
+    console.log(vm.loggedIn);
+    if(vm.loggedIn){
+      $state.go('root.library')
+    }else {
+      $state.go("root.register")
+    }
+  }
+
+  function newGarden () {
+    console.log(vm.loggedIn);
+    if(vm.loggedIn){
+      console.log("iffing");
+
+      $state.go('root.garden')
+    }else {
+      $state.go("root.register")
+    }
   }
 
   function fellow () {
@@ -33,7 +50,7 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
   }
 
   init ()
-  
+
   $rootScope.$on('loginChange', (event, status) => {
     vm.loggedIn = status;
   });
@@ -48,19 +65,19 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
     vm.loggedIn = false;
     vm.isAdmin = false;
   }
-  
+
   function login (user) {
     UserService.login(user).then( res => {
       $cookies.put('access_token', res.data.access_token)
       $cookies.put('admin', res.data.admin)
       $state.go('root.profile');
     })
-  }    
+  }
 
   function register (user) {
     UserService.register(user);
     $state.go('root.home')
-  }  
+  }
 
 }
 
