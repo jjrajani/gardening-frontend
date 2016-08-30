@@ -53,9 +53,9 @@ $green: #49BF02;
       }
     }
     .planner, .library {
-      margin: 10px 2.5%;
+      margin: 0px 2.5%;
       font-weight: 600;
-      padding: 10px 1.5%;
+      padding: 0px 1.5%;
       background-color: white;
       border: solid $darkborder 1px;
       border-radius: 4px;
@@ -64,7 +64,9 @@ $green: #49BF02;
       .title {
         margin: 0;
       }
-      a{
+      p{
+        margin: 0;
+        visibility: hidden;
       }
       &:hover {
         background-color: $orange;
@@ -72,29 +74,28 @@ $green: #49BF02;
           color: white;
         }
         p {
-          background-color: $green;
+          visibility: visible;
+          color: white;
         }
       }
     }
     .planner {
-      
+      position: relative;
       a {
-
-        h3 {
-          // padding: 8px 0;
-        }
+        margin: 30px auto;
       }
       p {
+        position: absolute;
         display: flex;
         padding: 5px 5%;
-        background-color: orange;
-        color: white;
-        border: solid 1px rgba(17, 17, 17, 0.3);
-        border-radius: 4px;
+        justify-content: center;
+        bottom: 4px;
       }
     }
 
     .library {
+      align-items: center;
+      justify-content: center;
       div {
         display: flex;
         justify-content: space-around;
@@ -111,14 +112,26 @@ $green: #49BF02;
     display: flex;
     width: 100%;
     justify-content: space-around;
+    margin: 0 auto;
+    padding: 0 0 10px 0;
+    max-width: 1189px;
     button {
       width: 45%;
-      font-weight: 600;
+      font-weight: 400;
+      margin: 10px 2.5%;
+      background-color: $green;
+      border: none;
+      border-radius: 4px;
+      color: white;
       &:hover {
-        background-color: $orange;
+        background-color: $green;
+        color: white;
+        font-weight: 600;
       }
       &:focus {
-        background-color: $green;
+        background-color: $orange;
+        color: white;
+        font-weight: 600;
       }
     }
   }
