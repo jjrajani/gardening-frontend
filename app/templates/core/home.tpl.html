@@ -5,11 +5,11 @@
     <img src="http://housely.com/wp-content/uploads/2016/06/Vegetable-Garden.jpg">
   </div>
   <div class="content">
-  
+
     <!-- Planner -->
     <!--<div ng-click="vm.planner()" class="planner">-->
-    <div class="planner">      
-        <a href="/#/gardens/new"><h3 class="title"><span class="green">my</span><span class="orange">Garden</span> Planner</h3></a>
+    <div class="planner" ng-click="vm.newGarden()">
+        <h3 class="title"><span class="green">my</span><span class="orange">Garden</span> Planner</h3>
         <p ng-hide="vm.loggedIn">Start planning your garden.</p>
         <!-- If user logged in href = new garden -->
         <!-- If user not logged in href = login/register page -->
@@ -17,9 +17,9 @@
 
     <!-- Library -->
     <div ng-click="vm.library()" class="library">
-      <a href="/#/library"><h3 class="title"><span class="green">my</span><span class="orange">Garden</span> Library</h3></a>
+      <h3 class="title"><span class="green">my</span><span class="orange">Garden</span> Library</h3>
     </div>
-    
+
     <a class="new-garden" href="/#/gardens/new" ng-show="vm.loggedIn">New Garden</a>
 </div>
 
