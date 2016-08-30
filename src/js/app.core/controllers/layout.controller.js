@@ -23,6 +23,7 @@ function LayoutController (UserService, $rootScope) {
     vm.loggedIn = false;
     vm.isAdmin = false
   }
+
 }
 
 LayoutController.$inject = ['UserService','$rootScope'];
