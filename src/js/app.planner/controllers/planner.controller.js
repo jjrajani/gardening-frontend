@@ -15,6 +15,7 @@ function PlannerController ($rootScope, GardenService, $cookies, PlannerService)
   vm.garden = {};
 
   function getNumberArray (num) {
+    console.log('NUM', num)
     return new Array(num)
   }
 

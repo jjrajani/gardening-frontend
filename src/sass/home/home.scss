@@ -53,57 +53,37 @@ $green: #49BF02;
       }
     }
     .planner, .library {
-      margin: 0px 2.5%;
-      font-weight: 600;
-      padding: 0px 1.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: white;
-      border: solid $darkborder 1px;
       border-radius: 4px;
-      box-shadow: 1px 1px 3px rgba(17,17,17,0.1),
-                  -1px -1px 3px rgba(17,17,17,0.1);
-      .title {
-        margin: 0;
-      }
-      p{
-        margin: 0;
-        visibility: hidden;
+      h3 {
+        &.title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 20px auto;
+          padding: 5px 12px;
+          border-bottom: solid 1px rga(10, 10, 10, 1);
+        }
       }
       &:hover {
         background-color: $orange;
+        .green {
+          color: white;
+        }
         .orange {
-          color: white;
+          color: $green;
         }
-        p {
-          visibility: visible;
-          color: white;
+        h3 {
+          color: rgba(17, 17, 17, 0.8);
         }
       }
-    }
-    .planner {
-      position: relative;
-      a {
-        margin: 30px auto;
-      }
-      p {
-        position: absolute;
-        display: flex;
-        padding: 5px 5%;
-        justify-content: center;
-        bottom: 4px;
-      }
-    }
-
-    .library {
-      align-items: center;
-      justify-content: center;
-      div {
-        display: flex;
-        justify-content: space-around;
-        a {
-          width: 30%;
-          background-color: $green;
-          border-radius: 4px;
-          color: white;
+      &:focus {
+        background-color: $green;
+        .orange{
+          color: $orange;
         }
       }
     }
