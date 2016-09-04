@@ -49,3 +49,56 @@ Promote Responsibly
     * User should be able to search for which garden certain plants are in.  which gardens contain tomatoes?
 
 ------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+colaboration
+grant makers
+
+
+Atlanta Regional Community (ARC) (5 counties)
+
+Center for Civic inovation
+    - Melanie, director planner.
+    - Food Inovation Network.
+
+
+Georgia Organics
+    - New Space in Augusta
+    - Licensing
+    - 100 organic farms reached, aiming for 200.
+    - 10,000 community gardens
+
+- EIN#
+- Make self legit.
+
+Consultant
+    - How do you grow enough food?
+    - Put gardens in every backyard.
+
+
+American Gardeners
+
+
+60 Days - Contact Board
+
+Chicago - restaurant group.
+Atlanta - healthy growing urban to table.
+
+Target, Whole-Foods, Walmart
+
+Home & Garden, Southern Living
+
+
