@@ -80,6 +80,10 @@ nav-card {
         border: solid black 1px;
         justify-content: space-between;
         align-items: center;
+        &.selected {
+          border: solid orange 2px;
+          border-radius: 4px;
+        }
         p {
           width: 100%;
           display: flex;

@@ -12,7 +12,7 @@ function NavCardController (NavCardService, $scope) {
 
 
   init ();
-  
+
   function init() {
     NavCardService.getPlants().then( res => {
       vm.plants = res.data;
@@ -25,16 +25,16 @@ function NavCardController (NavCardService, $scope) {
   }
 
   function compare(a,b) {
-  if (a.name < b.name)
-    return -1;
-  if (a.name > b.name)
-    return 1;
-  return 0;
+    if (a.name < b.name)
+      return -1;
+    if (a.name > b.name)
+      return 1;
+    return 0;
 }
 
   function setCurrentPlant (plant) {
     vm.current = plant;
-    $scope.$emit('selectedPlantChange', vm.current)
+    $scope.$emit('selectedPlantChange', vm.current);
   }
 
   // on page load
@@ -104,11 +104,11 @@ function NavCardController (NavCardService, $scope) {
       }
     }
 
-    if (vm.current.size === 1) { 
-      spaceWidth = spaceWidth; 
+    if (vm.current.size === 1) {
+      spaceWidth = spaceWidth;
       spaceHeight = spaceHeight;
     }
-    if (vm.current.size === 2) { 
+    if (vm.current.size === 2) {
       spaceWidth = 2 * spaceWidth;
       spaceHeight = spaceHeight;
     }
@@ -127,12 +127,3 @@ function NavCardController (NavCardService, $scope) {
 
 NavCardController.$inject = ['NavCardService', '$scope'];
 export { NavCardController };
-
-
-
-
-
-
-
-
-

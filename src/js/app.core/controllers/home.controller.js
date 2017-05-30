@@ -51,14 +51,14 @@ function HomeController ($state, UserService, $rootScope, $cookies) {
 
   init ()
 
-  $rootScope.$on('loginChange', (event, status) => {
-    vm.loggedIn = status;
-  });
-
   function init () {
     vm.loggedIn = UserService.isLoggedIn();
     vm.isAdmin = UserService.isAdmin();
   }
+
+  $rootScope.$on('loginChange', (event, status) => {
+    vm.loggedIn = status;
+  });
 
   function logOut () {
     UserService.logOut();
